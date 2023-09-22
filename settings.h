@@ -71,7 +71,7 @@
 #define CM_METHOD CM_NEON
 
 /** Maximimum Position per Channel */
-#define POSITIONS 1
+#define POSITIONS 64
 
 /** Re-arrange input data buffer if CM_METHOD = CM_NEON, 
  *  re-arringing either done with NEON (REARRANGE_CPU = false) or CPU (REARRANGE_CPU = true) */

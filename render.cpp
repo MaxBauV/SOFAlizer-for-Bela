@@ -52,9 +52,11 @@ Fft outRightFFT;
 #else
 	/** Object of OSC Control Interface */
 	OSCinterface oscInterface;
-	bool send_pos_0;
-	bool send_pos_1;
 #endif
+
+/** For OSC interface */
+bool send_pos_0;
+bool send_pos_1;
 
 /** Values to set active HRTFData objects (= SOFA structures) */
 unsigned int hrtf_cnt = 0;

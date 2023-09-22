@@ -46,9 +46,11 @@ extern Fft outRightFFT;
 #else
 	/** Object of OSC Control Interface */
 	extern OSCinterface oscInterface;
-	extern bool send_pos_0;
-	extern bool send_pos_1;
 #endif
+
+/** For OSC interface */
+extern bool send_pos_0;
+extern bool send_pos_1;
 
 /** Values to set active HRTFData objects (= SOFA structures) */
 extern unsigned int hrtf_cnt;
