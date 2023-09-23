@@ -693,7 +693,7 @@ setup:                                  @ @setup
 	.loc	13 117 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:117:7
 	movt	r1, :upper16:.L.str.11
 	mov	r0, r6
-	mov	r2, #1
+	mov	r2, #4
 	bl	_Z19read_hrtfs_from_dirRSt6vectorI8HRTFDataSaIS0_EEPKcfj
 .Ltmp157:
 	.loc	13 117 6                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:117:6
@@ -1311,19 +1311,19 @@ setup:                                  @ @setup
 .LBB4_59:                               @ %_ZNSt6vectorIfSaIfEE6resizeEj.exit
 	.loc	13 175 12               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:175:12
 	add	r0, r7, #52
-	mov	r1, #512
+	mov	r1, #256
 	bl	_ZN3Fft5setupEj
 	.loc	13 176 12               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:176:12
 	add	r0, r7, #68
-	mov	r1, #512
+	mov	r1, #256
 	bl	_ZN3Fft5setupEj
 	.loc	13 178 13               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:178:13
 	add	r0, r7, #84
-	mov	r1, #512
+	mov	r1, #256
 	bl	_ZN3Fft5setupEj
 	.loc	13 179 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:179:14
 	add	r0, r7, #100
-	mov	r1, #512
+	mov	r1, #256
 	bl	_ZN3Fft5setupEj
 	.loc	13 182 18               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:182:18
 	movw	r0, :lower16:_Z16filtering_threadPv
@@ -1776,7 +1776,7 @@ _Z16filtering_threadPv:                 @ @_Z16filtering_threadPv
 	.loc	13 215 19 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:215:19
 	ldr	r0, [r4, #8]
 	.loc	13 215 33 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:215:33
-	add	r0, r0, #256
+	add	r0, r0, #128
 	.loc	13 215 40               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:215:40
 	bfc	r0, #10, #22
 	.loc	13 215 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:215:16
@@ -1970,7 +1970,7 @@ render:                                 @ @render
 	@DEBUG_VALUE: rightOut <- %S18
 	@DEBUG_VALUE: leftOut <- %S20
 	.loc	13 268 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:268:7
-	cmp	r1, #256
+	cmp	r1, #128
 	blo	.LBB6_4
 .Ltmp403:
 @ BB#3:                                 @   in Loop: Header=BB6_2 Depth=1
@@ -3038,7 +3038,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.byte	0                       @ 0x0
 	.zero	2
 	.long	0                       @ 0x0
-	.long	256                     @ 0x100
+	.long	128                     @ 0x80
 	.long	0                       @ 0x0
 	.long	0                       @ 0x0
 	.long	0                       @ 0x0

@@ -52497,7 +52497,7 @@ CircBuff outcBuff;
 
 
 uint32_t incWritePtr = 0;
-uint32_t out_write_ptr = 256;
+uint32_t out_write_ptr = 128;
 uint32_t outcReadPtr = 0;
 uint32_t cached_in_read_ptr = 0;
 
@@ -52558,7 +52558,7 @@ bool setup(BelaContext *context, void *userData)
  rt_printf("HW Sample Rate: %5.0f Hz\n", context->audioSampleRate);
 
 
- if (!read_hrtfs_from_dir(hrtfdata, "./HRTFs/\0", context->audioSampleRate, 1)){
+ if (!read_hrtfs_from_dir(hrtfdata, "./HRTFs/\0", context->audioSampleRate, 4)){
   rt_printf("Could not find %s\n", "./HRTFs/\0");
 
  }
@@ -52616,11 +52616,11 @@ bool setup(BelaContext *context, void *userData)
  outcBuff.right.resize(1024);
 
 
- chInL_FFT.setup(512);
- chInR_FFT.setup(512);
+ chInL_FFT.setup(256);
+ chInR_FFT.setup(256);
 
- outLeftFFT.setup(512);
- outRightFFT.setup(512);
+ outLeftFFT.setup(256);
+ outRightFFT.setup(256);
 
 
  filteringTask = Bela_createAuxiliaryTask(filtering_thread, 50, "SOFAlizer-filtering-task");
@@ -52656,7 +52656,7 @@ void filtering_thread(void *) {
 
 
 
- out_write_ptr = (out_write_ptr + 256) % 1024;
+ out_write_ptr = (out_write_ptr + 128) % 1024;
 }
 
 
@@ -52683,7 +52683,7 @@ void render(BelaContext *context, void *userData)
   outcBuff.right[outcReadPtr] = 0;
 
 
-  float factor = (float) 256 / (float) 512;
+  float factor = (float) 128 / (float) 256;
   leftOut *= factor;
   rightOut *= factor;
 
@@ -52694,7 +52694,7 @@ void render(BelaContext *context, void *userData)
   }
 # 267 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   hopCnt++;
-  if (hopCnt >= 256) {
+  if (hopCnt >= 128) {
    hopCnt = 0;
    cached_in_read_ptr = incWritePtr;
    Bela_scheduleAuxiliaryTask(filteringTask);

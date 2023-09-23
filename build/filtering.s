@@ -227,14 +227,14 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 	@DEBUG_VALUE: filtering:incBuff <- %R4
 	@DEBUG_VALUE: filtering:in_read_ptr <- %R8
 	@DEBUG_VALUE: filtering:outcBuff <- %R9
-	@DEBUG_VALUE: vector:__n <- 512
-	@DEBUG_VALUE: _Vector_base:__n <- 512
+	@DEBUG_VALUE: vector:__n <- 256
+	@DEBUG_VALUE: _Vector_base:__n <- 256
 	mov	r0, #0
 .Ltmp36:
-	@DEBUG_VALUE: allocate:__n <- 512
-	@DEBUG_VALUE: allocate:__n <- 512
-	@DEBUG_VALUE: _M_allocate:__n <- 512
-	@DEBUG_VALUE: _M_create_storage:__n <- 512
+	@DEBUG_VALUE: allocate:__n <- 256
+	@DEBUG_VALUE: allocate:__n <- 256
+	@DEBUG_VALUE: _M_allocate:__n <- 256
+	@DEBUG_VALUE: _M_create_storage:__n <- 256
 	.loc	7 91 25 is_stmt 1       @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:91:25
 	str	r0, [r7, #8]
 	.loc	7 91 37 is_stmt 0       @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:91:37
@@ -244,7 +244,7 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 .Ltmp37:
 	.loc	3 104 27 is_stmt 1      @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/ext/new_allocator.h:104:27
 .Ltmp0:
-	mov	r0, #2048
+	mov	r0, #1024
 	bl	_Znwj
 .Ltmp1:
 .Ltmp38:
@@ -259,7 +259,7 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 	.file	37 "/usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits" "stl_algobase.h"
 	.loc	37 754 11               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_algobase.h:754:11
 	mov	r1, #0
-	mov	r2, #2048
+	mov	r2, #1024
 .Ltmp40:
 	.loc	7 185 25                @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:185:25
 	str	r0, [r6, #8]!
@@ -267,18 +267,18 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 	@DEBUG_VALUE: _M_fill_initialize:this <- %R6
 	@DEBUG_VALUE: vector:this <- %R6
 	.loc	7 187 59                @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:187:59
-	add	r5, r0, #2048
+	add	r5, r0, #1024
 	.loc	7 187 34 is_stmt 0      @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:187:34
 	str	r5, [r7, #16]
 .Ltmp42:
-	@DEBUG_VALUE: __niter <- 512
-	@DEBUG_VALUE: __fill_n_a<float *, unsigned int, float>:__n <- 512
-	@DEBUG_VALUE: fill_n<float *, unsigned int, float>:__n <- 512
-	@DEBUG_VALUE: __uninit_fill_n<float *, unsigned int, float>:__n <- 512
+	@DEBUG_VALUE: __niter <- 256
+	@DEBUG_VALUE: __fill_n_a<float *, unsigned int, float>:__n <- 256
+	@DEBUG_VALUE: fill_n<float *, unsigned int, float>:__n <- 256
+	@DEBUG_VALUE: __uninit_fill_n<float *, unsigned int, float>:__n <- 256
 	@DEBUG_VALUE: uninitialized_fill_n<float *, unsigned int, float>:__assignable <- 1
-	@DEBUG_VALUE: uninitialized_fill_n<float *, unsigned int, float>:__n <- 512
-	@DEBUG_VALUE: __uninitialized_fill_n_a<float *, unsigned int, float, float>:__n <- 512
-	@DEBUG_VALUE: _M_fill_initialize:__n <- 512
+	@DEBUG_VALUE: uninitialized_fill_n<float *, unsigned int, float>:__n <- 256
+	@DEBUG_VALUE: __uninitialized_fill_n_a<float *, unsigned int, float, float>:__n <- 256
+	@DEBUG_VALUE: _M_fill_initialize:__n <- 256
 	.loc	37 754 11 is_stmt 1     @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_algobase.h:754:11
 	bl	memset
 .Ltmp43:
@@ -329,14 +329,14 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 	@DEBUG_VALUE: filtering:incBuff <- %R4
 	@DEBUG_VALUE: filtering:in_read_ptr <- %R8
 	@DEBUG_VALUE: filtering:outcBuff <- %R9
-	@DEBUG_VALUE: vector:__n <- 512
-	@DEBUG_VALUE: _Vector_base:__n <- 512
+	@DEBUG_VALUE: vector:__n <- 256
+	@DEBUG_VALUE: _Vector_base:__n <- 256
 	mov	r0, #0
 .Ltmp49:
-	@DEBUG_VALUE: allocate:__n <- 512
-	@DEBUG_VALUE: allocate:__n <- 512
-	@DEBUG_VALUE: _M_allocate:__n <- 512
-	@DEBUG_VALUE: _M_create_storage:__n <- 512
+	@DEBUG_VALUE: allocate:__n <- 256
+	@DEBUG_VALUE: allocate:__n <- 256
+	@DEBUG_VALUE: _M_allocate:__n <- 256
+	@DEBUG_VALUE: _M_create_storage:__n <- 256
 	.loc	7 91 25 is_stmt 1       @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:91:25
 	str	r0, [r5, #20]
 	.loc	7 91 37 is_stmt 0       @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:91:37
@@ -346,7 +346,7 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 .Ltmp50:
 	.loc	3 104 27 is_stmt 1      @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/ext/new_allocator.h:104:27
 .Ltmp3:
-	mov	r0, #2048
+	mov	r0, #1024
 	bl	_Znwj
 .Ltmp4:
 .Ltmp51:
@@ -365,7 +365,7 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 	movt	r6, :upper16:.L_MergedGlobals
 .Ltmp54:
 	.loc	37 754 11               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_algobase.h:754:11
-	mov	r2, #2048
+	mov	r2, #1024
 .Ltmp55:
 	.loc	7 185 25                @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:185:25
 	str	r0, [r6, #20]!
@@ -373,18 +373,18 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 	@DEBUG_VALUE: _M_fill_initialize:this <- %R6
 	@DEBUG_VALUE: vector:this <- %R6
 	.loc	7 187 59                @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:187:59
-	add	r5, r0, #2048
+	add	r5, r0, #1024
 	.loc	7 187 34 is_stmt 0      @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:187:34
 	str	r5, [r6, #8]
 .Ltmp57:
-	@DEBUG_VALUE: __niter <- 512
-	@DEBUG_VALUE: __fill_n_a<float *, unsigned int, float>:__n <- 512
-	@DEBUG_VALUE: fill_n<float *, unsigned int, float>:__n <- 512
-	@DEBUG_VALUE: __uninit_fill_n<float *, unsigned int, float>:__n <- 512
+	@DEBUG_VALUE: __niter <- 256
+	@DEBUG_VALUE: __fill_n_a<float *, unsigned int, float>:__n <- 256
+	@DEBUG_VALUE: fill_n<float *, unsigned int, float>:__n <- 256
+	@DEBUG_VALUE: __uninit_fill_n<float *, unsigned int, float>:__n <- 256
 	@DEBUG_VALUE: uninitialized_fill_n<float *, unsigned int, float>:__assignable <- 1
-	@DEBUG_VALUE: uninitialized_fill_n<float *, unsigned int, float>:__n <- 512
-	@DEBUG_VALUE: __uninitialized_fill_n_a<float *, unsigned int, float, float>:__n <- 512
-	@DEBUG_VALUE: _M_fill_initialize:__n <- 512
+	@DEBUG_VALUE: uninitialized_fill_n<float *, unsigned int, float>:__n <- 256
+	@DEBUG_VALUE: __uninitialized_fill_n_a<float *, unsigned int, float, float>:__n <- 256
+	@DEBUG_VALUE: _M_fill_initialize:__n <- 256
 	.loc	37 754 11 is_stmt 1     @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_algobase.h:754:11
 	bl	memset
 .Ltmp58:
@@ -418,7 +418,7 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 	ldr	r0, [r4]
 .Ltmp62:
 	.loc	9 37 5 discriminator 1  @ /root/Bela/projects/SOFAlizer-for-Bela/filtering.cpp:37:5
-	add	r2, r8, #768
+	add	r2, r8, #896
 .Ltmp63:
 	.loc	7 796 32                @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:796:32
 	ldr	r1, [r4, #12]
@@ -455,7 +455,7 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 .Ltmp71:
 	@DEBUG_VALUE: i <- %R6
 	.loc	9 37 5 is_stmt 0 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/filtering.cpp:37:5
-	cmp	r6, #256
+	cmp	r6, #128
 	bne	.LBB0_13
 .Ltmp72:
 @ BB#14:
@@ -1054,7 +1054,7 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 	@DEBUG_VALUE: __ret <- %Q11
 	@DEBUG_VALUE: filtering:Himag <- %Q11
 	.loc	9 105 5 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/filtering.cpp:105:5
-	cmp	r3, #512
+	cmp	r3, #256
 .Ltmp196:
 	@DEBUG_VALUE: fd:this <- %R8
 	@DEBUG_VALUE: fd:this <- %R8
@@ -1177,7 +1177,7 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 	str	r6, [r1, r5, lsl #2]
 .Ltmp217:
 	.loc	9 202 9 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/filtering.cpp:202:9
-	cmp	r7, #256
+	cmp	r7, #128
 	bne	.LBB0_25
 	b	.LBB0_28
 .Ltmp218:
@@ -1240,7 +1240,7 @@ _Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j: @ @_Z9filteringRSt6ve
 	add	r6, r1, r5, lsl #2
 .Ltmp231:
 	.loc	9 210 9 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/filtering.cpp:210:9
-	cmp	r7, #2048
+	cmp	r7, #1024
 .Ltmp232:
 	.loc	9 213 42                @ /root/Bela/projects/SOFAlizer-for-Bela/filtering.cpp:213:42
 	vldr	s2, [r6]
@@ -6040,7 +6040,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.long	.Ldebug_loc14           @ DW_AT_location
 	.long	25379                   @ DW_AT_abstract_origin
 	.byte	15                      @ Abbrev [15] 0x203:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25388                   @ DW_AT_abstract_origin
 	.byte	16                      @ Abbrev [16] 0x20a:0x7d DW_TAG_inlined_subroutine
 	.long	25314                   @ DW_AT_abstract_origin
@@ -6048,7 +6048,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	7                       @ DW_AT_call_file
 	.short	293                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x216:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25337                   @ DW_AT_abstract_origin
 	.byte	17                      @ Abbrev [17] 0x21d:0xf DW_TAG_inlined_subroutine
 	.long	25274                   @ DW_AT_abstract_origin
@@ -6062,7 +6062,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	7                       @ DW_AT_call_file
 	.byte	136                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x237:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25554                   @ DW_AT_abstract_origin
 	.byte	18                      @ Abbrev [18] 0x23e:0x47 DW_TAG_inlined_subroutine
 	.long	25504                   @ DW_AT_abstract_origin
@@ -6071,7 +6071,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	7                       @ DW_AT_call_file
 	.byte	185                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x24d:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25523                   @ DW_AT_abstract_origin
 	.byte	19                      @ Abbrev [19] 0x254:0x30 DW_TAG_inlined_subroutine
 	.long	25473                   @ DW_AT_abstract_origin
@@ -6081,7 +6081,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	170                     @ DW_AT_call_line
 	.byte	1                       @ DW_AT_GNU_discriminator
 	.byte	15                      @ Abbrev [15] 0x264:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25491                   @ DW_AT_abstract_origin
 	.byte	20                      @ Abbrev [20] 0x26b:0x18 DW_TAG_inlined_subroutine
 	.long	25430                   @ DW_AT_abstract_origin
@@ -6090,7 +6090,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	2                       @ DW_AT_call_file
 	.short	436                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x27b:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25449                   @ DW_AT_abstract_origin
 	.byte	0                       @ End Of Children Mark
 	.byte	0                       @ End Of Children Mark
@@ -6106,7 +6106,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.long	.Ldebug_loc13           @ DW_AT_location
 	.long	25643                   @ DW_AT_abstract_origin
 	.byte	15                      @ Abbrev [15] 0x29c:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25652                   @ DW_AT_abstract_origin
 	.byte	16                      @ Abbrev [16] 0x2a3:0x76 DW_TAG_inlined_subroutine
 	.long	8851                    @ DW_AT_abstract_origin
@@ -6114,7 +6114,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	7                       @ DW_AT_call_file
 	.short	1299                    @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x2af:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	8916                    @ DW_AT_abstract_origin
 	.byte	16                      @ Abbrev [16] 0x2b6:0x62 DW_TAG_inlined_subroutine
 	.long	8763                    @ DW_AT_abstract_origin
@@ -6122,7 +6122,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	42                      @ DW_AT_call_file
 	.short	358                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x2c2:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	8817                    @ DW_AT_abstract_origin
 	.byte	21                      @ Abbrev [21] 0x2c9:0x6 DW_TAG_variable
 	.byte	1                       @ DW_AT_const_value
@@ -6133,7 +6133,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	42                      @ DW_AT_call_file
 	.byte	246                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x2da:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25610                   @ DW_AT_abstract_origin
 	.byte	9                       @ Abbrev [9] 0x2e1:0x35 DW_TAG_inlined_subroutine
 	.long	8605                    @ DW_AT_abstract_origin
@@ -6141,7 +6141,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	42                      @ DW_AT_call_file
 	.byte	220                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x2ec:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	8661                    @ DW_AT_abstract_origin
 	.byte	22                      @ Abbrev [22] 0x2f3:0x22 DW_TAG_inlined_subroutine
 	.long	8498                    @ DW_AT_abstract_origin
@@ -6150,12 +6150,12 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.short	789                     @ DW_AT_call_line
 	.byte	1                       @ DW_AT_GNU_discriminator
 	.byte	15                      @ Abbrev [15] 0x300:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	8554                    @ DW_AT_abstract_origin
 	.byte	23                      @ Abbrev [23] 0x307:0xd DW_TAG_lexical_block
 	.long	.Ldebug_ranges13        @ DW_AT_ranges
 	.byte	21                      @ Abbrev [21] 0x30c:0x7 DW_TAG_variable
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	8591                    @ DW_AT_abstract_origin
 	.byte	0                       @ End Of Children Mark
 	.byte	0                       @ End Of Children Mark
@@ -6175,7 +6175,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.long	.Ldebug_loc16           @ DW_AT_location
 	.long	25379                   @ DW_AT_abstract_origin
 	.byte	15                      @ Abbrev [15] 0x330:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25388                   @ DW_AT_abstract_origin
 	.byte	16                      @ Abbrev [16] 0x337:0x7d DW_TAG_inlined_subroutine
 	.long	25314                   @ DW_AT_abstract_origin
@@ -6183,7 +6183,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	7                       @ DW_AT_call_file
 	.short	293                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x343:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25337                   @ DW_AT_abstract_origin
 	.byte	17                      @ Abbrev [17] 0x34a:0xf DW_TAG_inlined_subroutine
 	.long	25274                   @ DW_AT_abstract_origin
@@ -6197,7 +6197,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	7                       @ DW_AT_call_file
 	.byte	136                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x364:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25554                   @ DW_AT_abstract_origin
 	.byte	18                      @ Abbrev [18] 0x36b:0x47 DW_TAG_inlined_subroutine
 	.long	25504                   @ DW_AT_abstract_origin
@@ -6206,7 +6206,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	7                       @ DW_AT_call_file
 	.byte	185                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x37a:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25523                   @ DW_AT_abstract_origin
 	.byte	19                      @ Abbrev [19] 0x381:0x30 DW_TAG_inlined_subroutine
 	.long	25473                   @ DW_AT_abstract_origin
@@ -6216,7 +6216,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	170                     @ DW_AT_call_line
 	.byte	1                       @ DW_AT_GNU_discriminator
 	.byte	15                      @ Abbrev [15] 0x391:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25491                   @ DW_AT_abstract_origin
 	.byte	20                      @ Abbrev [20] 0x398:0x18 DW_TAG_inlined_subroutine
 	.long	25430                   @ DW_AT_abstract_origin
@@ -6225,7 +6225,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	2                       @ DW_AT_call_file
 	.short	436                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x3a8:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25449                   @ DW_AT_abstract_origin
 	.byte	0                       @ End Of Children Mark
 	.byte	0                       @ End Of Children Mark
@@ -6241,7 +6241,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.long	.Ldebug_loc15           @ DW_AT_location
 	.long	25643                   @ DW_AT_abstract_origin
 	.byte	15                      @ Abbrev [15] 0x3c9:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25652                   @ DW_AT_abstract_origin
 	.byte	16                      @ Abbrev [16] 0x3d0:0x76 DW_TAG_inlined_subroutine
 	.long	8851                    @ DW_AT_abstract_origin
@@ -6249,7 +6249,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	7                       @ DW_AT_call_file
 	.short	1299                    @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x3dc:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	8916                    @ DW_AT_abstract_origin
 	.byte	16                      @ Abbrev [16] 0x3e3:0x62 DW_TAG_inlined_subroutine
 	.long	8763                    @ DW_AT_abstract_origin
@@ -6257,7 +6257,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	42                      @ DW_AT_call_file
 	.short	358                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x3ef:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	8817                    @ DW_AT_abstract_origin
 	.byte	21                      @ Abbrev [21] 0x3f6:0x6 DW_TAG_variable
 	.byte	1                       @ DW_AT_const_value
@@ -6268,7 +6268,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	42                      @ DW_AT_call_file
 	.byte	246                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x407:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	25610                   @ DW_AT_abstract_origin
 	.byte	9                       @ Abbrev [9] 0x40e:0x35 DW_TAG_inlined_subroutine
 	.long	8605                    @ DW_AT_abstract_origin
@@ -6276,7 +6276,7 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.byte	42                      @ DW_AT_call_file
 	.byte	220                     @ DW_AT_call_line
 	.byte	15                      @ Abbrev [15] 0x419:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	8661                    @ DW_AT_abstract_origin
 	.byte	22                      @ Abbrev [22] 0x420:0x22 DW_TAG_inlined_subroutine
 	.long	8498                    @ DW_AT_abstract_origin
@@ -6285,12 +6285,12 @@ _ZNSt6vectorIfSaIfEED2Ev:               @ @_ZNSt6vectorIfSaIfEED2Ev
 	.short	789                     @ DW_AT_call_line
 	.byte	1                       @ DW_AT_GNU_discriminator
 	.byte	15                      @ Abbrev [15] 0x42d:0x7 DW_TAG_formal_parameter
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	8554                    @ DW_AT_abstract_origin
 	.byte	23                      @ Abbrev [23] 0x434:0xd DW_TAG_lexical_block
 	.long	.Ldebug_ranges23        @ DW_AT_ranges
 	.byte	21                      @ Abbrev [21] 0x439:0x7 DW_TAG_variable
-	.ascii	"\200\004"              @ DW_AT_const_value
+	.ascii	"\200\002"              @ DW_AT_const_value
 	.long	8591                    @ DW_AT_abstract_origin
 	.byte	0                       @ End Of Children Mark
 	.byte	0                       @ End Of Children Mark
