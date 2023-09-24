@@ -109,10 +109,10 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
     static std::vector<float> unwrappedBuffRight(FFT_SIZE, 0.0);
 
     /** Unwrap circular buffer
-     *  Extract last WINDOW_SIZE samples into unwrapped Buffer
+     *  Extract last HOP_SIZE samples into unwrapped Buffer
      */
-    for (unsigned int i = 0; i < WINDOW_SIZE; i++) {
-        int in_buff_idx = (in_read_ptr + i - WINDOW_SIZE + INBUFF_SIZE) % INBUFF_SIZE;
+    for (unsigned int i = 0; i < HOP_SIZE; i++) {
+        int in_buff_idx = (in_read_ptr + i - HOP_SIZE + INBUFF_SIZE) % INBUFF_SIZE;
         unwrappedBuffLeft[i] = incBuff->left[in_buff_idx];
         unwrappedBuffRight[i] = incBuff->right[in_buff_idx];
     }

@@ -52532,18 +52532,6 @@ unsigned int hrtf_num_prev = 1;
 
 
 bool bypass = false;
-
-
-
-
-
-
-AuxiliaryTask filteringTask;
-
-
-
-
-void filtering_thread(void *);
 # 95 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
 bool setup(BelaContext *context, void *userData)
 {
@@ -52621,12 +52609,7 @@ bool setup(BelaContext *context, void *userData)
 
  outLeftFFT.setup(256);
  outRightFFT.setup(256);
-
-
- filteringTask = Bela_createAuxiliaryTask(filtering_thread, 50, "SOFAlizer-filtering-task");
-
-
-
+# 188 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   oscInterface.oscReceiver.setup(oscInterface.localPort, osc_on_receive);
 
 
@@ -52643,23 +52626,7 @@ bool setup(BelaContext *context, void *userData)
 
  return true;
 }
-
-
-
-
-void filtering_thread(void *) {
-
-
-
-  filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
-
-
-
-
- out_write_ptr = (out_write_ptr + 128) % 1024;
-}
-
-
+# 223 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
 void render(BelaContext *context, void *userData)
 {
  for (unsigned int i = 0; i < context->audioFrames; i++) {
@@ -52692,18 +52659,23 @@ void render(BelaContext *context, void *userData)
   if (outcReadPtr >= 1024) {
    outcReadPtr = 0;
   }
-# 267 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 271 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   hopCnt++;
   if (hopCnt >= 128) {
    hopCnt = 0;
    cached_in_read_ptr = incWritePtr;
-   Bela_scheduleAuxiliaryTask(filteringTask);
+
+
+
+    filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+    out_write_ptr = (out_write_ptr + 128) % 1024;
+
   }
 
 
   audioWrite(context, i, 0, leftOut);
   audioWrite(context, i, 1, rightOut);
-# 322 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 331 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   if (hrtf_num != hrtf_num_prev) {
 
 

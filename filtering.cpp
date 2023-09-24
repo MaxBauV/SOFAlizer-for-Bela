@@ -34,8 +34,8 @@ void filtering(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_
     int nearestChInR = 0;
 
     /** Unwrap circular buffer */
-    for (unsigned int i = 0; i < (WINDOW_SIZE); i++) {
-        int in_buff_idx = (in_read_ptr + i - (WINDOW_SIZE) + INBUFF_SIZE) % INBUFF_SIZE;
+    for (unsigned int i = 0; i < (HOP_SIZE); i++) {
+        int in_buff_idx = (in_read_ptr + i - (HOP_SIZE) + INBUFF_SIZE) % INBUFF_SIZE;
         unwrappedBuffLeft[i] = incBuff->left[in_buff_idx];
         unwrappedBuffRight[i] = incBuff->right[in_buff_idx];
     }

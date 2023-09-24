@@ -1,7 +1,7 @@
 {
-  "fileName": "settings.h",
+  "fileName": "render.cpp",
   "CLArgs": {
-    "-p": "4",
+    "-p": "256",
     "-C": "4",
     "-B": "16",
     "-N": "1",
