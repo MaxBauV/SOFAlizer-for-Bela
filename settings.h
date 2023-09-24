@@ -7,8 +7,8 @@
 /** Maximum HRTFs to be loaded */
 #define MAX_SOFAS 4
 
-#define HOP_SIZE 128 // Overlap factor = HOP_SIZE/FFT_SIZE (e.g. 0.25 if HOP_SIZE = 128 & FFT_SIZE = 512)
-#define FFT_SIZE 256 //1st half, window data (audio input / cropped filter length), 2nd half zero padded
+#define HOP_SIZE 256 // Overlap factor = HOP_SIZE/FFT_SIZE (e.g. 0.25 if HOP_SIZE = 128 & FFT_SIZE = 512)
+#define FFT_SIZE 512 //1st half, window data (audio input / cropped filter length), 2nd half zero padded
 #define INBUFF_SIZE 1024
 #define OUTBUFF_SIZE 1024 // min: FFT_SIZE + HOP_SIZE
 
@@ -59,7 +59,7 @@
 
 /* -------------------- DEFINES FOR TESTING --------------------- */
 
-#define MULTITHREADING false
+#define MULTITHREADING true
 
 /** Choose Method for FFT
  *  Set FFT_METHOD to FFT_CPU or FFT_NEON
@@ -72,7 +72,7 @@
 #define CM_METHOD CM_NEON
 
 /** Maximimum Position per Channel */
-#define POSITIONS 75
+#define POSITIONS 64
 
 /** Re-arrange input data buffer if CM_METHOD = CM_NEON, 
  *  re-arringing either done with NEON (REARRANGE_CPU = false) or CPU (REARRANGE_CPU = true) */

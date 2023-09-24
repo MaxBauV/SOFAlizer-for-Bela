@@ -1,5 +1,5 @@
 {
-  "fileName": "render.cpp",
+  "fileName": "settings.h",
   "CLArgs": {
     "-p": "256",
     "-C": "4",

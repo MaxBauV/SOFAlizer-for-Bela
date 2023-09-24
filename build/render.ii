@@ -52532,6 +52532,17 @@ unsigned int hrtf_num_prev = 1;
 
 
 bool bypass = false;
+
+
+
+
+
+
+ AuxiliaryTask filteringTask;
+
+
+
+ void filtering_thread(void *);
 # 95 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
 bool setup(BelaContext *context, void *userData)
 {
@@ -52609,7 +52620,14 @@ bool setup(BelaContext *context, void *userData)
 
  outLeftFFT.setup(256);
  outRightFFT.setup(256);
-# 188 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+
+
+
+  filteringTask = Bela_createAuxiliaryTask(filtering_thread, 50, "SOFAlizer-filtering-task");
+
+
+
+
   oscInterface.oscReceiver.setup(oscInterface.localPort, osc_on_receive);
 
 
@@ -52626,7 +52644,25 @@ bool setup(BelaContext *context, void *userData)
 
  return true;
 }
-# 223 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+
+
+
+
+
+ void filtering_thread(void *) {
+
+
+
+   filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+
+
+
+
+  out_write_ptr = (out_write_ptr + 128) % 1024;
+ }
+
+
+
 void render(BelaContext *context, void *userData)
 {
  for (unsigned int i = 0; i < context->audioFrames; i++) {
@@ -52665,10 +52701,10 @@ void render(BelaContext *context, void *userData)
    hopCnt = 0;
    cached_in_read_ptr = incWritePtr;
 
+    Bela_scheduleAuxiliaryTask(filteringTask);
 
 
-    filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
-    out_write_ptr = (out_write_ptr + 128) % 1024;
+
 
   }
 
