@@ -52530,13 +52530,13 @@ extern bool bypass;
 void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t in_read_ptr, CircBuff *outcBuff, uint32_t out_write_ptr) {
 
 
-
+        m_hrtf_num.lock();
 
 
     unsigned int hrtf_num2 = hrtf_num;
 
 
-
+        m_hrtf_num.unlock();
 
 
     static std::vector<float> unwrappedBuffLeft(512, 0.0);
@@ -52563,20 +52563,20 @@ void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const Cir
         outRightFFT.fdr(i) = 0;
         outRightFFT.fdi(i) = 0;
 
-        for (unsigned int pos = 0; pos < 64; pos++) {
+        for (unsigned int pos = 0; pos < 65; pos++) {
 
-            outLeftFFT.fdr(i) += (chInL_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].r - chInL_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].i) * (1 / (float) 64);;
-            outLeftFFT.fdi(i) += (chInL_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].i + chInL_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].r) * (1 / (float) 64);;
+            outLeftFFT.fdr(i) += (chInL_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].r - chInL_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].i) * (1 / (float) 65);;
+            outLeftFFT.fdi(i) += (chInL_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].i + chInL_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].r) * (1 / (float) 65);;
 
-            outRightFFT.fdr(i) += (chInL_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].r - chInL_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].i) * (1 / (float) 64);;
-            outRightFFT.fdi(i) += (chInL_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].i + chInL_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].r) * (1 / (float) 64);;
+            outRightFFT.fdr(i) += (chInL_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].r - chInL_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].i) * (1 / (float) 65);;
+            outRightFFT.fdi(i) += (chInL_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].i + chInL_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].r) * (1 / (float) 65);;
 
 
-            outLeftFFT.fdr(i) += (chInR_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].r - chInR_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].i) * (1 / (float) 64);;
-            outLeftFFT.fdi(i) += (chInR_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].i + chInR_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].r) * (1 / (float) 64);;
+            outLeftFFT.fdr(i) += (chInR_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].r - chInR_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].i) * (1 / (float) 65);;
+            outLeftFFT.fdi(i) += (chInR_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].i + chInR_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_left[pos]->fd()[i].r) * (1 / (float) 65);;
 
-            outRightFFT.fdr(i) += (chInR_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].r - chInR_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].i) * (1 / (float) 64);;
-            outRightFFT.fdi(i) += (chInR_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].i + chInR_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].r) * (1 / (float) 64);;
+            outRightFFT.fdr(i) += (chInR_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].r - chInR_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].i) * (1 / (float) 65);;
+            outRightFFT.fdi(i) += (chInR_FFT.fd()[i].r * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].i + chInR_FFT.fd()[i].i * hrtfdata[hrtf_num2].hrtf_right[pos]->fd()[i].r) * (1 / (float) 65);;
         }
     }
 
@@ -52605,13 +52605,13 @@ void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const Cir
 void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t in_read_ptr, CircBuff *outcBuff, uint32_t out_write_ptr) {
 
 
-
+        m_hrtf_num.lock();
 
 
     unsigned int hrtf_num2 = hrtf_num;
 
 
-
+        m_hrtf_num.unlock();
 
 
     static std::vector<float> unwrappedBuffLeft(512, 0.0);
@@ -52669,7 +52669,7 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
 
             L2 = __extension__ ({ float32x4_t __ret; __ret = (float32x4_t) __builtin_neon_vld1q_v(Left2, 41); __ret; });
 # 182 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp"
-        for (unsigned pos = 0; pos < 64; pos++) {
+        for (unsigned pos = 0; pos < 65; pos++) {
 
 
             Hreal = __extension__ ({ float32x4_t __ret; __ret = (float32x4_t) __builtin_neon_vld1q_v(hrtfdata[hrtf_num2].hrtf_left_r[pos][i], 41); __ret; });
@@ -52680,10 +52680,10 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
             C = vmlaq_f32(C, L2, Himag);
 
 
-            outLeftFFT.fdr(cnt) += C[0] * (1 / (float) 64);;
-            outLeftFFT.fdi(cnt) += C[1] * (1 / (float) 64);;
-            outLeftFFT.fdr(cnt+1) += C[2] * (1 / (float) 64);;
-            outLeftFFT.fdi(cnt+1) += C[3] * (1 / (float) 64);;
+            outLeftFFT.fdr(cnt) += C[0] * (1 / (float) 65);;
+            outLeftFFT.fdi(cnt) += C[1] * (1 / (float) 65);;
+            outLeftFFT.fdr(cnt+1) += C[2] * (1 / (float) 65);;
+            outLeftFFT.fdi(cnt+1) += C[3] * (1 / (float) 65);;
 
 
             Hreal=__extension__ ({ float32x4_t __ret; __ret = (float32x4_t) __builtin_neon_vld1q_v(hrtfdata[hrtf_num2].hrtf_right_r[pos][i], 41); __ret; });
@@ -52694,10 +52694,10 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
             C=vmlaq_f32(C, L2, Himag);
 
 
-            outRightFFT.fdr(cnt) += C[0] * (1 / (float) 64);;
-            outRightFFT.fdi(cnt) += C[1] * (1 / (float) 64);;
-            outRightFFT.fdr(cnt+1) += C[2] * (1 / (float) 64);;
-            outRightFFT.fdi(cnt+1) += C[3] * (1 / (float) 64);;
+            outRightFFT.fdr(cnt) += C[0] * (1 / (float) 65);;
+            outRightFFT.fdi(cnt) += C[1] * (1 / (float) 65);;
+            outRightFFT.fdr(cnt+1) += C[2] * (1 / (float) 65);;
+            outRightFFT.fdi(cnt+1) += C[3] * (1 / (float) 65);;
         }
 
 
@@ -52718,7 +52718,7 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
 
             R2 = __extension__ ({ float32x4_t __ret; __ret = (float32x4_t) __builtin_neon_vld1q_v(Right2, 41); __ret; });
 # 238 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp"
-        for (unsigned pos = 0; pos < 64; pos++) {
+        for (unsigned pos = 0; pos < 65; pos++) {
 
 
             Hreal = __extension__ ({ float32x4_t __ret; __ret = (float32x4_t) __builtin_neon_vld1q_v(hrtfdata[hrtf_num2].hrtf_left_r[pos][i], 41); __ret; });
@@ -52729,10 +52729,10 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
             C = vmlaq_f32(C, R2, Himag);
 
 
-            outLeftFFT.fdr(cnt) += C[0] * (1 / (float) 64);;
-            outLeftFFT.fdi(cnt) += C[1] * (1 / (float) 64);;
-            outLeftFFT.fdr(cnt+1) += C[2] * (1 / (float) 64);;
-            outLeftFFT.fdi(cnt+1) += C[3] * (1 / (float) 64);;
+            outLeftFFT.fdr(cnt) += C[0] * (1 / (float) 65);;
+            outLeftFFT.fdi(cnt) += C[1] * (1 / (float) 65);;
+            outLeftFFT.fdr(cnt+1) += C[2] * (1 / (float) 65);;
+            outLeftFFT.fdi(cnt+1) += C[3] * (1 / (float) 65);;
 
 
             Hreal=__extension__ ({ float32x4_t __ret; __ret = (float32x4_t) __builtin_neon_vld1q_v(hrtfdata[hrtf_num2].hrtf_right_r[pos][i], 41); __ret; });
@@ -52743,10 +52743,10 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
             C=vmlaq_f32(C, R2, Himag);
 
 
-            outRightFFT.fdr(cnt) += C[0] * (1 / (float) 64);;
-            outRightFFT.fdi(cnt) += C[1] * (1 / (float) 64);;
-            outRightFFT.fdr(cnt+1) += C[2] * (1 / (float) 64);;
-            outRightFFT.fdi(cnt+1) += C[3] * (1 / (float) 64);;
+            outRightFFT.fdr(cnt) += C[0] * (1 / (float) 65);;
+            outRightFFT.fdi(cnt) += C[1] * (1 / (float) 65);;
+            outRightFFT.fdr(cnt+1) += C[2] * (1 / (float) 65);;
+            outRightFFT.fdi(cnt+1) += C[3] * (1 / (float) 65);;
         }
 
         cnt = cnt+2;

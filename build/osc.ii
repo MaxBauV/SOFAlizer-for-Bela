@@ -52516,21 +52516,21 @@ void OSCinterface::send_status (std::string status) {
 
 void OSCinterface::get_angle_pos0 (void) {
 
-
+        m_left_pos.lock();
 
     oscSender.newMessage("/position/0").add(leftPosition.azimuth).add(leftPosition.elevation_angle).send();
 
-
+        m_left_pos.unlock();
 
 }
 
 void OSCinterface::get_angle_pos1 (void) {
 
-
+        m_right_pos.lock();
 
     oscSender.newMessage("/position/1").add(righPosition.azimuth).add(righPosition.elevation_angle).send();
 
-
+        m_right_pos.unlock();
 
 }
 
@@ -52547,12 +52547,12 @@ void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg)
             float e;
             msg->arg().popFloat(a).popFloat(e).isOkNoMoreArgs();
 
-
+                m_left_pos.lock();
 
             leftPosition.azimuth = fmod(a, 360);
             leftPosition.elevation_angle = fmod(e, 360);
 
-
+                m_left_pos.unlock();
 
             rt_printf("fmod(%f, 360) = %f\n", a, fmod(a, 360));
             rt_printf("received a %f\n", leftPosition.azimuth);
@@ -52563,12 +52563,12 @@ void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg)
             float e;
             msg->arg().popFloat(a).popFloat(e).isOkNoMoreArgs();
 
-
+                m_right_pos.lock();
 
             righPosition.azimuth = fmod(a, 360);
             righPosition.elevation_angle = fmod(e, 360);
 
-
+                m_right_pos.unlock();
 
             rt_printf("received a %f\n", righPosition.azimuth);
             rt_printf("received e %f\n", righPosition.elevation_angle);
@@ -52578,14 +52578,14 @@ void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg)
             float left_y;
             msg->arg().popFloat(left_x).popFloat(left_y).isOkNoMoreArgs();
 
-
+                m_left_pos.lock();
 
 
             leftPosition.azimuth = (((left_x - 0) * (360 - 0)) / (1 - 0)) + 0;
 
             leftPosition.elevation_angle = (((left_y - 0) * (90 - (-30))) / (1 - 0)) + (-30);
 
-
+                m_left_pos.unlock();
 
         }
         else if(msg->match("/position/set/norm/1")){
@@ -52593,14 +52593,14 @@ void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg)
             float right_y;
             msg->arg().popFloat(right_x).popFloat(right_y).isOkNoMoreArgs();
 
-
+                m_right_pos.lock();
 
 
             righPosition.azimuth = (((right_x - 0) * (360 - 0)) / (1 - 0)) + 0;
 
             righPosition.elevation_angle = (((right_y - 0) * (90 - (-30))) / (1 - 0)) + (-30);
 
-
+                m_right_pos.unlock();
 
         }
         else if(msg->match("/position/get/angle/0")) {
@@ -52613,7 +52613,7 @@ void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg)
             int num;
             msg->arg().popInt32(num).isOkNoMoreArgs();
 
-
+                m_hrtf_num.lock();
 
             if (num <= hrtf_num) {
                 hrtf_num = num;
@@ -52622,32 +52622,32 @@ void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg)
                 hrtf_num = hrtf_cnt-1;
             }
 
-
+                m_hrtf_num.unlock();
 
             rt_printf("hrtf_num %d, hrtf_cnt %d\n", hrtf_num, hrtf_cnt);
         }
         else if(msg->match("/hrtf/inc")) {
 
-
+                m_hrtf_num.lock();
 
             hrtf_num++;
             if (hrtf_num == hrtf_cnt) {
                 hrtf_num = 0;
             }
 
-
+                m_hrtf_num.unlock();
 
         }
         else if(msg->match("/hrtf/dec")) {
 
-
+                m_hrtf_num.lock();
 
             hrtf_num--;
             if (hrtf_num == -1) {
                 hrtf_num = hrtf_cnt-1;
             }
 
-
+                m_hrtf_num.unlock();
 
         }
     }

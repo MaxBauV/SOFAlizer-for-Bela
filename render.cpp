@@ -1,9 +1,7 @@
 #include <Bela.h>
 
 #include <vector>
-#if MUTEX
-	#include <mutex>
-#endif
+#include <mutex>
 
 #include "settings.h"
 #include "position.h"
