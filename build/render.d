@@ -11,8 +11,7 @@
   /root/Bela/projects/SOFAlizer-for-Bela/analog_interface.h \
   /root/Bela/projects/SOFAlizer-for-Bela/osc.h \
   libraries/OscSender/OscSender.h libraries/OscReceiver/OscReceiver.h \
-  include/oscpkt.hh /root/Bela/projects/SOFAlizer-for-Bela/filtering.h \
-  /root/Bela/projects/SOFAlizer-for-Bela/bela_sofa.h \
+  include/oscpkt.hh /root/Bela/projects/SOFAlizer-for-Bela/bela_sofa.h \
   /root/Bela/projects/SOFAlizer-for-Bela/mysofa.h \
   /root/Bela/projects/SOFAlizer-for-Bela/filtering_test.h
 
@@ -49,8 +48,6 @@ libraries/OscSender/OscSender.h:
 libraries/OscReceiver/OscReceiver.h:
 
 include/oscpkt.hh:
-
-/root/Bela/projects/SOFAlizer-for-Bela/filtering.h:
 
 /root/Bela/projects/SOFAlizer-for-Bela/bela_sofa.h:
 

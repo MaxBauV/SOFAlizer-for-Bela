@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "filtering.h"
+#include "filtering_test.h"
 #include "fft.h"
 #include "global_variables.h"
 #include "position.h"
@@ -20,9 +20,15 @@
 */
 void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t in_read_ptr, CircBuff *outcBuff, uint32_t out_write_ptr) {
 
-    m_hrtf_num.lock();
+    #if MUTEX
+        m_hrtf_num.lock();
+    #endif
+
     unsigned int hrtf_num2 = hrtf_num;
-    m_hrtf_num.unlock();
+
+    #if MUTEX
+        m_hrtf_num.unlock();
+    #endif
 
     static std::vector<float> unwrappedBuffLeft(FFT_SIZE, 0.0);
     static std::vector<float> unwrappedBuffRight(FFT_SIZE, 0.0);
@@ -101,9 +107,15 @@ void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const Cir
 */
 void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t in_read_ptr, CircBuff *outcBuff, uint32_t out_write_ptr) {
 
-    m_hrtf_num.lock();
+    #if MUTEX
+        m_hrtf_num.lock();
+    #endif
+
     unsigned int hrtf_num2 = hrtf_num;
-    m_hrtf_num.unlock();
+
+    #if MUTEX
+        m_hrtf_num.unlock();
+    #endif
 
     static std::vector<float> unwrappedBuffLeft(FFT_SIZE, 0.0);
     static std::vector<float> unwrappedBuffRight(FFT_SIZE, 0.0);

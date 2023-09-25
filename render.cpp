@@ -1,7 +1,9 @@
 #include <Bela.h>
 
 #include <vector>
-#include <mutex>
+#if MUTEX
+	#include <mutex>
+#endif
 
 #include "settings.h"
 #include "position.h"
@@ -9,7 +11,7 @@
 #include "fft.h"
 #include "analog_interface.h"
 #include "osc.h"
-#include "filtering.h"
+//#include "filtering.h"
 #include "bela_sofa.h"
 
 #include "filtering_test.h"
@@ -22,8 +24,10 @@ std::vector<HRTFData> hrtfdata;
 /** Object holding the given position (spherical & cartesian) */
 Position leftPosition;
 Position righPosition;
-std::mutex m_left_pos;
-std::mutex m_right_pos;
+#if MUTEX
+	std::mutex m_left_pos;
+	std::mutex m_right_pos;
+#endif
 
 /** Circular input & output buffer */
 CircBuff incBuff;
@@ -61,7 +65,9 @@ bool send_pos_1;
 /** Values to set active HRTFData objects (= SOFA structures) */
 unsigned int hrtf_cnt = 0;
 unsigned int hrtf_num = 0;
-std::mutex m_hrtf_num;
+#if MUTEX
+	std::mutex m_hrtf_num;
+#endif
 unsigned int hrtf_num_prev = 1;
 
 /** Bypass toggle - bypass spatialization while keeping CPU load similar */
@@ -190,9 +196,13 @@ bool setup(BelaContext *context, void *userData)
 
 	/** Set hrtf_cnt to number of loaded HRTFs and select last HRTF data set by setting hrtf_num to (hrtf_cnt-1) */
 	hrtf_cnt = hrtfdata.size();
-	m_hrtf_num.lock();
+	#if MUTEX
+		m_hrtf_num.lock();
+	#endif
 	hrtf_num = (hrtf_cnt-1);
-	m_hrtf_num.unlock();
+	#if MUTEX
+		m_hrtf_num.unlock();
+	#endif
 
 	#if INTERFACE != ANALOG
 		oscInterface.send_filename(hrtfdata[hrtf_num].filename);

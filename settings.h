@@ -60,6 +60,7 @@
 /* -------------------- DEFINES FOR TESTING --------------------- */
 
 #define MULTITHREADING true
+#define MUTEX false
 
 /** Choose Method for FFT
  *  Set FFT_METHOD to FFT_CPU or FFT_NEON

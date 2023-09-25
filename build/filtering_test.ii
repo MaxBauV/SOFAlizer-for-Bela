@@ -14934,7 +14934,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 # 70 "/usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/vector" 2 3
 # 4 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp" 2
 
-# 1 "/root/Bela/projects/SOFAlizer-for-Bela/filtering.h" 1
+# 1 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.h" 1
 
 
 
@@ -36870,7 +36870,7 @@ enum {
     MYSOFA_NOT_SPHERICAL = -4,
     MYSOFA_UNSUPPORTED_SPHERICAL_UNITS = -5
 };
-# 7 "/root/Bela/projects/SOFAlizer-for-Bela/filtering.h" 2
+# 7 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.h" 2
 # 1 "/root/Bela/projects/SOFAlizer-for-Bela/circular_buffer.h" 1
 
 
@@ -36885,9 +36885,10 @@ class CircBuff
         std::vector<float> left;
         std::vector<float> right;
 };
-# 8 "/root/Bela/projects/SOFAlizer-for-Bela/filtering.h" 2
+# 8 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.h" 2
 
-void filtering(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t inPtr, CircBuff *outcBuff, uint32_t outPtr);
+void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t inPtr, CircBuff *outcBuff, uint32_t outPtr);
+void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t inPtr, CircBuff *outcBuff, uint32_t outPtr);
 # 6 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp" 2
 
 # 1 "/root/Bela/projects/SOFAlizer-for-Bela/global_variables.h" 1
@@ -52528,16 +52529,22 @@ extern bool bypass;
 # 21 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp"
 void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t in_read_ptr, CircBuff *outcBuff, uint32_t out_write_ptr) {
 
-    m_hrtf_num.lock();
+
+
+
+
     unsigned int hrtf_num2 = hrtf_num;
-    m_hrtf_num.unlock();
-
-    static std::vector<float> unwrappedBuffLeft(256, 0.0);
-    static std::vector<float> unwrappedBuffRight(256, 0.0);
 
 
-    for (unsigned int i = 0; i < 128; i++) {
-        int in_buff_idx = (in_read_ptr + i - 128 + 1024) % 1024;
+
+
+
+    static std::vector<float> unwrappedBuffLeft(512, 0.0);
+    static std::vector<float> unwrappedBuffRight(512, 0.0);
+
+
+    for (unsigned int i = 0; i < 256; i++) {
+        int in_buff_idx = (in_read_ptr + i - 256 + 1024) % 1024;
         unwrappedBuffLeft[i] = incBuff->left[in_buff_idx];
         unwrappedBuffRight[i] = incBuff->right[in_buff_idx];
     }
@@ -52549,7 +52556,7 @@ void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const Cir
 
 
 
-    for (unsigned int i = 0; i < 256; i++) {
+    for (unsigned int i = 0; i < 512; i++) {
 
         outLeftFFT.fdr(i) = 0;
         outLeftFFT.fdi(i) = 0;
@@ -52579,7 +52586,7 @@ void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const Cir
 
     if (bypass){
 
-     for (unsigned int i = 0; i < 128; i++) {
+     for (unsigned int i = 0; i < 256; i++) {
          int outcBuffIdx = (out_write_ptr + i) % 1024;
          outcBuff->left[outcBuffIdx] = unwrappedBuffLeft[i];
          outcBuff->right[outcBuffIdx] = unwrappedBuffRight[i];
@@ -52587,28 +52594,34 @@ void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const Cir
     }
     else {
 
-        for (unsigned int i = 0; i < 256; i++) {
+        for (unsigned int i = 0; i < 512; i++) {
             int outcBuffIdx = (out_write_ptr + i) % 1024;
             outcBuff->left[outcBuffIdx] += outLeftFFT.td(i);
             outcBuff->right[outcBuffIdx] += outRightFFT.td(i);
         }
     }
 }
-# 102 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp"
+# 108 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp"
 void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t in_read_ptr, CircBuff *outcBuff, uint32_t out_write_ptr) {
 
-    m_hrtf_num.lock();
+
+
+
+
     unsigned int hrtf_num2 = hrtf_num;
-    m_hrtf_num.unlock();
-
-    static std::vector<float> unwrappedBuffLeft(256, 0.0);
-    static std::vector<float> unwrappedBuffRight(256, 0.0);
 
 
 
 
-    for (unsigned int i = 0; i < 128; i++) {
-        int in_buff_idx = (in_read_ptr + i - 128 + 1024) % 1024;
+
+    static std::vector<float> unwrappedBuffLeft(512, 0.0);
+    static std::vector<float> unwrappedBuffRight(512, 0.0);
+
+
+
+
+    for (unsigned int i = 0; i < 256; i++) {
+        int in_buff_idx = (in_read_ptr + i - 256 + 1024) % 1024;
         unwrappedBuffLeft[i] = incBuff->left[in_buff_idx];
         unwrappedBuffRight[i] = incBuff->right[in_buff_idx];
     }
@@ -52626,7 +52639,7 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
     float32x4_t L1, L2, R1, R2, C, Hreal, Himag;
 
     unsigned int cnt = 0;
-    for (unsigned int i = 0; i < (256)/4; i++) {
+    for (unsigned int i = 0; i < (512)/4; i++) {
 
 
         outLeftFFT.fdr(cnt) = 0;
@@ -52655,7 +52668,7 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
             Left2[3] = Left1[2];
 
             L2 = __extension__ ({ float32x4_t __ret; __ret = (float32x4_t) __builtin_neon_vld1q_v(Left2, 41); __ret; });
-# 170 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp"
+# 182 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp"
         for (unsigned pos = 0; pos < 64; pos++) {
 
 
@@ -52704,7 +52717,7 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
             Right2[3] = Right1[2];
 
             R2 = __extension__ ({ float32x4_t __ret; __ret = (float32x4_t) __builtin_neon_vld1q_v(Right2, 41); __ret; });
-# 226 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp"
+# 238 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp"
         for (unsigned pos = 0; pos < 64; pos++) {
 
 
@@ -52745,7 +52758,7 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
 
     if (bypass){
 
-     for (unsigned int i = 0; i < 128; i++) {
+     for (unsigned int i = 0; i < 256; i++) {
          int outcBuffIdx = (out_write_ptr + i) % 1024;
          outcBuff->left[outcBuffIdx] = unwrappedBuffLeft[i];
          outcBuff->right[outcBuffIdx] = unwrappedBuffRight[i];
@@ -52753,7 +52766,7 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
     }
     else {
 
-        for (unsigned int i = 0; i < 256; i++) {
+        for (unsigned int i = 0; i < 512; i++) {
             int outcBuffIdx = (out_write_ptr + i) % 1024;
             outcBuff->left[outcBuffIdx] += outLeftFFT.td(i);
             outcBuff->right[outcBuffIdx] += outRightFFT.td(i);
