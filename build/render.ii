@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp" 2
 # 1 "./include/Bela.h" 1
-# 76 "./include/Bela.h"
+# 86 "./include/Bela.h"
 extern "C"
 {
 
@@ -133,7 +133,7 @@ typedef long long int intmax_t;
 __extension__
 typedef unsigned long long int uintmax_t;
 # 62 "/usr/lib/llvm-3.9/bin/../lib/clang/3.9.1/include/stdint.h" 2 3
-# 81 "./include/Bela.h" 2
+# 91 "./include/Bela.h" 2
 # 1 "/usr/xenomai/include/cobalt/unistd.h" 1
 # 19 "/usr/xenomai/include/cobalt/unistd.h" 3
 # 1 "/usr/include/unistd.h" 1 3 4
@@ -1662,9 +1662,9 @@ __typeof__(unsigned int) __cobalt_sleep(unsigned int seconds); __typeof__(unsign
 
 
 }
-# 82 "./include/Bela.h" 2
+# 92 "./include/Bela.h" 2
 # 1 "/usr/lib/llvm-3.9/bin/../lib/clang/3.9.1/include/stdbool.h" 1 3
-# 83 "./include/Bela.h" 2
+# 93 "./include/Bela.h" 2
 # 1 "/usr/xenomai/include/cobalt/stdio.h" 1
 # 20 "/usr/xenomai/include/cobalt/stdio.h" 3
 # 1 "/usr/include/stdio.h" 1 3 4
@@ -2566,7 +2566,7 @@ void rt_print_flush_buffers(void);
 
 
 }
-# 84 "./include/Bela.h" 2
+# 94 "./include/Bela.h" 2
 
 
 
@@ -2592,6 +2592,8 @@ typedef enum
  BelaHw_BelaMiniMultiTdm,
  BelaHw_BelaMultiTdm,
  BelaHw_BelaMiniMultiI2s,
+ BelaHw_BelaEs9080,
+ BelaHw_BelaRevC,
  BelaHw_Batch,
 } BelaHw;
 
@@ -2666,22 +2668,22 @@ int led_set_trigger(unsigned int lednum, const char *trigger);
 
 
 }
-# 148 "./include/Bela.h" 2
-# 213 "./include/Bela.h"
+# 160 "./include/Bela.h" 2
+# 219 "./include/Bela.h"
 struct option;
-# 223 "./include/Bela.h"
+# 229 "./include/Bela.h"
 typedef struct {
-# 241 "./include/Bela.h"
+# 247 "./include/Bela.h"
  const float * const audioIn;
-# 256 "./include/Bela.h"
+# 262 "./include/Bela.h"
  float * const audioOut;
-# 275 "./include/Bela.h"
+# 281 "./include/Bela.h"
  const float * const analogIn;
-# 290 "./include/Bela.h"
+# 296 "./include/Bela.h"
  float * const analogOut;
-# 300 "./include/Bela.h"
+# 306 "./include/Bela.h"
  uint32_t * const digital;
-# 314 "./include/Bela.h"
+# 320 "./include/Bela.h"
  const uint32_t audioFrames;
 
  const uint32_t audioInChannels;
@@ -2689,7 +2691,7 @@ typedef struct {
  const uint32_t audioOutChannels;
 
  const float audioSampleRate;
-# 333 "./include/Bela.h"
+# 339 "./include/Bela.h"
  const uint32_t analogFrames;
 
 
@@ -2701,7 +2703,7 @@ typedef struct {
 
 
  const uint32_t analogOutChannels;
-# 354 "./include/Bela.h"
+# 360 "./include/Bela.h"
  const float analogSampleRate;
 
 
@@ -2745,7 +2747,7 @@ typedef struct {
 
 
  const uint32_t audioExpanderEnabled;
-# 406 "./include/Bela.h"
+# 412 "./include/Bela.h"
  const uint32_t flags;
 
 
@@ -2764,7 +2766,7 @@ struct BelaChannelGainArray {
  unsigned int length;
  struct BelaChannelGain* data;
 };
-# 433 "./include/Bela.h"
+# 439 "./include/Bela.h"
 typedef struct {
 
 
@@ -2866,7 +2868,7 @@ typedef struct {
 
  struct BelaChannelGainArray adcGains;
 
- struct BelaChannelGainArray dacGains;
+ struct BelaChannelGainArray lineOutGains;
 
  char unused[224];
 
@@ -2884,28 +2886,28 @@ typedef struct {
 
 
 typedef void* AuxiliaryTask;
-# 569 "./include/Bela.h"
+# 575 "./include/Bela.h"
 extern int volatile gShouldStop;
-# 599 "./include/Bela.h"
+# 605 "./include/Bela.h"
 bool setup(BelaContext *context, void *userData);
-# 615 "./include/Bela.h"
+# 621 "./include/Bela.h"
 void render(BelaContext *context, void *userData);
-# 632 "./include/Bela.h"
+# 638 "./include/Bela.h"
 void cleanup(BelaContext *context, void *userData);
-# 655 "./include/Bela.h"
+# 661 "./include/Bela.h"
 BelaInitSettings* Bela_InitSettings_alloc();
-# 665 "./include/Bela.h"
+# 671 "./include/Bela.h"
 void Bela_InitSettings_free(BelaInitSettings* settings);
-# 676 "./include/Bela.h"
+# 682 "./include/Bela.h"
 void Bela_defaultSettings(BelaInitSettings *settings);
 
 #pragma weak Bela_userSettings
-# 690 "./include/Bela.h"
+# 696 "./include/Bela.h"
 void Bela_userSettings(BelaInitSettings *settings);
-# 713 "./include/Bela.h"
+# 719 "./include/Bela.h"
 int Bela_getopt_long(int argc, char * const argv[], const char *customShortOptions,
        const struct option *customLongOptions, BelaInitSettings *settings);
-# 723 "./include/Bela.h"
+# 729 "./include/Bela.h"
 void Bela_usage();
 
 
@@ -2920,13 +2922,13 @@ void Bela_getVersion(int* major, int* minor, int* bugfix);
 
 
 void Bela_setVerboseLevel(int level);
-# 745 "./include/Bela.h"
+# 751 "./include/Bela.h"
 BelaHw Bela_detectHw(BelaHwDetectMode mode);
-# 764 "./include/Bela.h"
+# 770 "./include/Bela.h"
 int Bela_initAudio(BelaInitSettings *settings, void *userData);
-# 774 "./include/Bela.h"
+# 780 "./include/Bela.h"
 int Bela_startAudio();
-# 784 "./include/Bela.h"
+# 790 "./include/Bela.h"
 int Bela_runInSameThread();
 
 
@@ -2936,15 +2938,15 @@ int Bela_runInSameThread();
 
 
 void Bela_stopAudio();
-# 801 "./include/Bela.h"
+# 807 "./include/Bela.h"
 void Bela_cleanupAudio();
-# 810 "./include/Bela.h"
+# 816 "./include/Bela.h"
 void Bela_setUserData(void* newUserData);
-# 824 "./include/Bela.h"
+# 830 "./include/Bela.h"
 void Bela_requestStop();
-# 835 "./include/Bela.h"
+# 841 "./include/Bela.h"
 int Bela_stopRequested();
-# 861 "./include/Bela.h"
+# 867 "./include/Bela.h"
 # 1 "/usr/xenomai/include/cobalt/time.h" 1
 # 19 "/usr/xenomai/include/cobalt/time.h" 3
 # 1 "/usr/include/time.h" 1 3 4
@@ -3318,7 +3320,7 @@ __typeof__(int) __cobalt_timer_getoverrun(timer_t timerid); __typeof__(int) __re
 
 
 }
-# 862 "./include/Bela.h" 2
+# 868 "./include/Bela.h" 2
 typedef struct {
  int count;
  unsigned int currentCount;
@@ -3355,7 +3357,9 @@ void Bela_cpuTic(BelaCpuData* data);
 
 
 void Bela_cpuToc(BelaCpuData* data);
-# 928 "./include/Bela.h"
+# 930 "./include/Bela.h"
+int Bela_setLineOutLevel(int channel, float decibel);
+# 939 "./include/Bela.h"
 int Bela_setDacLevel(int channel, float decibels);
 
 
@@ -3364,7 +3368,7 @@ int Bela_setDacLevel(int channel, float decibels);
 
 
 int Bela_setDACLevel(float decibels);
-# 952 "./include/Bela.h"
+# 963 "./include/Bela.h"
 int Bela_setAdcLevel(int channel, float decibels);
 
 
@@ -3373,7 +3377,7 @@ int Bela_setAdcLevel(int channel, float decibels);
 
 
 int Bela_setADCLevel(float decibels);
-# 978 "./include/Bela.h"
+# 989 "./include/Bela.h"
 int Bela_setAudioInputGain(int channel, float decibels);
 
 
@@ -3382,26 +3386,26 @@ int Bela_setAudioInputGain(int channel, float decibels);
 
 
 int Bela_setPgaGain(float decibels, int channel);
-# 1003 "./include/Bela.h"
+# 1014 "./include/Bela.h"
 int Bela_setHpLevel(int channel, float decibels);
 
 
 
 
 int Bela_setHeadphoneLevel(float decibels);
-# 1023 "./include/Bela.h"
+# 1034 "./include/Bela.h"
 int Bela_muteSpeakers(int mute);
-# 1059 "./include/Bela.h"
+# 1070 "./include/Bela.h"
 AuxiliaryTask Bela_createAuxiliaryTask(void (*callback)(void*), int priority, const char *name, void* arg
 
 = __null
 
 );
-# 1080 "./include/Bela.h"
+# 1091 "./include/Bela.h"
 int Bela_scheduleAuxiliaryTask(AuxiliaryTask task);
-# 1095 "./include/Bela.h"
+# 1106 "./include/Bela.h"
 AuxiliaryTask Bela_runAuxiliaryTask(void (*callback)(void*), int priority = 0, void* arg = nullptr);
-# 1115 "./include/Bela.h"
+# 1126 "./include/Bela.h"
 int Bela_startAuxiliaryTask(AuxiliaryTask task);
 int Bela_startAllAuxiliaryTasks();
 void Bela_stopAllAuxiliaryTasks();
@@ -3456,13 +3460,13 @@ static inline float max(float x, float y){
 static inline float min(float x, float y){
  return x < y ? x : y;
 }
-# 1125 "./include/Bela.h" 2
-# 1143 "./include/Bela.h"
+# 1136 "./include/Bela.h" 2
+# 1154 "./include/Bela.h"
 enum {
  INPUT = 0,
  OUTPUT = 1,
 };
-# 1194 "./include/Bela.h"
+# 1205 "./include/Bela.h"
 static inline float audioRead(BelaContext *context, int frame, int channel);
 
 
@@ -3471,7 +3475,7 @@ static inline float audioRead(BelaContext *context, int frame, int channel);
 
 
 static inline float audioReadNI(BelaContext *context, int frame, int channel);
-# 1216 "./include/Bela.h"
+# 1227 "./include/Bela.h"
 static inline void audioWrite(BelaContext *context, int frame, int channel, float value);
 
 
@@ -3480,7 +3484,7 @@ static inline void audioWrite(BelaContext *context, int frame, int channel, floa
 
 
 static inline void audioWriteNI(BelaContext *context, int frame, int channel, float value);
-# 1238 "./include/Bela.h"
+# 1249 "./include/Bela.h"
 static inline float analogRead(BelaContext *context, int frame, int channel);
 
 
@@ -3489,7 +3493,7 @@ static inline float analogRead(BelaContext *context, int frame, int channel);
 
 
 static inline float analogReadNI(BelaContext *context, int frame, int channel);
-# 1263 "./include/Bela.h"
+# 1274 "./include/Bela.h"
 static inline void analogWrite(BelaContext *context, int frame, int channel, float value);
 
 
@@ -3498,7 +3502,7 @@ static inline void analogWrite(BelaContext *context, int frame, int channel, flo
 
 
 static inline void analogWriteNI(BelaContext *context, int frame, int channel, float value);
-# 1291 "./include/Bela.h"
+# 1302 "./include/Bela.h"
 static inline void analogWriteOnce(BelaContext *context, int frame, int channel, float value);
 
 
@@ -3507,19 +3511,19 @@ static inline void analogWriteOnce(BelaContext *context, int frame, int channel,
 
 
 static inline void analogWriteOnceNI(BelaContext *context, int frame, int channel, float value);
-# 1314 "./include/Bela.h"
+# 1325 "./include/Bela.h"
 static inline int digitalRead(BelaContext *context, int frame, int channel);
-# 1332 "./include/Bela.h"
+# 1343 "./include/Bela.h"
 static inline void digitalWrite(BelaContext *context, int frame, int channel, int value);
-# 1352 "./include/Bela.h"
+# 1363 "./include/Bela.h"
 static inline void digitalWriteOnce(BelaContext *context, int frame, int channel, int value);
-# 1370 "./include/Bela.h"
+# 1381 "./include/Bela.h"
 static inline void pinMode(BelaContext *context, int frame, int channel, int mode);
-# 1388 "./include/Bela.h"
+# 1399 "./include/Bela.h"
 static inline void pinModeOnce(BelaContext *context, int frame, int channel, int mode);
-# 1413 "./include/Bela.h"
+# 1424 "./include/Bela.h"
 static inline float multiplexerAnalogRead(BelaContext *context, int input, int muxChannel);
-# 1436 "./include/Bela.h"
+# 1447 "./include/Bela.h"
 static inline unsigned int multiplexerChannelForFrame(BelaContext *context, int frame);
 
 
@@ -52465,13 +52469,7 @@ enum {
 
 void filtering(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t inPtr, CircBuff *outcBuff, uint32_t outPtr);
 # 13 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp" 2
-
-
-
-
-
-
-
+# 22 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
 std::vector<HRTFData> hrtfdata;
 
 
@@ -52533,11 +52531,11 @@ AuxiliaryTask filteringTask;
 
 
 void filtering_thread(void *);
-# 95 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 97 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
 bool setup(BelaContext *context, void *userData)
 {
  int normalization_status = 2;
-# 108 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 110 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   oscInterface.oscSender.setup(oscInterface.remotePort, oscInterface.remoteIP);
   oscInterface.send_status("Started..");
   send_pos_0 = false;
@@ -52676,7 +52674,7 @@ void render(BelaContext *context, void *userData)
   if (outcReadPtr >= 1024) {
    outcReadPtr = 0;
   }
-# 262 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 264 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   hopCnt++;
   if (hopCnt >= 256) {
    hopCnt = 0;
@@ -52687,7 +52685,7 @@ void render(BelaContext *context, void *userData)
 
   audioWrite(context, i, 0, leftOut);
   audioWrite(context, i, 1, rightOut);
-# 317 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 319 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   if (hrtf_num != hrtf_num_prev) {
 
 
