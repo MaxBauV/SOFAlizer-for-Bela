@@ -52467,18 +52467,7 @@ void filtering(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_
 # 13 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp" 2
 
 
-# 1 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.h" 1
 
-
-
-
-
-
-
-
-void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t inPtr, CircBuff *outcBuff, uint32_t outPtr);
-void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t inPtr, CircBuff *outcBuff, uint32_t outPtr);
-# 16 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp" 2
 
 
 
@@ -52648,12 +52637,7 @@ bool setup(BelaContext *context, void *userData)
 
 
 void filtering_thread(void *) {
-
-
-
-  filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
-
-
+ filtering(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
 
 
  out_write_ptr = (out_write_ptr + 256) % 1024;
@@ -52692,7 +52676,7 @@ void render(BelaContext *context, void *userData)
   if (outcReadPtr >= 1024) {
    outcReadPtr = 0;
   }
-# 267 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 262 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   hopCnt++;
   if (hopCnt >= 256) {
    hopCnt = 0;
@@ -52703,7 +52687,7 @@ void render(BelaContext *context, void *userData)
 
   audioWrite(context, i, 0, leftOut);
   audioWrite(context, i, 1, rightOut);
-# 322 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 317 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   if (hrtf_num != hrtf_num_prev) {
 
 

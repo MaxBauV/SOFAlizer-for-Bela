@@ -12,7 +12,9 @@
 #include "filtering.h"
 #include "bela_sofa.h"
 
-#include "filtering_test.h"
+/** filtering_test.cpp is solely used for effiency testing,
+ *  evaluation the maximum amount of positions (virtual speakers) */
+//#include "filtering_test.h"
 
 /*----------------- GLOBAL VARIABLES DEFINITIONS -----------------*/
 
@@ -204,12 +206,7 @@ bool setup(BelaContext *context, void *userData)
  * Multithread wrapper for filtering process
 */
 void filtering_thread(void *) {
-	#if CM_METHOD == CM_CPU
-		filtering_multiple_positions_cpu(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
-	#elif CM_METHOD == CM_NEON
-		filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
-	#endif
-	//filtering(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+	filtering(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
 
 	/** Update the output buffer write pointer to start at next hop */
 	out_write_ptr = (out_write_ptr + HOP_SIZE) % INBUFF_SIZE;

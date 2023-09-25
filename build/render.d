@@ -13,8 +13,7 @@
   libraries/OscSender/OscSender.h libraries/OscReceiver/OscReceiver.h \
   include/oscpkt.hh /root/Bela/projects/SOFAlizer-for-Bela/filtering.h \
   /root/Bela/projects/SOFAlizer-for-Bela/bela_sofa.h \
-  /root/Bela/projects/SOFAlizer-for-Bela/mysofa.h \
-  /root/Bela/projects/SOFAlizer-for-Bela/filtering_test.h
+  /root/Bela/projects/SOFAlizer-for-Bela/mysofa.h
 
 include/Bela.h:
 
@@ -55,5 +54,3 @@ include/oscpkt.hh:
 /root/Bela/projects/SOFAlizer-for-Bela/bela_sofa.h:
 
 /root/Bela/projects/SOFAlizer-for-Bela/mysofa.h:
-
-/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.h:

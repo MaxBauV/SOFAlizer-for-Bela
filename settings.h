@@ -8,7 +8,6 @@
 #define MAX_SOFAS 1
 
 #define HOP_SIZE 256 // Overlap factor = HOP_SIZE/FFT_SIZE (e.g. 0.25 if HOP_SIZE = 128 & FFT_SIZE = 512)
-#define WINDOW_SIZE 256 //window size = cropped filter length
 #define FFT_SIZE 512 //1st half, window data (audio input / cropped filter length), 2nd half zero padded
 #define INBUFF_SIZE 1024
 #define OUTBUFF_SIZE 1024 // min: FFT_SIZE + HOP_SIZE
@@ -59,6 +58,10 @@
 
 
 /* -------------------- DEFINES FOR TESTING --------------------- */
+
+/** Pre-compiler macros for effiency testing, where the maximum number of positions (virtual loudspeakers) is evaluated.
+ *  At this state the macros influence filtering_test.cpp and fft.cpp
+ */
 
 /** Choose Method for FFT
  *  Set FFT_METHOD to FFT_CPU or FFT_NEON
