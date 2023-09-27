@@ -7,9 +7,9 @@
 /** Maximum HRTFs to be loaded */
 #define MAX_SOFAS 1
 
-#define HOP_SIZE 256 // Overlap factor = HOP_SIZE/FFT_SIZE (e.g. 0.25 if HOP_SIZE = 128 & FFT_SIZE = 512)
-#define FFT_SIZE 512 //1st half, window data (audio input / cropped filter length), 2nd half zero padded
-#define INBUFF_SIZE 1024
+#define HOP_SIZE 256
+#define FFT_SIZE (HOP_SIZE * 2)
+#define INBUFF_SIZE 1024  // min: FFT_SIZE + HOP_SIZE
 #define OUTBUFF_SIZE 1024 // min: FFT_SIZE + HOP_SIZE
 
 #define HRTF_DIR "./HRTFs/\0"

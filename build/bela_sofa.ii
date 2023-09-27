@@ -52784,12 +52784,12 @@ void HRTFData::allocateFDdata()
     hrtf_right_i = new float32_t**[mysofa->M];
 
     for (unsigned int m = 0; m < mysofa->M; m++) {
-            hrtf_left_r[m] = new float32_t*[(512*2)/4];
-            hrtf_left_i[m] = new float32_t*[(512*2)/4];
-            hrtf_right_r[m] = new float32_t*[(512*2)/4];
-            hrtf_right_i[m] = new float32_t*[(512*2)/4];
+            hrtf_left_r[m] = new float32_t*[((256 * 2)*2)/4];
+            hrtf_left_i[m] = new float32_t*[((256 * 2)*2)/4];
+            hrtf_right_r[m] = new float32_t*[((256 * 2)*2)/4];
+            hrtf_right_i[m] = new float32_t*[((256 * 2)*2)/4];
 
-        for (unsigned int n = 0; n < (512*2)/4; n++) {
+        for (unsigned int n = 0; n < ((256 * 2)*2)/4; n++) {
             hrtf_left_r[m][n] = new float32_t[4];
             hrtf_left_i[m][n] = new float32_t[4];
             hrtf_right_r[m][n] = new float32_t[4];
@@ -52801,7 +52801,7 @@ void HRTFData::allocateFDdata()
 void HRTFData::deallocateFDdata()
 {
     for (unsigned int m = 0; m < mysofa->M; m++) {
-        for (unsigned int n = 0; n < (512*2)/4; n++) {
+        for (unsigned int n = 0; n < ((256 * 2)*2)/4; n++) {
             delete[] hrtf_left_r[m][n];
             delete[] hrtf_left_i[m][n];
             delete[] hrtf_right_r[m][n];
@@ -52822,7 +52822,7 @@ void HRTFData::prepareNeonFDdata()
 {
     unsigned int cnt = 0;
     for (unsigned int m = 0; m < mysofa->M; m++) {
-        for (unsigned int n = 0; n < (512*2)/4; n++) {
+        for (unsigned int n = 0; n < ((256 * 2)*2)/4; n++) {
 
             hrtf_left_r[m][n][0] = hrtf_left[m]->fdr(cnt);
             hrtf_left_r[m][n][1] = hrtf_left[m]->fdr(cnt);
@@ -52942,7 +52942,7 @@ int HRTFData::load_sofa(float hwSampleRate)
 void HRTFData::sofaFFT () {
 
 
-    std::vector<float> tmpZP (512, 0.0);
+    std::vector<float> tmpZP ((256 * 2), 0.0);
 
 
     unsigned int m = 0;
@@ -52956,8 +52956,8 @@ void HRTFData::sofaFFT () {
 
 
 
-    if (mysofa->N > ((512/2)-1)) {
-        newN = ((512/2)-1);
+    if (mysofa->N > (((256 * 2)/2)-1)) {
+        newN = (((256 * 2)/2)-1);
         rt_printf("triggering N>FFT/2-1\n");
     }
     else {
@@ -52974,7 +52974,7 @@ void HRTFData::sofaFFT () {
         memcpy(&tmpZP[0], &mysofa->DataIR.values[i], (newN+1) * sizeof(float));
 
         Fft *fftobj = new Fft;
-        fftobj->setup(512);
+        fftobj->setup((256 * 2));
 
         fftobj->fft(tmpZP);
 
