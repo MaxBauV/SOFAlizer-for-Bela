@@ -52537,8 +52537,8 @@ void filtering(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_
     unsigned int hrtf_num2 = hrtf_num;
     m_hrtf_num.unlock();
 
-    static std::vector<float> unwrappedBuffLeft(512, 0.0);
-    static std::vector<float> unwrappedBuffRight(512, 0.0);
+    static std::vector<float> unwrappedBuffLeft((256 * 2), 0.0);
+    static std::vector<float> unwrappedBuffRight((256 * 2), 0.0);
 
     int nearestChInL = 0;
     int nearestChInR = 0;
@@ -52590,7 +52590,7 @@ void filtering(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_
     float32x4_t L1, L2, R1, R2, C, Hreal, Himag;
 
     unsigned int cnt = 0;
-    for (unsigned int i = 0; i < (512)/4; i++) {
+    for (unsigned int i = 0; i < ((256 * 2))/4; i++) {
 
 
         Left1[0] = chInL_FFT.fd()[cnt].r;
@@ -52695,7 +52695,7 @@ void filtering(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_
     }
     else {
 
-        for (unsigned int i = 0; i < 512; i++) {
+        for (unsigned int i = 0; i < (256 * 2); i++) {
             int outcBuffIdx = (out_write_ptr + i) % 1024;
             outcBuff->left[outcBuffIdx] += outLeftFFT.td(i);
             outcBuff->right[outcBuffIdx] += outRightFFT.td(i);

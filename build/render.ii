@@ -52603,11 +52603,11 @@ bool setup(BelaContext *context, void *userData)
  outcBuff.right.resize(1024);
 
 
- chInL_FFT.setup(512);
- chInR_FFT.setup(512);
+ chInL_FFT.setup((256 * 2));
+ chInR_FFT.setup((256 * 2));
 
- outLeftFFT.setup(512);
- outRightFFT.setup(512);
+ outLeftFFT.setup((256 * 2));
+ outRightFFT.setup((256 * 2));
 
 
  filteringTask = Bela_createAuxiliaryTask(filtering_thread, 50, "SOFAlizer-filtering-task");
@@ -52665,7 +52665,7 @@ void render(BelaContext *context, void *userData)
   outcBuff.right[outcReadPtr] = 0;
 
 
-  float factor = (float) 256 / (float) 512;
+  float factor = (float) 256 / (float) (256 * 2);
   leftOut *= factor;
   rightOut *= factor;
 

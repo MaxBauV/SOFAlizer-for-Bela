@@ -1982,7 +1982,7 @@ _ZN8HRTFData14allocateFDdataEv:         @ @_ZN8HRTFData14allocateFDdataEv
 	.loc	43 134 32               @ /root/Bela/projects/SOFAlizer-for-Bela/bela_sofa.cpp:134:32
 	str	r0, [r1, r5, lsl #2]
 .Ltmp250:
-	.loc	43 130 50 is_stmt 1 discriminator 3 @ /root/Bela/projects/SOFAlizer-for-Bela/bela_sofa.cpp:130:50
+	.loc	43 130 56 is_stmt 1 discriminator 3 @ /root/Bela/projects/SOFAlizer-for-Bela/bela_sofa.cpp:130:56
 	add	r5, r5, #1
 .Ltmp251:
 	@DEBUG_VALUE: n <- %R5
@@ -2114,7 +2114,7 @@ _ZN8HRTFData16deallocateFDdataEv:       @ @_ZN8HRTFData16deallocateFDdataEv
 	.loc	43 151 22 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/bela_sofa.cpp:151:22
 	ldr	r0, [r4, #144]
 .Ltmp267:
-	.loc	43 150 50 discriminator 3 @ /root/Bela/projects/SOFAlizer-for-Bela/bela_sofa.cpp:150:50
+	.loc	43 150 56 discriminator 3 @ /root/Bela/projects/SOFAlizer-for-Bela/bela_sofa.cpp:150:56
 	add	r6, r6, #1
 .Ltmp268:
 	@DEBUG_VALUE: n <- %R6

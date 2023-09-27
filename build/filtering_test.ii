@@ -52536,8 +52536,8 @@ void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const Cir
     unsigned int hrtf_num2 = hrtf_num;
     m_hrtf_num.unlock();
 
-    static std::vector<float> unwrappedBuffLeft(512, 0.0);
-    static std::vector<float> unwrappedBuffRight(512, 0.0);
+    static std::vector<float> unwrappedBuffLeft((256 * 2), 0.0);
+    static std::vector<float> unwrappedBuffRight((256 * 2), 0.0);
 
 
     for (unsigned int i = 0; i < 256; i++) {
@@ -52553,7 +52553,7 @@ void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const Cir
 
 
 
-    for (unsigned int i = 0; i < 512; i++) {
+    for (unsigned int i = 0; i < (256 * 2); i++) {
 
         outLeftFFT.fdr(i) = 0;
         outLeftFFT.fdi(i) = 0;
@@ -52591,7 +52591,7 @@ void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const Cir
     }
     else {
 
-        for (unsigned int i = 0; i < 512; i++) {
+        for (unsigned int i = 0; i < (256 * 2); i++) {
             int outcBuffIdx = (out_write_ptr + i) % 1024;
             outcBuff->left[outcBuffIdx] += outLeftFFT.td(i);
             outcBuff->right[outcBuffIdx] += outRightFFT.td(i);
@@ -52605,8 +52605,8 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
     unsigned int hrtf_num2 = hrtf_num;
     m_hrtf_num.unlock();
 
-    static std::vector<float> unwrappedBuffLeft(512, 0.0);
-    static std::vector<float> unwrappedBuffRight(512, 0.0);
+    static std::vector<float> unwrappedBuffLeft((256 * 2), 0.0);
+    static std::vector<float> unwrappedBuffRight((256 * 2), 0.0);
 
 
 
@@ -52630,7 +52630,7 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
     float32x4_t L1, L2, R1, R2, C, Hreal, Himag;
 
     unsigned int cnt = 0;
-    for (unsigned int i = 0; i < (512)/4; i++) {
+    for (unsigned int i = 0; i < ((256 * 2))/4; i++) {
 
 
         outLeftFFT.fdr(cnt) = 0;
@@ -52757,7 +52757,7 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
     }
     else {
 
-        for (unsigned int i = 0; i < 512; i++) {
+        for (unsigned int i = 0; i < (256 * 2); i++) {
             int outcBuffIdx = (out_write_ptr + i) % 1024;
             outcBuff->left[outcBuffIdx] += outLeftFFT.td(i);
             outcBuff->right[outcBuffIdx] += outRightFFT.td(i);
