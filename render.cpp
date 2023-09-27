@@ -220,13 +220,6 @@ void render(BelaContext *context, void *userData)
 		/** Overwrite the buffer at the write pointer */
 		incBuff.left[incWritePtr] = audioRead(context, i, 0);
 		incBuff.right[incWritePtr] = audioRead(context, i, 1);
-		
-		/** Additional bypass mechanism for latency evaluation
-		 *  Input buffer is directly written to output while leavin everything else intact
-		 *  Line 238 & 239 uncommented
-		 */
-		float leftOut = audioRead(context, i, 0);
-		float rightOut = audioRead(context, i, 1);
 
 		/** Increment input-buffer write pointer and reset if at end of circular buffer */
 		incWritePtr++;
@@ -235,8 +228,8 @@ void render(BelaContext *context, void *userData)
 		}
 
 		/** Get output sample from output Buffer */
-		// float leftOut = outcBuff.left[outcReadPtr];
-		// float rightOut = outcBuff.right[outcReadPtr];
+		float leftOut = outcBuff.left[outcReadPtr];
+		float rightOut = outcBuff.right[outcReadPtr];
 
 		/** Clear output sample in buffer */
 		outcBuff.left[outcReadPtr] = 0;
