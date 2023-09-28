@@ -52651,21 +52651,14 @@ void render(BelaContext *context, void *userData)
   incBuff.right[incWritePtr] = audioRead(context, i, 1);
 
 
-
-
-
-  float leftOut = audioRead(context, i, 0);
-  float rightOut = audioRead(context, i, 1);
-
-
   incWritePtr++;
   if (incWritePtr >= 1024) {
    incWritePtr = 0;
   }
 
 
-
-
+  float leftOut = outcBuff.left[outcReadPtr];
+  float rightOut = outcBuff.right[outcReadPtr];
 
 
   outcBuff.left[outcReadPtr] = 0;
@@ -52681,7 +52674,7 @@ void render(BelaContext *context, void *userData)
   if (outcReadPtr >= 1024) {
    outcReadPtr = 0;
   }
-# 271 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 264 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   hopCnt++;
   if (hopCnt >= 256) {
    hopCnt = 0;
@@ -52692,7 +52685,7 @@ void render(BelaContext *context, void *userData)
 
   audioWrite(context, i, 0, leftOut);
   audioWrite(context, i, 1, rightOut);
-# 326 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 319 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   if (hrtf_num != hrtf_num_prev) {
 
 
@@ -52734,4 +52727,19 @@ void cleanup(BelaContext *context, void *userData)
    hrtfdata[i].deallocateFDdata();
 
  }
+
+
+ hrtfdata.clear();
+
+
+ incBuff.left.clear();
+ incBuff.right.clear();
+ outcBuff.left.clear();
+ outcBuff.right.clear();
+
+
+ chInL_FFT.cleanup();
+ chInR_FFT.cleanup();
+ outLeftFFT.cleanup();
+ outRightFFT.cleanup();
 }

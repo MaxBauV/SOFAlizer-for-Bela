@@ -222,6 +222,8 @@ void HRTFData::freeFFTdata() {
 
     /** Seallocate fd data of Fft class */
     for (unsigned int i = 0; i < hrtf_left.size(); i++) {
+        hrtf_left[i]->cleanup();
+        hrtf_right[i]->cleanup();
         delete hrtf_left[i];
         delete hrtf_right[i];
     }

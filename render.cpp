@@ -347,7 +347,7 @@ void render(BelaContext *context, void *userData)
  */
 void cleanup(BelaContext *context, void *userData)
 {
-	//TODO: check if other ressources need de-allocation
+	/** Clear elements of hrtfdata vector */
 	for (unsigned int i = 0; i < hrtfdata.size(); i++) {
 		hrtfdata[i].unload_sofa();
 
@@ -357,4 +357,19 @@ void cleanup(BelaContext *context, void *userData)
 			hrtfdata[i].deallocateFDdata();
 		#endif
 	}
+
+	/** Clear hrtfdata vector */
+	hrtfdata.clear();
+
+	/** Clear input & output circular buffer */
+	incBuff.left.clear();
+	incBuff.right.clear();
+	outcBuff.left.clear();
+	outcBuff.right.clear();
+
+	/** Clear FFT data of input & output buffer */
+	chInL_FFT.cleanup();
+	chInR_FFT.cleanup();
+	outLeftFFT.cleanup();
+	outRightFFT.cleanup();
 }
