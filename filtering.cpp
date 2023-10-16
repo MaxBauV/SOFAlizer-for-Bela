@@ -102,7 +102,7 @@ void filtering(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_
     float32x4_t L1, L2, R1, R2, C, Hreal, Himag;
 
     unsigned int cnt = 0;
-    for (unsigned int i = 0; i < (FFT_SIZE)/4; i++) {
+    for (unsigned int i = 0; i < (FFT_SIZE/2); i++) {
 
         /** process left audio input */
         Left1[0] = chInL_FFT.fd()[cnt].r;

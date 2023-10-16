@@ -1,4 +1,5 @@
 #include <mutex>
+#include <atomic>
 
 #include "bela_sofa.h"
 #include "position.h"
@@ -59,6 +60,6 @@ extern std::mutex m_hrtf_num;
 extern unsigned int hrtf_num_prev;
 
 /** Bypass */
-extern bool bypass;
+extern std::atomic<bool> bypass;
 
 /*----------------- END GLOBAL VARIABLES DECLARATIONS -----------------*/

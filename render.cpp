@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <mutex>
+#include <atomic>
 
 #include "settings.h"
 #include "position.h"
@@ -67,7 +68,7 @@ std::mutex m_hrtf_num;
 unsigned int hrtf_num_prev = 1;
 
 /** Bypass toggle - bypass spatialization while keeping CPU load similar */
-bool bypass = false;
+std::atomic<bool> bypass; // = false;
 
 /*----------------- END GLOBAL VARIABLES DEFINITIONS -----------------*/
 
@@ -97,6 +98,7 @@ void filtering_thread(void *);
 bool setup(BelaContext *context, void *userData)
 {
 	int normalization_status = 2;
+	bypass = false;
 
 	#if INTERFACE == ANALOG
 		/** Configure Button & LED pins */
@@ -113,10 +115,8 @@ bool setup(BelaContext *context, void *userData)
 		send_pos_1 = true;
 	#endif
 
-	rt_printf("HW Sample Rate: %5.0f Hz\n", context->audioSampleRate);
-
 	/** Load all sofa files from HRTF_DIR */
-	if (!read_hrtfs_from_dir(hrtfdata, HRTF_DIR, context->audioSampleRate, MAX_SOFAS)){
+	if (!read_hrtfs_from_dir(hrtfdata, HRTF_DIR, 44100, MAX_SOFAS)){
 		rt_printf("Could not find %s\n", HRTF_DIR);
 		//oscInterface.send_status("Could not find" << HRTF_DIR);
 	}
@@ -236,9 +236,8 @@ void render(BelaContext *context, void *userData)
 		outcBuff.right[outcReadPtr] = 0;
 
 		/** Scale down output by overlap factor (how many windows overlap) */
-		float factor = (float) HOP_SIZE / (float) FFT_SIZE;
-		leftOut *= factor;
-		rightOut *= factor;
+		leftOut *= VOLUME;
+		rightOut *= VOLUME;
 
 		/** Increment output-buffer read pointer and reset if end of circular buffer is reached */
 		outcReadPtr++;

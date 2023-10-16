@@ -127,7 +127,7 @@ void HRTFData::allocateFDdata()
             hrtf_right_r[m] = new float32_t*[(FFT_SIZE*2)/4];
             hrtf_right_i[m] = new float32_t*[(FFT_SIZE*2)/4];
 
-        for (unsigned int n = 0; n < (FFT_SIZE*2)/4; n++) {
+        for (unsigned int n = 0; n < (FFT_SIZE/2); n++) {
             hrtf_left_r[m][n]  = new float32_t[4];
             hrtf_left_i[m][n]  = new float32_t[4];
             hrtf_right_r[m][n] = new float32_t[4];
@@ -147,7 +147,7 @@ void HRTFData::allocateFDdata()
 void HRTFData::deallocateFDdata()
 {
     for (unsigned int m = 0; m < mysofa->M; m++) {
-        for (unsigned int n = 0; n < (FFT_SIZE*2)/4; n++) {
+        for (unsigned int n = 0; n < (FFT_SIZE/2); n++) {
             delete[] hrtf_left_r[m][n];
             delete[] hrtf_left_i[m][n];
             delete[] hrtf_right_r[m][n];
@@ -169,7 +169,7 @@ void HRTFData::deallocateFDdata()
  *  frequency domain (FD) data of impulse response (IR) igets reformatted into tuples (float32_t arrays) of size 4
  *  those tuples are stored in an 2D array for each HRTF dataset, resulting in a 3D array
  *  hrtf***  M positions
- *  hrtf**   (N*2)/4
+ *  hrtf**   (FFT_SIZE/2)
  *  hrtf*    FD data of IR (tuple of size 4)
  *
  *  each hrtf dataset has 4 of those NEON optimized FD 3D arrays:
@@ -184,7 +184,7 @@ void HRTFData::prepareNeonFDdata()
 {
     unsigned int cnt = 0;
     for (unsigned int m = 0; m < mysofa->M; m++) {
-        for (unsigned int n = 0; n < (FFT_SIZE*2)/4; n++) {
+        for (unsigned int n = 0; n < (FFT_SIZE/2); n++) {
 
             hrtf_left_r[m][n][0]   = hrtf_left[m]->fdr(cnt);
             hrtf_left_r[m][n][1]   = hrtf_left[m]->fdr(cnt);
@@ -332,7 +332,7 @@ void HRTFData::sofaFFT () {
 
     if (mysofa->N > ((FFT_SIZE/2)-1)) {
         newN = ((FFT_SIZE/2)-1);
-        rt_printf("triggering N>FFT/2-1\n");
+        //rt_printf("triggering N>FFT/2-1\n");
     }
     else {
         newN = (mysofa->N-1);

@@ -15,6 +15,7 @@
 #define HRTF_DIR "./HRTFs/\0"
 
 #define NORMALIZATION_PERCENT 0.9
+#define VOLUME ((float) HOP_SIZE / (float) FFT_SIZE)
 
 /** Choose Interface
  *  Set INTERFACE to ANALOG or OSC

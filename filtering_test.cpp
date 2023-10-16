@@ -130,7 +130,7 @@ void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const Ci
     float32x4_t L1, L2, R1, R2, C, Hreal, Himag;
 
     unsigned int cnt = 0;
-    for (unsigned int i = 0; i < (FFT_SIZE)/4; i++) {
+    for (unsigned int i = 0; i < (FFT_SIZE/2); i++) {
 
         /** set to 0 */
         outLeftFFT.fdr(cnt) = 0;
