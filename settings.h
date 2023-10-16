@@ -67,7 +67,7 @@
 /** Choose Method for FFT
  *  Set FFT_METHOD to FFT_CPU or FFT_NEON
  */
-#define FFT_METHOD FFT_NEON
+#define FFT_METHOD FFT_NEON 
 
 /** Choose Method for complex multiplication (CM)
  *  Set CM_METHOD to CM_CPU or CM_NEON
@@ -75,7 +75,7 @@
 #define CM_METHOD CM_NEON
 
 /** Maximimum Position per Channel */
-#define POSITIONS 64
+#define POSITIONS 36
 
 /** Re-arrange input data buffer if CM_METHOD = CM_NEON, 
  *  re-arringing either done with NEON (REARRANGE_CPU = false) or CPU (REARRANGE_CPU = true) */

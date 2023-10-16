@@ -45690,11 +45690,6 @@ class OSCinterface {
 
 void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg);
 # 13 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp" 2
-# 1 "/root/Bela/projects/SOFAlizer-for-Bela/filtering.h" 1
-
-
-
-
 
 # 1 "/root/Bela/projects/SOFAlizer-for-Bela/bela_sofa.h" 1
 
@@ -53682,12 +53677,26 @@ enum {
     MYSOFA_NOT_SPHERICAL = -4,
     MYSOFA_UNSUPPORTED_SPHERICAL_UNITS = -5
 };
-# 7 "/root/Bela/projects/SOFAlizer-for-Bela/filtering.h" 2
+# 15 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp" 2
 
 
-void filtering(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t inPtr, CircBuff *outcBuff, uint32_t outPtr);
-# 14 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp" 2
-# 23 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+
+# 1 "/root/Bela/projects/SOFAlizer-for-Bela/filtering_test.h" 1
+
+
+
+
+
+
+
+
+void filtering_multiple_positions_cpu(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t inPtr, CircBuff *outcBuff, uint32_t outPtr);
+void filtering_multiple_positions_neon(std::vector<HRTFData>& hrtfdata, const CircBuff *incBuff, uint32_t inPtr, CircBuff *outcBuff, uint32_t outPtr);
+# 19 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp" 2
+
+
+
+
 std::vector<HRTFData> hrtfdata;
 
 
@@ -53702,7 +53711,7 @@ CircBuff outcBuff;
 
 
 uint32_t incWritePtr = 0;
-uint32_t out_write_ptr = 256;
+uint32_t out_write_ptr = 2*256;
 uint32_t outcReadPtr = 0;
 uint32_t cached_in_read_ptr = 0;
 
@@ -53749,12 +53758,12 @@ AuxiliaryTask filteringTask;
 
 
 void filtering_thread(void *);
-# 98 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 96 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
 bool setup(BelaContext *context, void *userData)
 {
  int normalization_status = 2;
  bypass = false;
-# 112 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 110 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   oscInterface.oscSender.setup(oscInterface.remotePort, oscInterface.remoteIP);
   oscInterface.send_status("Started..");
   send_pos_0 = false;
@@ -53852,7 +53861,12 @@ bool setup(BelaContext *context, void *userData)
 
 
 void filtering_thread(void *) {
- filtering(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+
+
+
+  filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+
+
 
 
  out_write_ptr = (out_write_ptr + 256) % 1024;
@@ -53882,7 +53896,6 @@ void render(BelaContext *context, void *userData)
   outcBuff.right[outcReadPtr] = 0;
 
 
-  rt_printf("vol=%f", ((float) 256 / (float) (256 * 2)));
   leftOut *= ((float) 256 / (float) (256 * 2));
   rightOut *= ((float) 256 / (float) (256 * 2));
 
@@ -53891,7 +53904,7 @@ void render(BelaContext *context, void *userData)
   if (outcReadPtr >= 1024) {
    outcReadPtr = 0;
   }
-# 264 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 266 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   hopCnt++;
   if (hopCnt >= 256) {
    hopCnt = 0;
@@ -53902,7 +53915,7 @@ void render(BelaContext *context, void *userData)
 
   audioWrite(context, i, 0, leftOut);
   audioWrite(context, i, 1, rightOut);
-# 319 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 321 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   if (hrtf_num != hrtf_num_prev) {
 
 

@@ -10,12 +10,12 @@
 #include "fft.h"
 #include "analog_interface.h"
 #include "osc.h"
-#include "filtering.h"
+//#include "filtering.h"
 #include "bela_sofa.h"
 
 /** filtering_test.cpp is solely used for effiency testing,
  *  evaluation the maximum amount of positions (virtual speakers) */
-//#include "filtering_test.h"
+#include "filtering_test.h"
 
 /*----------------- GLOBAL VARIABLES DEFINITIONS -----------------*/
 
@@ -34,7 +34,7 @@ CircBuff outcBuff;
 
 /** Read & write pointer for circular input & output buffers */
 uint32_t incWritePtr = 0;
-uint32_t out_write_ptr = HOP_SIZE;
+uint32_t out_write_ptr = 2*HOP_SIZE;
 uint32_t outcReadPtr = 0;
 uint32_t cached_in_read_ptr = 0;
 
@@ -68,7 +68,7 @@ std::mutex m_hrtf_num;
 unsigned int hrtf_num_prev = 1;
 
 /** Bypass toggle - bypass spatialization while keeping CPU load similar */
-std::atomic<bool> bypass; // = false;
+std::atomic<bool> bypass;
 
 /*----------------- END GLOBAL VARIABLES DEFINITIONS -----------------*/
 
@@ -83,8 +83,6 @@ AuxiliaryTask filteringTask;
 void filtering_thread(void *);
 //void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg);
 /*----------------- END FUNCTION PROTOTYPES -----------------*/
-
-
 
 /**
  * Load multiple Sofa structures & perform FFT on it,
@@ -206,7 +204,12 @@ bool setup(BelaContext *context, void *userData)
  * Multithread wrapper for filtering process
 */
 void filtering_thread(void *) {
-	filtering(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+	#if CM_METHOD == CM_CPU
+		filtering_multiple_positions_cpu(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+	#elif CM_METHOD == CM_NEON
+		filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+	#endif
+	//filtering(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
 
 	/** Update the output buffer write pointer to start at next hop */
 	out_write_ptr = (out_write_ptr + HOP_SIZE) % INBUFF_SIZE;

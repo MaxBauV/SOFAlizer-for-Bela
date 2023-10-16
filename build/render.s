@@ -376,7 +376,7 @@ _ZN12OSCinterfaceD2Ev:                  @ @_ZN12OSCinterfaceD2Ev
 	.type	setup,%function
 setup:                                  @ @setup
 .Lfunc_begin4:
-	.loc	13 99 0 is_stmt 1       @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:99:0
+	.loc	13 97 0 is_stmt 1       @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:97:0
 	.fnstart
 	.cfi_startproc
 @ BB#0:
@@ -428,7 +428,7 @@ setup:                                  @ @setup
 .Ltmp106:
 	movt	r6, :upper16:.L_MergedGlobals
 .Ltmp107:
-	.loc	13 112 45               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:112:45
+	.loc	13 110 45               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:110:45
 	movw	r7, :lower16:.L_MergedGlobals.4
 .Ltmp108:
 	.loc	33 374 2 discriminator 3 @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/atomic_base.h:374:2
@@ -436,7 +436,7 @@ setup:                                  @ @setup
 	strb	r0, [r6, #2]
 	dmb	ish
 .Ltmp109:
-	.loc	13 112 45               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:112:45
+	.loc	13 110 45               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:110:45
 	movt	r7, :upper16:.L_MergedGlobals.4
 	sub	r0, r11, #76
 .Ltmp110:
@@ -565,7 +565,7 @@ setup:                                  @ @setup
 	.loc	40 243 14               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/char_traits.h:243:14
 	strb	r2, [r1, r0]
 .Ltmp136:
-	.loc	13 112 26 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:112:26
+	.loc	13 110 26 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:110:26
 .Ltmp57:
 	add	r0, r7, #76
 .Ltmp137:
@@ -641,7 +641,7 @@ setup:                                  @ @setup
 	mov	r0, #0
 	strb	r0, [sp, #105]
 .Ltmp152:
-	.loc	13 113 16 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:113:16
+	.loc	13 111 16 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:111:16
 .Ltmp60:
 	add	r4, r7, #28
 .Ltmp153:
@@ -669,24 +669,24 @@ setup:                                  @ @setup
 	bl	_ZdlPv
 .Ltmp158:
 .LBB4_15:                               @ %_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED2Ev.exit37
-	.loc	13 114 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:114:14
+	.loc	13 112 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:112:14
 	mov	r1, #256
 	mov	r0, r6
 	strh	r1, [r0], #40
 .Ltmp159:
-	.loc	13 119 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:119:7
+	.loc	13 117 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:117:7
 	movw	r1, :lower16:.L.str.10
 	vldr	s0, .LCPI4_2
 	movt	r1, :upper16:.L.str.10
 	mov	r2, #1
 	bl	_Z19read_hrtfs_from_dirRSt6vectorI8HRTFDataSaIS0_EEPKcfj
 .Ltmp160:
-	.loc	13 119 6 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:119:6
+	.loc	13 117 6 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:117:6
 	cmp	r0, #0
 	bne	.LBB4_17
 @ BB#16:
 .Ltmp161:
-	.loc	13 120 3 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:120:3
+	.loc	13 118 3 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:118:3
 	movw	r0, :lower16:.L.str.11
 	movw	r1, :lower16:.L.str.10
 	movt	r0, :upper16:.L.str.11
@@ -760,7 +760,7 @@ setup:                                  @ @setup
 	.loc	40 243 14               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/char_traits.h:243:14
 	strb	r7, [r0, r1]
 .Ltmp179:
-	.loc	13 125 16 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:125:16
+	.loc	13 123 16 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:123:16
 .Ltmp66:
 	add	r1, sp, #64
 .Ltmp180:
@@ -798,31 +798,31 @@ setup:                                  @ @setup
 	.loc	10 656 66               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:656:66
 	ldrd	r0, r1, [r6, #40]
 .Ltmp186:
-	.loc	13 129 2 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:129:2
+	.loc	13 127 2 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:127:2
 	cmp	r1, r0
 	beq	.LBB4_42
 @ BB#22:                                @ %.lr.ph.preheader
 .Ltmp187:
-	.loc	13 135 5                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:135:5
+	.loc	13 133 5                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:133:5
 	movw	r7, :lower16:.L.str.13
 .Ltmp188:
 	.loc	10 656 50               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:656:50
 	movw	r8, #39961
 .Ltmp189:
-	.loc	13 156 4 discriminator 2 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:156:4
+	.loc	13 154 4 discriminator 2 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:154:4
 	movw	r5, :lower16:.L.str.16
 .Ltmp190:
-	.loc	13 133 39 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:133:39
+	.loc	13 131 39 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:131:39
 	vldr	s16, .LCPI4_3
 	mov	r10, #0
 .Ltmp191:
-	.loc	13 135 5                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:135:5
+	.loc	13 133 5                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:133:5
 	movt	r7, :upper16:.L.str.13
 .Ltmp192:
 	.loc	10 656 50               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:656:50
 	movt	r8, #49551
 .Ltmp193:
-	.loc	13 156 4 discriminator 2 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:156:4
+	.loc	13 154 4 discriminator 2 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:154:4
 	movt	r5, :upper16:.L.str.16
 	mov	r9, #0
 	b	.LBB4_31
@@ -832,9 +832,9 @@ setup:                                  @ @setup
 	@DEBUG_VALUE: setup:userData <- %R1
 	.loc	63 212 4                @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/basic_string.tcc:212:4
 .Ltmp90:
-	movw	r0, :lower16:.L.str.21
+	movw	r0, :lower16:.L.str.20
 .Ltmp195:
-	movt	r0, :upper16:.L.str.21
+	movt	r0, :upper16:.L.str.20
 	mov	lr, pc
 	b	_ZSt19__throw_logic_errorPKc
 .Ltmp196:
@@ -882,32 +882,32 @@ setup:                                  @ @setup
 .LBB4_30:                               @   in Loop: Header=BB4_31 Depth=1
 .Ltmp71:
 .Ltmp207:
-	.loc	13 159 4 is_stmt 1 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:159:4
+	.loc	13 157 4 is_stmt 1 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:157:4
 	bl	__cxa_begin_catch
 .Ltmp208:
-	.loc	13 160 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:160:16
+	.loc	13 158 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:158:16
 	bl	__cxa_end_catch
 	b	.LBB4_41
 .Ltmp209:
 .LBB4_31:                               @ %.lr.ph
                                         @ =>This Inner Loop Header: Depth=1
-	.loc	13 130 19               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:130:19
+	.loc	13 128 19               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:128:19
 	add	r2, r0, r10
 	ldr	r1, [r2, #116]
 .Ltmp210:
-	.loc	13 130 7 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:130:7
+	.loc	13 128 7 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:128:7
 	cmp	r1, #0
 	beq	.LBB4_33
 @ BB#32:                                @   in Loop: Header=BB4_31 Depth=1
 .Ltmp211:
-	.loc	13 156 4 is_stmt 1 discriminator 2 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:156:4
+	.loc	13 154 4 is_stmt 1 discriminator 2 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:154:4
 	mov	r0, r5
 	bl	rt_printf
 .Ltmp212:
 	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
 	ldr	r0, [r6, #40]
 .Ltmp213:
-	.loc	13 158 17               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:158:17
+	.loc	13 156 17               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:156:17
 	add	r0, r0, r10
 .Ltmp69:
 	bl	_ZN8HRTFData11unload_sofaEv
@@ -915,13 +915,13 @@ setup:                                  @ @setup
 	b	.LBB4_41
 .Ltmp214:
 .LBB4_33:                               @   in Loop: Header=BB4_31 Depth=1
-	.loc	13 133 39 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:133:39
+	.loc	13 131 39 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:131:39
 	vmov.f32	s0, s16
 	mov	r0, r2
 	bl	_ZN8HRTFData15normalizeTDdataEf
 .Ltmp215:
 	@DEBUG_VALUE: setup:normalization_status <- %R0
-	.loc	13 134 8                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:134:8
+	.loc	13 132 8                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:132:8
 	cmp	r0, #1
 	beq	.LBB4_38
 .Ltmp216:
@@ -937,7 +937,7 @@ setup:                                  @ @setup
 .Ltmp218:
 @ BB#36:                                @   in Loop: Header=BB4_31 Depth=1
 	@DEBUG_VALUE: setup:normalization_status <- %R0
-	.loc	13 135 5                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:135:5
+	.loc	13 133 5                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:133:5
 	mov	r0, r7
 .Ltmp219:
 	bl	rt_printf
@@ -948,7 +948,7 @@ setup:                                  @ @setup
 	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
 	ldr	r0, [r6, #40]
 .Ltmp221:
-	.loc	13 138 5 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:138:5
+	.loc	13 136 5 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:136:5
 	add	r1, r0, r10
 	movw	r0, :lower16:.L.str.14
 	movt	r0, :upper16:.L.str.14
@@ -959,7 +959,7 @@ setup:                                  @ @setup
 	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
 	ldr	r0, [r6, #40]
 .Ltmp223:
-	.loc	13 141 5 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:141:5
+	.loc	13 139 5 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:139:5
 	add	r1, r0, r10
 	movw	r0, :lower16:.L.str.15
 	movt	r0, :upper16:.L.str.15
@@ -970,28 +970,28 @@ setup:                                  @ @setup
 	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
 	ldr	r0, [r6, #40]
 .Ltmp225:
-	.loc	13 145 16 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:145:16
+	.loc	13 143 16 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:143:16
 	add	r0, r0, r10
 	bl	_ZN8HRTFData7sofaFFTEv
 .Ltmp226:
 	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
 	ldr	r0, [r6, #40]
 .Ltmp227:
-	.loc	13 150 17 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:150:17
+	.loc	13 148 17 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:148:17
 	add	r0, r0, r10
 	bl	_ZN8HRTFData14allocateFDdataEv
 .Ltmp228:
 	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
 	ldr	r0, [r6, #40]
 .Ltmp229:
-	.loc	13 151 17 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:151:17
+	.loc	13 149 17 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:149:17
 	add	r0, r0, r10
 	bl	_ZN8HRTFData17prepareNeonFDdataEv
 .Ltmp230:
 	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
 	ldr	r0, [r6, #40]
 .Ltmp231:
-	.loc	13 152 17 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:152:17
+	.loc	13 150 17 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:150:17
 	add	r0, r0, r10
 	bl	_ZN8HRTFData11freeFFTdataEv
 .Ltmp232:
@@ -1000,9 +1000,9 @@ setup:                                  @ @setup
 	.loc	10 656 66               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:656:66
 	ldrd	r0, r1, [r6, #40]
 .Ltmp233:
-	.loc	13 129 20 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:129:20
+	.loc	13 127 20 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:127:20
 	add	r10, r10, #164
-	.loc	13 129 40 is_stmt 0 discriminator 3 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:129:40
+	.loc	13 127 40 is_stmt 0 discriminator 3 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:127:40
 	add	r9, r9, #1
 .Ltmp234:
 	@DEBUG_VALUE: i <- %R9
@@ -1011,7 +1011,7 @@ setup:                                  @ @setup
 	asr	r1, r1, #2
 	mul	r1, r1, r8
 .Ltmp235:
-	.loc	13 129 2 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:129:2
+	.loc	13 127 2 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:127:2
 	cmp	r9, r1
 .Ltmp236:
 	@DEBUG_VALUE: operator[]:__n <- %R9
@@ -1086,7 +1086,7 @@ setup:                                  @ @setup
 	.loc	40 243 14               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/char_traits.h:243:14
 	strb	r7, [r0]
 .Ltmp253:
-	.loc	13 165 16 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:165:16
+	.loc	13 163 16 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:163:16
 .Ltmp75:
 	add	r1, sp, #40
 .Ltmp254:
@@ -1126,13 +1126,13 @@ setup:                                  @ @setup
 	.loc	10 656 40               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:656:40
 	movw	r5, :lower16:.L_MergedGlobals.3
 .Ltmp261:
-	.loc	13 112 45               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:112:45
+	.loc	13 110 45               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:110:45
 	movw	r7, :lower16:.L_MergedGlobals.4
 .Ltmp262:
 	.loc	10 656 40               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:656:40
 	movt	r5, :upper16:.L_MergedGlobals.3
 .Ltmp263:
-	.loc	13 112 45               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:112:45
+	.loc	13 110 45               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:110:45
 	movt	r7, :upper16:.L_MergedGlobals.4
 .Ltmp264:
 	.loc	10 656 66               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:656:66
@@ -1283,23 +1283,23 @@ setup:                                  @ @setup
 	strne	r0, [r5, #40]
 .Ltmp292:
 .LBB4_59:                               @ %_ZNSt6vectorIfSaIfEE6resizeEj.exit
-	.loc	13 177 12               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:177:12
+	.loc	13 175 12               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:175:12
 	add	r0, r6, #52
 	mov	r1, #512
 	bl	_ZN3Fft5setupEj
-	.loc	13 178 12               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:178:12
+	.loc	13 176 12               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:176:12
 	add	r0, r6, #68
 	mov	r1, #512
 	bl	_ZN3Fft5setupEj
-	.loc	13 180 13               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:180:13
+	.loc	13 178 13               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:178:13
 	add	r0, r6, #84
 	mov	r1, #512
 	bl	_ZN3Fft5setupEj
-	.loc	13 181 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:181:14
+	.loc	13 179 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:179:14
 	add	r0, r6, #100
 	mov	r1, #512
 	bl	_ZN3Fft5setupEj
-	.loc	13 184 18               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:184:18
+	.loc	13 182 18               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:182:18
 	movw	r0, :lower16:_Z16filtering_threadPv
 	movw	r2, :lower16:.L.str.18
 	movt	r0, :upper16:_Z16filtering_threadPv
@@ -1307,7 +1307,7 @@ setup:                                  @ @setup
 	mov	r1, #50
 	mov	r3, #0
 	bl	Bela_createAuxiliaryTask
-	.loc	13 184 16 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:184:16
+	.loc	13 182 16 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:182:16
 	str	r0, [r6, #36]
 .Ltmp293:
 	@DEBUG_VALUE: function<void (*)(oscpkt::Message *, const char *, void *), void, void>:__f <- %R0
@@ -1316,7 +1316,7 @@ setup:                                  @ @setup
 .Ltmp294:
 	movt	r0, :upper16:_Z14osc_on_receivePN6oscpkt7MessageEPKcPv
 .Ltmp295:
-	.loc	13 188 47               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:188:47
+	.loc	13 186 47               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:186:47
 	ldr	r1, [r7, #92]
 .Ltmp296:
 	.loc	31 1643 4               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/functional:1643:4
@@ -1331,7 +1331,7 @@ setup:                                  @ @setup
 	movt	r0, :upper16:_ZNSt14_Function_base13_Base_managerIPFvPN6oscpkt7MessageEPKcPvEE10_M_managerERSt9_Any_dataRKSA_St18_Manager_operation
 	str	r0, [sp, #32]
 .Ltmp298:
-	.loc	13 188 28               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:188:28
+	.loc	13 186 28               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:186:28
 .Ltmp78:
 	add	r2, sp, #24
 .Ltmp299:
@@ -1371,12 +1371,12 @@ setup:                                  @ @setup
 	.loc	10 656 50               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:656:50
 	sub	r0, r1, r0
 .Ltmp307:
-	.loc	13 194 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:194:14
+	.loc	13 192 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:192:14
 	movw	r1, #39961
 	movt	r1, #49551
 	asr	r0, r0, #2
 	mul	r0, r0, r1
-	.loc	13 192 11               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:192:11
+	.loc	13 190 11               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:190:11
 	str	r0, [r6, #24]
 .Ltmp308:
 	.loc	16 747 7                @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/arm-linux-gnueabihf/c++/6.3.0/bits/gthr-default.h:747:7
@@ -1395,15 +1395,15 @@ setup:                                  @ @setup
 .Ltmp311:
 @ BB#64:                                @ %_ZNSt5mutex4lockEv.exit
 	@DEBUG_VALUE: lock:__e <- %R0
-	.loc	13 194 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:194:14
+	.loc	13 192 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:192:14
 	ldr	r0, [r6, #24]
 .Ltmp312:
 	.loc	16 777 7                @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/arm-linux-gnueabihf/c++/6.3.0/bits/gthr-default.h:777:7
 	cmp	r7, #0
 .Ltmp313:
-	.loc	13 194 22               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:194:22
+	.loc	13 192 22               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:192:22
 	sub	r0, r0, #1
-	.loc	13 194 11 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:194:11
+	.loc	13 192 11 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:192:11
 	str	r0, [r6, #28]
 	beq	.LBB4_68
 @ BB#65:
@@ -1412,7 +1412,7 @@ setup:                                  @ @setup
 	mov	r0, r5
 	bl	pthread_mutex_unlock
 .Ltmp315:
-	.loc	13 198 39               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:198:39
+	.loc	13 196 39               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:196:39
 	ldr	r0, [r6, #28]
 	b	.LBB4_68
 	.p2align	2
@@ -1420,22 +1420,22 @@ setup:                                  @ @setup
 .LCPI4_3:
 	.long	1063675494              @ float 0.899999976
 .LBB4_67:                               @ %_ZNSt5mutex6unlockEv.exit.critedge
-	.loc	13 194 22               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:194:22
+	.loc	13 192 22               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:192:22
 	sub	r0, r0, #1
-	.loc	13 194 11 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:194:11
+	.loc	13 192 11 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:192:11
 	str	r0, [r6, #28]
 .LBB4_68:                               @ %_ZNSt5mutex6unlockEv.exit
 .Ltmp316:
 	@DEBUG_VALUE: operator[]:__n <- %R0
-	.loc	13 198 30 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:198:30
+	.loc	13 196 30 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:196:30
 	mov	r1, #164
 .Ltmp317:
 	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
 	ldr	r2, [r6, #40]
 .Ltmp318:
-	.loc	13 198 30               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:198:30
+	.loc	13 196 30               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:196:30
 	mla	r1, r0, r1, r2
-	.loc	13 198 16 is_stmt 0 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:198:16
+	.loc	13 196 16 is_stmt 0 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:196:16
 	mov	r0, r4
 .Ltmp319:
 	bl	_ZN12OSCinterface13send_filenameEPc
@@ -1483,7 +1483,7 @@ setup:                                  @ @setup
 	mov	r0, #0
 	strb	r0, [sp, #17]
 .Ltmp329:
-	.loc	13 199 16 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:199:16
+	.loc	13 197 16 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:197:16
 .Ltmp87:
 	mov	r0, r4
 	bl	_ZN12OSCinterface11send_statusENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
@@ -1509,7 +1509,7 @@ setup:                                  @ @setup
 	bl	_ZdlPv
 .Ltmp334:
 .LBB4_71:                               @ %_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED2Ev.exit41
-	.loc	13 202 2                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:202:2
+	.loc	13 200 2                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:200:2
 	mov	r0, #1
 	sub	sp, r11, #40
 	vpop	{d8}
@@ -1706,7 +1706,7 @@ GCC_except_table4:
 	.type	_Z16filtering_threadPv,%function
 _Z16filtering_threadPv:                 @ @_Z16filtering_threadPv
 .Lfunc_begin5:
-	.loc	13 208 0                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:208:0
+	.loc	13 206 0                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:206:0
 	.fnstart
 	.cfi_startproc
 @ BB#0:
@@ -1730,34 +1730,34 @@ _Z16filtering_threadPv:                 @ @_Z16filtering_threadPv
 	sub	sp, sp, #8
 	@DEBUG_VALUE: filtering_thread: <- %R0
 .Ltmp356:
-	.loc	13 209 32 prologue_end  @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:209:32
+	.loc	13 210 57 prologue_end  @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:210:57
 	movw	r4, :lower16:.L_MergedGlobals
-	.loc	13 209 2 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:209:2
+	.loc	13 210 3 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:210:3
 	movw	r1, :lower16:.L_MergedGlobals.3
-	.loc	13 209 32               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:209:32
+	.loc	13 210 57               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:210:57
 	movt	r4, :upper16:.L_MergedGlobals
-	.loc	13 209 2                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:209:2
+	.loc	13 210 3                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:210:3
 	movt	r1, :upper16:.L_MergedGlobals.3
-	.loc	13 209 63               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:209:63
+	.loc	13 210 88               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:210:88
 	ldr	r0, [r4, #8]
 .Ltmp357:
-	.loc	13 209 2                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:209:2
+	.loc	13 210 3                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:210:3
 	add	r3, r1, #24
-	.loc	13 209 32               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:209:32
+	.loc	13 210 57               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:210:57
 	ldr	r2, [r4, #16]
-	.loc	13 209 2                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:209:2
+	.loc	13 210 3                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:210:3
 	str	r0, [sp]
 	add	r0, r4, #40
-	bl	_Z9filteringRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j
-	.loc	13 212 19 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:212:19
+	bl	_Z33filtering_multiple_positions_neonRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j
+	.loc	13 215 19 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:215:19
 	ldr	r0, [r4, #8]
-	.loc	13 212 33 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:212:33
+	.loc	13 215 33 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:215:33
 	add	r0, r0, #256
-	.loc	13 212 40               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:212:40
+	.loc	13 215 40               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:215:40
 	bfc	r0, #10, #22
-	.loc	13 212 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:212:16
+	.loc	13 215 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:215:16
 	str	r0, [r4, #8]
-	.loc	13 213 1 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:213:1
+	.loc	13 216 1 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:216:1
 	sub	sp, r11, #8
 	pop	{r4, r10, r11, pc}
 .Ltmp358:
@@ -1771,7 +1771,7 @@ _Z16filtering_threadPv:                 @ @_Z16filtering_threadPv
 	.type	render,%function
 render:                                 @ @render
 .Lfunc_begin6:
-	.loc	13 217 0                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:217:0
+	.loc	13 220 0                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:220:0
 	.fnstart
 	.cfi_startproc
 @ BB#0:
@@ -1811,170 +1811,152 @@ render:                                 @ @render
 	.cfi_offset d9, -56
 .Ltmp372:
 	.cfi_offset d8, -64
-	.pad	#8
-	sub	sp, sp, #8
 	@DEBUG_VALUE: render:context <- %R0
 	@DEBUG_VALUE: render:userData <- %R1
 	mov	r4, r0
 .Ltmp373:
 	@DEBUG_VALUE: i <- 0
 	@DEBUG_VALUE: render:context <- %R4
-	.loc	13 218 40 prologue_end discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:218:40
+	.loc	13 221 40 prologue_end discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:221:40
 	ldr	r0, [r4, #20]
-	.loc	13 218 2 is_stmt 0 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:218:2
+	.loc	13 221 2 is_stmt 0 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:221:2
 	cmp	r0, #0
 	beq	.LBB6_11
 .Ltmp374:
 @ BB#1:                                 @ %.lr.ph
 	@DEBUG_VALUE: render:context <- %R4
 	@DEBUG_VALUE: render:userData <- %R1
-	.loc	13 239 3 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:239:3
-	vmov.f64	d16, #5.000000e-01
-.Ltmp375:
-	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
-	movw	r6, :lower16:.L_MergedGlobals.3
-.Ltmp376:
-	.loc	13 221 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:221:16
-	movw	r8, :lower16:.L_MergedGlobals
-	mov	r5, #0
-.Ltmp377:
-	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
-	movt	r6, :upper16:.L_MergedGlobals.3
-.Ltmp378:
-	.loc	13 221 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:221:16
-	movt	r8, :upper16:.L_MergedGlobals
-	mov	r9, #0
-	.loc	13 239 3                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:239:3
-	vmov	r0, r10, d16
-	.loc	13 240 11               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:240:11
-	vmov.f32	d8, #5.000000e-01
-	.loc	13 239 3                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:239:3
-	str	r0, [sp, #4]            @ 4-byte Spill
-.Ltmp379:
-	.loc	13 337 18               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:337:18
+	.loc	13 339 18 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:339:18
 	movw	r0, :lower16:.L_MergedGlobals.4
+.Ltmp375:
+	.loc	13 242 11               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:242:11
+	vmov.f32	d8, #5.000000e-01
+.Ltmp376:
+	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
+	movw	r8, :lower16:.L_MergedGlobals.3
+.Ltmp377:
+	.loc	13 224 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:224:16
+	movw	r6, :lower16:.L_MergedGlobals
+.Ltmp378:
+	.loc	13 339 18               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:339:18
 	movt	r0, :upper16:.L_MergedGlobals.4
-	add	r7, r0, #28
+	add	r10, r0, #28
+	mov	r9, #0
+.Ltmp379:
+	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
+	movt	r8, :upper16:.L_MergedGlobals.3
 .Ltmp380:
+	.loc	13 224 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:224:16
+	movt	r6, :upper16:.L_MergedGlobals
+	mov	r5, #0
+.Ltmp381:
 .LBB6_2:                                @ =>This Inner Loop Header: Depth=1
 	ldr	r1, [r4, #24]
 	ldr	r0, [r4]
-.Ltmp381:
-	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
-	ldr	r2, [r6]
 .Ltmp382:
-	.loc	35 1455 32              @ ./include/Bela.h:1455:32
-	mul	r1, r1, r9
+	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
+	ldr	r2, [r8]
 .Ltmp383:
-	.loc	13 221 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:221:16
-	ldr	r3, [r8, #4]
+	.loc	35 1455 32              @ ./include/Bela.h:1455:32
+	mul	r1, r1, r5
 .Ltmp384:
+	.loc	13 224 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:224:16
+	ldr	r3, [r6, #4]
+.Ltmp385:
 	@DEBUG_VALUE: operator[]:__n <- %R3
 	@DEBUG_VALUE: operator[]:__n <- %R3
 	.loc	35 1455 9               @ ./include/Bela.h:1455:9
 	ldr	r1, [r0, r1, lsl #2]!
-.Ltmp385:
-	.loc	13 221 29               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:221:29
-	str	r1, [r2, r3, lsl #2]
 .Ltmp386:
-	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
-	ldr	r1, [r6, #12]
+	.loc	13 224 29               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:224:29
+	str	r1, [r2, r3, lsl #2]
 .Ltmp387:
+	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
+	ldr	r1, [r8, #12]
+.Ltmp388:
 	.loc	35 1455 9               @ ./include/Bela.h:1455:9
 	ldr	r0, [r0, #4]
-.Ltmp388:
-	.loc	13 222 30               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:222:30
-	str	r0, [r1, r3, lsl #2]
-	.loc	13 225 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:225:14
-	add	r0, r3, #1
-	.loc	13 226 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:226:7
-	cmp	r5, r0, lsr #10
 .Ltmp389:
-	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
-	ldr	r2, [r6, #36]
+	.loc	13 225 30               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:225:30
+	str	r0, [r1, r3, lsl #2]
+	.loc	13 228 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:228:14
+	add	r0, r3, #1
 .Ltmp390:
-	.loc	13 226 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:226:7
-	movwne	r0, #0
+	.loc	13 269 25               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:269:25
+	cmp	r9, r0, lsr #10
 .Ltmp391:
 	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
-	ldr	r1, [r6, #24]
+	ldr	r2, [r8, #24]
 .Ltmp392:
-	.loc	13 227 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:227:16
-	str	r0, [r8, #4]
-.Ltmp393:
-	.loc	13 231 33               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:231:33
-	ldr	r0, [r8, #12]
-.Ltmp394:
-	@DEBUG_VALUE: operator[]:__n <- %R0
-	@DEBUG_VALUE: operator[]:__n <- %R0
-	@DEBUG_VALUE: operator[]:__n <- %R0
-	@DEBUG_VALUE: operator[]:__n <- %R0
-	.loc	10 781 41               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:41
-	add	r3, r2, r0, lsl #2
-.Ltmp395:
-	.loc	13 232 20               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:232:20
-	vldr	s18, [r3]
-.Ltmp396:
-	@DEBUG_VALUE: rightOut <- %S18
-	.loc	10 781 41               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:41
-	add	r3, r1, r0, lsl #2
-.Ltmp397:
-	.loc	13 231 19               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:231:19
-	vldr	s20, [r3]
-.Ltmp398:
-	@DEBUG_VALUE: leftOut <- %S20
-	.loc	13 239 3                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:239:3
-	mov	r3, r10
-	.loc	13 235 30               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:235:30
-	str	r5, [r1, r0, lsl #2]
-	.loc	13 236 31               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:236:31
-	str	r5, [r2, r0, lsl #2]
-	.loc	13 239 3                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:239:3
-	movw	r0, :lower16:.L.str.20
-.Ltmp399:
-	movt	r0, :upper16:.L.str.20
-	ldr	r2, [sp, #4]            @ 4-byte Reload
-	bl	rt_printf
-	.loc	13 244 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:244:14
-	ldr	r0, [r8, #12]
-	.loc	13 241 12               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:241:12
-	vmul.f32	d9, d9, d8
-.Ltmp400:
-	.loc	13 240 11               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:240:11
-	vmul.f32	d10, d10, d8
-.Ltmp401:
-	.loc	13 244 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:244:14
-	add	r0, r0, #1
-	.loc	13 245 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:245:7
-	cmp	r5, r0, lsr #10
+	.loc	13 269 25               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:269:25
 	movwne	r0, #0
+.Ltmp393:
+	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
+	ldr	r3, [r8, #36]
+.Ltmp394:
+	.loc	13 230 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:230:16
+	str	r0, [r6, #4]
+.Ltmp395:
+	.loc	13 234 33               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:234:33
+	ldr	r1, [r6, #12]
+.Ltmp396:
+	@DEBUG_VALUE: operator[]:__n <- %R1
+	@DEBUG_VALUE: operator[]:__n <- %R1
+	@DEBUG_VALUE: operator[]:__n <- %R1
+	@DEBUG_VALUE: operator[]:__n <- %R1
+	.loc	10 781 41               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:41
+	add	r7, r2, r1, lsl #2
+.Ltmp397:
+	.loc	13 234 19               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:234:19
+	vldr	s0, [r7]
+.Ltmp398:
+	@DEBUG_VALUE: leftOut <- %S0
+	.loc	10 781 41               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:41
+	add	r7, r3, r1, lsl #2
+.Ltmp399:
+	.loc	13 235 20               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:235:20
+	vldr	s2, [r7]
+.Ltmp400:
+	@DEBUG_VALUE: rightOut <- %S2
+	.loc	13 242 11               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:242:11
+	vmul.f32	d10, d0, d8
+	.loc	13 238 30               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:238:30
+	str	r9, [r2, r1, lsl #2]
+	.loc	13 246 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:246:14
+	add	r2, r1, #1
+	.loc	13 243 12               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:243:12
+	vmul.f32	d9, d1, d8
+	.loc	13 247 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:247:7
+	cmp	r9, r2, lsr #10
+	.loc	13 239 31               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:239:31
+	str	r9, [r3, r1, lsl #2]
+	.loc	13 247 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:247:7
+	movwne	r2, #0
+.Ltmp401:
+	.loc	13 248 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:248:16
+	str	r2, [r6, #12]
 .Ltmp402:
-	.loc	13 246 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:246:16
-	str	r0, [r8, #12]
+	.loc	13 266 9                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:266:9
+	ldr	r1, [r6, #20]
 .Ltmp403:
-	.loc	13 264 9                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:264:9
-	ldr	r0, [r8, #20]
+	add	r1, r1, #1
+	str	r1, [r6, #20]
 .Ltmp404:
-	@DEBUG_VALUE: leftOut <- %S20
 	@DEBUG_VALUE: rightOut <- %S18
-	add	r0, r0, #1
-	str	r0, [r8, #20]
-	.loc	13 265 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:265:7
-	cmp	r0, #256
+	@DEBUG_VALUE: leftOut <- %S20
+	.loc	13 267 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:267:7
+	cmp	r1, #256
 	blo	.LBB6_4
 .Ltmp405:
 @ BB#3:                                 @   in Loop: Header=BB6_2 Depth=1
 	@DEBUG_VALUE: leftOut <- %S20
 	@DEBUG_VALUE: rightOut <- %S18
-	.loc	13 266 11               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:266:11
-	str	r5, [r8, #20]
-	.loc	13 267 25               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:267:25
-	ldr	r0, [r8, #4]
-	.loc	13 267 23 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:267:23
-	str	r0, [r8, #16]
-	.loc	13 268 31 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:268:31
-	ldr	r0, [r8, #36]
-	.loc	13 268 4 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:268:4
+	.loc	13 269 23               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:269:23
+	str	r0, [r6, #16]
+	str	r9, [r6, #20]
+	.loc	13 270 31               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:270:31
+	ldr	r0, [r6, #36]
+	.loc	13 270 4 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:270:4
 	bl	Bela_scheduleAuxiliaryTask
 .Ltmp406:
 .LBB6_4:                                @   in Loop: Header=BB6_2 Depth=1
@@ -1984,7 +1966,7 @@ render:                                 @ @render
 	ldr	r0, [r4, #4]
 .Ltmp407:
 	.loc	35 1466 26 is_stmt 1    @ ./include/Bela.h:1466:26
-	mul	r1, r1, r9
+	mul	r1, r1, r5
 	add	r0, r0, r1, lsl #2
 	.loc	35 1466 65 is_stmt 0    @ ./include/Bela.h:1466:65
 	vstr	s20, [r0]
@@ -1992,96 +1974,95 @@ render:                                 @ @render
 	.loc	35 1466 65              @ ./include/Bela.h:1466:65
 	vstr	s18, [r0, #4]
 .Ltmp409:
-	.loc	13 319 7 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:319:7
-	ldr	r1, [r8, #28]
-	.loc	13 319 19 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:319:19
-	ldr	r0, [r8, #32]
+	.loc	13 321 7 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:321:7
+	ldr	r1, [r6, #28]
+	.loc	13 321 19 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:321:19
+	ldr	r0, [r6, #32]
 .Ltmp410:
-	.loc	13 319 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:319:7
+	.loc	13 321 7                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:321:7
 	cmp	r1, r0
 	beq	.LBB6_6
 .Ltmp411:
 @ BB#5:                                 @   in Loop: Header=BB6_2 Depth=1
 	@DEBUG_VALUE: leftOut <- %S20
 	@DEBUG_VALUE: rightOut <- %S18
-	.loc	13 323 18 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:323:18
-	mov	r0, r7
+	.loc	13 325 18 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:325:18
+	mov	r0, r10
 	bl	_ZN12OSCinterface13send_hrtf_numEj
-	.loc	13 324 41               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:324:41
-	ldr	r0, [r8, #28]
+	.loc	13 326 41               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:326:41
+	ldr	r0, [r6, #28]
 .Ltmp412:
 	@DEBUG_VALUE: operator[]:__n <- %R0
-	.loc	13 324 32 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:324:32
+	.loc	13 326 32 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:326:32
 	mov	r2, #164
 .Ltmp413:
 	.loc	10 781 32 is_stmt 1     @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
-	ldr	r1, [r8, #40]
+	ldr	r1, [r6, #40]
 .Ltmp414:
-	.loc	13 324 32               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:324:32
+	.loc	13 326 32               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:326:32
 	mla	r1, r0, r2, r1
-	.loc	13 324 18 is_stmt 0 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:324:18
-	mov	r0, r7
+	.loc	13 326 18 is_stmt 0 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:326:18
+	mov	r0, r10
 .Ltmp415:
 	bl	_ZN12OSCinterface13send_filenameEPc
-	.loc	13 327 20 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:327:20
-	ldr	r0, [r8, #28]
-	.loc	13 327 18 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:327:18
-	str	r0, [r8, #32]
+	.loc	13 329 20 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:329:20
+	ldr	r0, [r6, #28]
+	.loc	13 329 18 is_stmt 0     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:329:18
+	str	r0, [r6, #32]
 .Ltmp416:
 .LBB6_6:                                @   in Loop: Header=BB6_2 Depth=1
 	@DEBUG_VALUE: leftOut <- %S20
 	@DEBUG_VALUE: rightOut <- %S18
-	.loc	13 332 8 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:332:8
-	ldrb	r0, [r8]
+	.loc	13 334 8 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:334:8
+	ldrb	r0, [r6]
 .Ltmp417:
-	.loc	13 332 8 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:332:8
+	.loc	13 334 8 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:334:8
 	cmp	r0, #0
 	beq	.LBB6_8
 .Ltmp418:
 @ BB#7:                                 @   in Loop: Header=BB6_2 Depth=1
 	@DEBUG_VALUE: leftOut <- %S20
 	@DEBUG_VALUE: rightOut <- %S18
-	.loc	13 333 18 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:333:18
-	mov	r0, r7
+	.loc	13 335 18 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:335:18
+	mov	r0, r10
 	bl	_ZN12OSCinterface14get_angle_pos0Ev
-	.loc	13 334 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:334:16
-	strb	r5, [r8]
+	.loc	13 336 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:336:16
+	strb	r9, [r6]
 .Ltmp419:
 .LBB6_8:                                @   in Loop: Header=BB6_2 Depth=1
 	@DEBUG_VALUE: leftOut <- %S20
 	@DEBUG_VALUE: rightOut <- %S18
-	.loc	13 336 8                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:336:8
-	ldrb	r0, [r8, #1]
+	.loc	13 338 8                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:338:8
+	ldrb	r0, [r6, #1]
 .Ltmp420:
-	.loc	13 336 8 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:336:8
+	.loc	13 338 8 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:338:8
 	cmp	r0, #0
 	beq	.LBB6_10
 .Ltmp421:
 @ BB#9:                                 @   in Loop: Header=BB6_2 Depth=1
 	@DEBUG_VALUE: leftOut <- %S20
 	@DEBUG_VALUE: rightOut <- %S18
-	.loc	13 337 18 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:337:18
-	mov	r0, r7
+	.loc	13 339 18 is_stmt 1     @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:339:18
+	mov	r0, r10
 	bl	_ZN12OSCinterface14get_angle_pos1Ev
-	.loc	13 338 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:338:16
-	strb	r5, [r8, #1]
+	.loc	13 340 16               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:340:16
+	strb	r9, [r6, #1]
 .Ltmp422:
 .LBB6_10:                               @   in Loop: Header=BB6_2 Depth=1
 	@DEBUG_VALUE: leftOut <- %S20
 	@DEBUG_VALUE: rightOut <- %S18
-	.loc	13 218 54 discriminator 3 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:218:54
-	add	r9, r9, #1
+	.loc	13 221 54 discriminator 3 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:221:54
+	add	r5, r5, #1
 .Ltmp423:
-	@DEBUG_VALUE: i <- %R9
-	.loc	13 218 40 is_stmt 0 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:218:40
+	@DEBUG_VALUE: i <- %R5
+	.loc	13 221 40 is_stmt 0 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:221:40
 	ldr	r0, [r4, #20]
-	.loc	13 218 2 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:218:2
-	cmp	r9, r0
+	.loc	13 221 2 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:221:2
+	cmp	r5, r0
 	blo	.LBB6_2
 .Ltmp424:
 .LBB6_11:                               @ %._crit_edge
-	.loc	13 342 1 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:342:1
-	sub	sp, r11, #56
+	.loc	13 344 1 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:344:1
 	vpop	{d8, d9, d10}
 	add	sp, sp, #4
 	pop	{r4, r5, r6, r7, r8, r9, r10, r11, pc}
@@ -2096,7 +2077,7 @@ render:                                 @ @render
 	.type	cleanup,%function
 cleanup:                                @ @cleanup
 .Lfunc_begin7:
-	.loc	13 349 0                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:349:0
+	.loc	13 351 0                @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:351:0
 	.fnstart
 	.cfi_startproc
 @ BB#0:
@@ -2134,7 +2115,7 @@ cleanup:                                @ @cleanup
 	.loc	10 656 66 is_stmt 0     @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:656:66
 	ldrd	r6, r7, [r9, #40]
 .Ltmp437:
-	.loc	13 351 2 is_stmt 1 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:351:2
+	.loc	13 353 2 is_stmt 1 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:353:2
 	cmp	r7, r6
 	beq	.LBB7_3
 .Ltmp438:
@@ -2150,23 +2131,23 @@ cleanup:                                @ @cleanup
 .LBB7_2:                                @ %.lr.ph
                                         @ =>This Inner Loop Header: Depth=1
 	@DEBUG_VALUE: operator[]:__n <- %R5
-	.loc	13 352 15 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:352:15
+	.loc	13 354 15 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:354:15
 	add	r0, r6, r4
 	bl	_ZN8HRTFData11unload_sofaEv
 .Ltmp440:
 	.loc	10 781 32               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:781:32
 	ldr	r0, [r9, #40]
 .Ltmp441:
-	.loc	13 357 16 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:357:16
+	.loc	13 359 16 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:359:16
 	add	r0, r0, r4
 	bl	_ZN8HRTFData16deallocateFDdataEv
 .Ltmp442:
 	.loc	10 656 66               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:656:66
 	ldrd	r6, r7, [r9, #40]
 .Ltmp443:
-	.loc	13 351 29 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:351:29
+	.loc	13 353 29 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:353:29
 	add	r4, r4, #164
-	.loc	13 351 49 is_stmt 0 discriminator 3 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:351:49
+	.loc	13 353 49 is_stmt 0 discriminator 3 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:353:49
 	add	r5, r5, #1
 .Ltmp444:
 	@DEBUG_VALUE: i <- %R5
@@ -2175,7 +2156,7 @@ cleanup:                                @ @cleanup
 	asr	r0, r0, #2
 	mul	r0, r0, r8
 .Ltmp445:
-	.loc	13 351 2 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:351:2
+	.loc	13 353 2 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:353:2
 	cmp	r5, r0
 	blo	.LBB7_2
 .Ltmp446:
@@ -2241,16 +2222,16 @@ cleanup:                                @ @cleanup
 	.loc	10 1437 26              @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:1437:26
 	str	r1, [r0, #40]
 .Ltmp461:
-	.loc	13 371 12               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:371:12
+	.loc	13 373 12               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:373:12
 	add	r0, r9, #52
 	bl	_ZN3Fft7cleanupEv
-	.loc	13 372 12               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:372:12
+	.loc	13 374 12               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:374:12
 	add	r0, r9, #68
 	bl	_ZN3Fft7cleanupEv
-	.loc	13 373 13               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:373:13
+	.loc	13 375 13               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:375:13
 	add	r0, r9, #84
 	bl	_ZN3Fft7cleanupEv
-	.loc	13 374 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:374:14
+	.loc	13 376 14               @ /root/Bela/projects/SOFAlizer-for-Bela/render.cpp:376:14
 	add	r0, r9, #100
 	pop	{r4, r5, r6, r7, r8, r9, r11, lr}
 	b	_ZN3Fft7cleanupEv
@@ -2594,8 +2575,8 @@ _ZNSt6vectorIfSaIfEE17_M_default_appendEj: @ @_ZNSt6vectorIfSaIfEE17_M_default_a
 	@DEBUG_VALUE: _M_default_append:this <- %R4
 	@DEBUG_VALUE: _M_default_append:__n <- %R5
 	.loc	10 1423 4               @ /usr/bin/../lib/gcc/arm-linux-gnueabihf/6.3.0/../../../../include/c++/6.3.0/bits/stl_vector.h:1423:4
-	movw	r0, :lower16:.L.str.22
-	movt	r0, :upper16:.L.str.22
+	movw	r0, :lower16:.L.str.21
+	movt	r0, :upper16:.L.str.21
 .Ltmp510:
 	@DEBUG_VALUE: _M_check_len:__s <- %R0
 	mov	lr, pc
@@ -3041,18 +3022,13 @@ m_right_pos:
 	.type	.L.str.20,%object       @ @.str.20
 	.section	.rodata.str1.1,"aMS",%progbits,1
 .L.str.20:
-	.asciz	"vol=%f"
-	.size	.L.str.20, 7
+	.asciz	"basic_string::_M_construct null not valid"
+	.size	.L.str.20, 42
 
 	.type	.L.str.21,%object       @ @.str.21
 .L.str.21:
-	.asciz	"basic_string::_M_construct null not valid"
-	.size	.L.str.21, 42
-
-	.type	.L.str.22,%object       @ @.str.22
-.L.str.22:
 	.asciz	"vector::_M_default_append"
-	.size	.L.str.22, 26
+	.size	.L.str.21, 26
 
 	.type	_ZTSPFvPN6oscpkt7MessageEPKcPvE,%object @ @_ZTSPFvPN6oscpkt7MessageEPKcPvE
 	.section	.rodata._ZTSPFvPN6oscpkt7MessageEPKcPvE,"aG",%progbits,_ZTSPFvPN6oscpkt7MessageEPKcPvE,comdat
@@ -3102,7 +3078,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.zero	1
 	.zero	1
 	.long	0                       @ 0x0
-	.long	256                     @ 0x100
+	.long	512                     @ 0x200
 	.long	0                       @ 0x0
 	.long	0                       @ 0x0
 	.long	0                       @ 0x0
@@ -7569,9 +7545,9 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 .Linfo_string2221:
 	.asciz	"normalization_status"  @ string offset=72701
 .Linfo_string2222:
-	.asciz	"rightOut"              @ string offset=72722
+	.asciz	"leftOut"               @ string offset=72722
 .Linfo_string2223:
-	.asciz	"leftOut"               @ string offset=72731
+	.asciz	"rightOut"              @ string offset=72730
 .Linfo_string2224:
 	.asciz	"__new_finish"          @ string offset=72739
 .Linfo_string2225:
@@ -8506,14 +8482,14 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.short	1                       @ Loc expr size
 	.byte	80                      @ DW_OP_reg0
 	.long	.Ltmp373
-	.long	.Ltmp380
+	.long	.Ltmp381
 	.short	1                       @ Loc expr size
 	.byte	84                      @ DW_OP_reg4
 	.long	0
 	.long	0
 .Ldebug_loc117:
 	.long	.Lfunc_begin6
-	.long	.Ltmp380
+	.long	.Ltmp381
 	.short	1                       @ Loc expr size
 	.byte	81                      @ DW_OP_reg1
 	.long	0
@@ -8528,43 +8504,43 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp423
 	.long	.Ltmp424
 	.short	1                       @ Loc expr size
-	.byte	89                      @ DW_OP_reg9
+	.byte	85                      @ DW_OP_reg5
 	.long	0
 	.long	0
 .Ldebug_loc119:
-	.long	.Ltmp384
-	.long	.Ltmp395
+	.long	.Ltmp385
+	.long	.Ltmp394
 	.short	1                       @ Loc expr size
 	.byte	83                      @ DW_OP_reg3
 	.long	0
 	.long	0
 .Ldebug_loc120:
-	.long	.Ltmp384
-	.long	.Ltmp395
+	.long	.Ltmp385
+	.long	.Ltmp394
 	.short	1                       @ Loc expr size
 	.byte	83                      @ DW_OP_reg3
 	.long	0
 	.long	0
 .Ldebug_loc121:
-	.long	.Ltmp394
-	.long	.Ltmp399
+	.long	.Ltmp396
+	.long	.Ltmp403
 	.short	1                       @ Loc expr size
-	.byte	80                      @ DW_OP_reg0
+	.byte	81                      @ DW_OP_reg1
 	.long	0
 	.long	0
 .Ldebug_loc122:
-	.long	.Ltmp394
-	.long	.Ltmp399
+	.long	.Ltmp396
+	.long	.Ltmp403
 	.short	1                       @ Loc expr size
-	.byte	80                      @ DW_OP_reg0
+	.byte	81                      @ DW_OP_reg1
 	.long	0
 	.long	0
 .Ldebug_loc123:
-	.long	.Ltmp396
-	.long	.Ltmp400
+	.long	.Ltmp398
+	.long	.Ltmp404
 	.short	5                       @ Loc expr size
 	.byte	144                     @ super-register DW_OP_regx
-	.byte	137                     @ 265
+	.byte	128                     @ 256
 	.byte	2                       @ DW_OP_piece
 	.byte	147                     @ 4
 	.byte	4                       @ 
@@ -8572,18 +8548,18 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp424
 	.short	5                       @ Loc expr size
 	.byte	144                     @ super-register DW_OP_regx
-	.byte	137                     @ 265
+	.byte	138                     @ 266
 	.byte	2                       @ DW_OP_piece
 	.byte	147                     @ 4
 	.byte	4                       @ 
 	.long	0
 	.long	0
 .Ldebug_loc124:
-	.long	.Ltmp398
-	.long	.Ltmp401
+	.long	.Ltmp400
+	.long	.Ltmp404
 	.short	5                       @ Loc expr size
 	.byte	144                     @ super-register DW_OP_regx
-	.byte	138                     @ 266
+	.byte	129                     @ 257
 	.byte	2                       @ DW_OP_piece
 	.byte	147                     @ 4
 	.byte	4                       @ 
@@ -8591,7 +8567,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp424
 	.short	5                       @ Loc expr size
 	.byte	144                     @ super-register DW_OP_regx
-	.byte	138                     @ 266
+	.byte	137                     @ 265
 	.byte	2                       @ DW_OP_piece
 	.byte	147                     @ 4
 	.byte	4                       @ 
@@ -43552,32 +43528,32 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.byte	91
 	.long	.Linfo_string38         @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.byte	98                      @ DW_AT_decl_line
+	.byte	96                      @ DW_AT_decl_line
 	.long	40917                   @ DW_AT_type
                                         @ DW_AT_external
 	.byte	126                     @ Abbrev [126] 0xe686:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc18           @ DW_AT_location
 	.long	.Linfo_string2109       @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.byte	98                      @ DW_AT_decl_line
+	.byte	96                      @ DW_AT_decl_line
 	.long	62750                   @ DW_AT_type
 	.byte	126                     @ Abbrev [126] 0xe695:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc19           @ DW_AT_location
 	.long	.Linfo_string2220       @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.byte	98                      @ DW_AT_decl_line
+	.byte	96                      @ DW_AT_decl_line
 	.long	46058                   @ DW_AT_type
 	.byte	127                     @ Abbrev [127] 0xe6a4:0xf DW_TAG_variable
 	.long	.Ldebug_loc20           @ DW_AT_location
 	.long	.Linfo_string2221       @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.byte	100                     @ DW_AT_decl_line
+	.byte	98                      @ DW_AT_decl_line
 	.long	40233                   @ DW_AT_type
 	.ascii	"\200\001"              @ Abbrev [128] 0xe6b3:0x56 DW_TAG_inlined_subroutine
 	.long	57676                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges0         @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	101                     @ DW_AT_call_line
+	.byte	99                      @ DW_AT_call_line
 	.ascii	"\201\001"              @ Abbrev [129] 0xe6bf:0xd DW_TAG_formal_parameter
 	.byte	6                       @ DW_AT_location
 	.byte	16
@@ -43625,7 +43601,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	57742                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges3         @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	112                     @ DW_AT_call_line
+	.byte	110                     @ DW_AT_call_line
 	.byte	116                     @ Abbrev [116] 0xe715:0x9 DW_TAG_formal_parameter
 	.long	.Ldebug_loc21           @ DW_AT_location
 	.long	57765                   @ DW_AT_abstract_origin
@@ -43807,7 +43783,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp140                @ DW_AT_low_pc
 	.long	.Ltmp143-.Ltmp140       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	112                     @ DW_AT_call_line
+	.byte	110                     @ DW_AT_call_line
 	.byte	2                       @ DW_AT_GNU_discriminator
 	.byte	115                     @ Abbrev [115] 0xe8e2:0x75 DW_TAG_inlined_subroutine
 	.long	58382                   @ DW_AT_abstract_origin
@@ -43863,7 +43839,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp143                @ DW_AT_low_pc
 	.long	.Ltmp152-.Ltmp143       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	113                     @ DW_AT_call_line
+	.byte	111                     @ DW_AT_call_line
 	.ascii	"\205\001"              @ Abbrev [133] 0xe967:0xe8 DW_TAG_inlined_subroutine
 	.long	57994                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges8         @ DW_AT_ranges
@@ -43982,7 +43958,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp155                @ DW_AT_low_pc
 	.long	.Ltmp158-.Ltmp155       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	113                     @ DW_AT_call_line
+	.byte	111                     @ DW_AT_call_line
 	.byte	2                       @ DW_AT_GNU_discriminator
 	.byte	115                     @ Abbrev [115] 0xea8c:0x75 DW_TAG_inlined_subroutine
 	.long	58382                   @ DW_AT_abstract_origin
@@ -44038,7 +44014,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp163                @ DW_AT_low_pc
 	.long	.Ltmp179-.Ltmp163       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	125                     @ DW_AT_call_line
+	.byte	123                     @ DW_AT_call_line
 	.ascii	"\205\001"              @ Abbrev [133] 0xeb11:0x144 DW_TAG_inlined_subroutine
 	.long	57994                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges14        @ DW_AT_ranges
@@ -44191,7 +44167,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp182                @ DW_AT_low_pc
 	.long	.Ltmp185-.Ltmp182       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	125                     @ DW_AT_call_line
+	.byte	123                     @ DW_AT_call_line
 	.byte	2                       @ DW_AT_GNU_discriminator
 	.byte	115                     @ Abbrev [115] 0xec92:0x75 DW_TAG_inlined_subroutine
 	.long	58382                   @ DW_AT_abstract_origin
@@ -44248,63 +44224,63 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ldebug_loc71           @ DW_AT_location
 	.long	.Linfo_string28         @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.byte	129                     @ DW_AT_decl_line
+	.byte	127                     @ DW_AT_decl_line
 	.long	40233                   @ DW_AT_type
 	.ascii	"\211\001"              @ Abbrev [137] 0xed1d:0xd DW_TAG_inlined_subroutine
 	.long	58563                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges20        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	129                     @ DW_AT_call_line
+	.byte	127                     @ DW_AT_call_line
 	.byte	1                       @ DW_AT_GNU_discriminator
 	.ascii	"\210\001"              @ Abbrev [136] 0xed2a:0x10 DW_TAG_inlined_subroutine
 	.long	58588                   @ DW_AT_abstract_origin
 	.long	.Ltmp220                @ DW_AT_low_pc
 	.long	.Ltmp221-.Ltmp220       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	138                     @ DW_AT_call_line
+	.byte	136                     @ DW_AT_call_line
 	.ascii	"\210\001"              @ Abbrev [136] 0xed3a:0x10 DW_TAG_inlined_subroutine
 	.long	58588                   @ DW_AT_abstract_origin
 	.long	.Ltmp222                @ DW_AT_low_pc
 	.long	.Ltmp223-.Ltmp222       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	141                     @ DW_AT_call_line
+	.byte	139                     @ DW_AT_call_line
 	.ascii	"\210\001"              @ Abbrev [136] 0xed4a:0x10 DW_TAG_inlined_subroutine
 	.long	58588                   @ DW_AT_abstract_origin
 	.long	.Ltmp224                @ DW_AT_low_pc
 	.long	.Ltmp225-.Ltmp224       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	145                     @ DW_AT_call_line
+	.byte	143                     @ DW_AT_call_line
 	.ascii	"\210\001"              @ Abbrev [136] 0xed5a:0x10 DW_TAG_inlined_subroutine
 	.long	58588                   @ DW_AT_abstract_origin
 	.long	.Ltmp226                @ DW_AT_low_pc
 	.long	.Ltmp227-.Ltmp226       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	150                     @ DW_AT_call_line
+	.byte	148                     @ DW_AT_call_line
 	.ascii	"\210\001"              @ Abbrev [136] 0xed6a:0x10 DW_TAG_inlined_subroutine
 	.long	58588                   @ DW_AT_abstract_origin
 	.long	.Ltmp228                @ DW_AT_low_pc
 	.long	.Ltmp229-.Ltmp228       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	151                     @ DW_AT_call_line
+	.byte	149                     @ DW_AT_call_line
 	.ascii	"\210\001"              @ Abbrev [136] 0xed7a:0x10 DW_TAG_inlined_subroutine
 	.long	58588                   @ DW_AT_abstract_origin
 	.long	.Ltmp230                @ DW_AT_low_pc
 	.long	.Ltmp231-.Ltmp230       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	152                     @ DW_AT_call_line
+	.byte	150                     @ DW_AT_call_line
 	.ascii	"\210\001"              @ Abbrev [136] 0xed8a:0x10 DW_TAG_inlined_subroutine
 	.long	58588                   @ DW_AT_abstract_origin
 	.long	.Ltmp212                @ DW_AT_low_pc
 	.long	.Ltmp213-.Ltmp212       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	158                     @ DW_AT_call_line
+	.byte	156                     @ DW_AT_call_line
 	.byte	0                       @ End Of Children Mark
 	.byte	118                     @ Abbrev [118] 0xed9b:0x42 DW_TAG_inlined_subroutine
 	.long	58402                   @ DW_AT_abstract_origin
 	.long	.Ltmp199                @ DW_AT_low_pc
 	.long	.Ltmp200-.Ltmp199       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	125                     @ DW_AT_call_line
+	.byte	123                     @ DW_AT_call_line
 	.byte	3                       @ DW_AT_GNU_discriminator
 	.byte	115                     @ Abbrev [115] 0xedab:0x31 DW_TAG_inlined_subroutine
 	.long	58382                   @ DW_AT_abstract_origin
@@ -44332,7 +44308,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp202                @ DW_AT_low_pc
 	.long	.Ltmp204-.Ltmp202       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	113                     @ DW_AT_call_line
+	.byte	111                     @ DW_AT_call_line
 	.byte	3                       @ DW_AT_GNU_discriminator
 	.byte	115                     @ Abbrev [115] 0xeded:0x31 DW_TAG_inlined_subroutine
 	.long	58382                   @ DW_AT_abstract_origin
@@ -44360,7 +44336,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp205                @ DW_AT_low_pc
 	.long	.Ltmp206-.Ltmp205       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	112                     @ DW_AT_call_line
+	.byte	110                     @ DW_AT_call_line
 	.byte	3                       @ DW_AT_GNU_discriminator
 	.byte	115                     @ Abbrev [115] 0xee2f:0x31 DW_TAG_inlined_subroutine
 	.long	58382                   @ DW_AT_abstract_origin
@@ -44388,7 +44364,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp238                @ DW_AT_low_pc
 	.long	.Ltmp253-.Ltmp238       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	165                     @ DW_AT_call_line
+	.byte	163                     @ DW_AT_call_line
 	.ascii	"\205\001"              @ Abbrev [133] 0xee70:0x134 DW_TAG_inlined_subroutine
 	.long	57994                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges22        @ DW_AT_ranges
@@ -44535,7 +44511,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp257                @ DW_AT_low_pc
 	.long	.Ltmp260-.Ltmp257       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	165                     @ DW_AT_call_line
+	.byte	163                     @ DW_AT_call_line
 	.byte	2                       @ DW_AT_GNU_discriminator
 	.byte	115                     @ Abbrev [115] 0xefe1:0x75 DW_TAG_inlined_subroutine
 	.long	58382                   @ DW_AT_abstract_origin
@@ -44590,7 +44566,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	58650                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges28        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	169                     @ DW_AT_call_line
+	.byte	167                     @ DW_AT_call_line
 	.ascii	"\213\001"              @ Abbrev [139] 0xf063:0x8 DW_TAG_formal_parameter
 	.ascii	"\200\b"                @ DW_AT_const_value
 	.long	58669                   @ DW_AT_abstract_origin
@@ -44618,7 +44594,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp271                @ DW_AT_low_pc
 	.long	.Ltmp278-.Ltmp271       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	170                     @ DW_AT_call_line
+	.byte	168                     @ DW_AT_call_line
 	.ascii	"\213\001"              @ Abbrev [139] 0xf0ab:0x8 DW_TAG_formal_parameter
 	.ascii	"\200\b"                @ DW_AT_const_value
 	.long	58669                   @ DW_AT_abstract_origin
@@ -44647,7 +44623,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp278                @ DW_AT_low_pc
 	.long	.Ltmp285-.Ltmp278       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	173                     @ DW_AT_call_line
+	.byte	171                     @ DW_AT_call_line
 	.ascii	"\213\001"              @ Abbrev [139] 0xf0f6:0x8 DW_TAG_formal_parameter
 	.ascii	"\200\b"                @ DW_AT_const_value
 	.long	58669                   @ DW_AT_abstract_origin
@@ -44676,7 +44652,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp285                @ DW_AT_low_pc
 	.long	.Ltmp292-.Ltmp285       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	174                     @ DW_AT_call_line
+	.byte	172                     @ DW_AT_call_line
 	.ascii	"\213\001"              @ Abbrev [139] 0xf141:0x8 DW_TAG_formal_parameter
 	.ascii	"\200\b"                @ DW_AT_const_value
 	.long	58669                   @ DW_AT_abstract_origin
@@ -44704,7 +44680,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	58789                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges30        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	188                     @ DW_AT_call_line
+	.byte	186                     @ DW_AT_call_line
 	.byte	116                     @ Abbrev [116] 0xf189:0x9 DW_TAG_formal_parameter
 	.long	.Ldebug_loc99           @ DW_AT_location
 	.long	58816                   @ DW_AT_abstract_origin
@@ -44728,18 +44704,18 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	58843                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges33        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	188                     @ DW_AT_call_line
+	.byte	186                     @ DW_AT_call_line
 	.byte	1                       @ DW_AT_GNU_discriminator
 	.ascii	"\220\001"              @ Abbrev [144] 0xf1c5:0xc DW_TAG_inlined_subroutine
 	.long	58563                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges34        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	192                     @ DW_AT_call_line
+	.byte	190                     @ DW_AT_call_line
 	.ascii	"\200\001"              @ Abbrev [128] 0xf1d1:0x24 DW_TAG_inlined_subroutine
 	.long	58907                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges35        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	193                     @ DW_AT_call_line
+	.byte	191                     @ DW_AT_call_line
 	.ascii	"\207\001"              @ Abbrev [135] 0xf1dd:0xa DW_TAG_variable
 	.long	.Ldebug_loc100          @ DW_AT_location
 	.long	58926                   @ DW_AT_abstract_origin
@@ -44754,7 +44730,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	58973                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges37        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	195                     @ DW_AT_call_line
+	.byte	193                     @ DW_AT_call_line
 	.ascii	"\220\001"              @ Abbrev [144] 0xf201:0xc DW_TAG_inlined_subroutine
 	.long	58943                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges38        @ DW_AT_ranges
@@ -44766,7 +44742,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp317                @ DW_AT_low_pc
 	.long	.Ltmp318-.Ltmp317       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	198                     @ DW_AT_call_line
+	.byte	196                     @ DW_AT_call_line
 	.byte	116                     @ Abbrev [116] 0xf21d:0x9 DW_TAG_formal_parameter
 	.long	.Ldebug_loc101          @ DW_AT_location
 	.long	58607                   @ DW_AT_abstract_origin
@@ -44776,7 +44752,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp320                @ DW_AT_low_pc
 	.long	.Ltmp329-.Ltmp320       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	199                     @ DW_AT_call_line
+	.byte	197                     @ DW_AT_call_line
 	.ascii	"\205\001"              @ Abbrev [133] 0xf236:0xe8 DW_TAG_inlined_subroutine
 	.long	57994                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges39        @ DW_AT_ranges
@@ -44895,7 +44871,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp331                @ DW_AT_low_pc
 	.long	.Ltmp334-.Ltmp331       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	199                     @ DW_AT_call_line
+	.byte	197                     @ DW_AT_call_line
 	.byte	2                       @ DW_AT_GNU_discriminator
 	.byte	115                     @ Abbrev [115] 0xf35b:0x75 DW_TAG_inlined_subroutine
 	.long	58382                   @ DW_AT_abstract_origin
@@ -44950,7 +44926,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	58402                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges45        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	199                     @ DW_AT_call_line
+	.byte	197                     @ DW_AT_call_line
 	.byte	3                       @ DW_AT_GNU_discriminator
 	.ascii	"\202\001"              @ Abbrev [130] 0xf3de:0x72 DW_TAG_inlined_subroutine
 	.long	58382                   @ DW_AT_abstract_origin
@@ -45005,14 +44981,14 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp342                @ DW_AT_low_pc
 	.long	.Ltmp345-.Ltmp342       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	188                     @ DW_AT_call_line
+	.byte	186                     @ DW_AT_call_line
 	.byte	2                       @ DW_AT_GNU_discriminator
 	.byte	118                     @ Abbrev [118] 0xf462:0x42 DW_TAG_inlined_subroutine
 	.long	58402                   @ DW_AT_abstract_origin
 	.long	.Ltmp346                @ DW_AT_low_pc
 	.long	.Ltmp347-.Ltmp346       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	165                     @ DW_AT_call_line
+	.byte	163                     @ DW_AT_call_line
 	.byte	3                       @ DW_AT_GNU_discriminator
 	.byte	115                     @ Abbrev [115] 0xf472:0x31 DW_TAG_inlined_subroutine
 	.long	58382                   @ DW_AT_abstract_origin
@@ -45044,12 +45020,12 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Linfo_string2216       @ DW_AT_linkage_name
 	.long	.Linfo_string2217       @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.byte	208                     @ DW_AT_decl_line
+	.byte	206                     @ DW_AT_decl_line
                                         @ DW_AT_external
 	.ascii	"\222\001"              @ Abbrev [146] 0xf4bb:0xc DW_TAG_formal_parameter
 	.long	.Ldebug_loc115          @ DW_AT_location
 	.byte	13                      @ DW_AT_decl_file
-	.byte	208                     @ DW_AT_decl_line
+	.byte	206                     @ DW_AT_decl_line
 	.long	46058                   @ DW_AT_type
 	.byte	0                       @ End Of Children Mark
 	.byte	112                     @ Abbrev [112] 0xf4c8:0x20 DW_TAG_subprogram
@@ -45299,19 +45275,19 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.byte	91
 	.long	.Linfo_string2218       @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.byte	216                     @ DW_AT_decl_line
+	.byte	219                     @ DW_AT_decl_line
                                         @ DW_AT_external
 	.byte	126                     @ Abbrev [126] 0xf6f1:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc116          @ DW_AT_location
 	.long	.Linfo_string2109       @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.byte	216                     @ DW_AT_decl_line
+	.byte	219                     @ DW_AT_decl_line
 	.long	62750                   @ DW_AT_type
 	.byte	126                     @ Abbrev [126] 0xf700:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc117          @ DW_AT_location
 	.long	.Linfo_string2220       @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.byte	216                     @ DW_AT_decl_line
+	.byte	219                     @ DW_AT_decl_line
 	.long	46058                   @ DW_AT_type
 	.ascii	"\230\001"              @ Abbrev [152] 0xf70f:0xf8 DW_TAG_lexical_block
 	.long	.Ltmp373                @ DW_AT_low_pc
@@ -45320,7 +45296,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ldebug_loc118          @ DW_AT_location
 	.long	.Linfo_string28         @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.byte	218                     @ DW_AT_decl_line
+	.byte	221                     @ DW_AT_decl_line
 	.long	40774                   @ DW_AT_type
 	.ascii	"\230\001"              @ Abbrev [152] 0xf728:0xde DW_TAG_lexical_block
 	.long	.Ltmp374                @ DW_AT_low_pc
@@ -45329,19 +45305,19 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ldebug_loc123          @ DW_AT_location
 	.long	.Linfo_string2222       @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.byte	232                     @ DW_AT_decl_line
+	.byte	234                     @ DW_AT_decl_line
 	.long	40226                   @ DW_AT_type
 	.byte	127                     @ Abbrev [127] 0xf741:0xf DW_TAG_variable
 	.long	.Ldebug_loc124          @ DW_AT_location
 	.long	.Linfo_string2223       @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.byte	231                     @ DW_AT_decl_line
+	.byte	235                     @ DW_AT_decl_line
 	.long	40226                   @ DW_AT_type
 	.ascii	"\206\001"              @ Abbrev [134] 0xf750:0x17 DW_TAG_inlined_subroutine
 	.long	62664                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges47        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	221                     @ DW_AT_call_line
+	.byte	224                     @ DW_AT_call_line
 	.byte	1                       @ DW_AT_GNU_discriminator
 	.byte	116                     @ Abbrev [116] 0xf75d:0x9 DW_TAG_formal_parameter
 	.long	.Ldebug_loc119          @ DW_AT_location
@@ -45351,13 +45327,13 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	62696                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges48        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	221                     @ DW_AT_call_line
+	.byte	224                     @ DW_AT_call_line
 	.byte	118                     @ Abbrev [118] 0xf773:0x1a DW_TAG_inlined_subroutine
 	.long	62664                   @ DW_AT_abstract_origin
-	.long	.Ltmp386                @ DW_AT_low_pc
-	.long	.Ltmp387-.Ltmp386       @ DW_AT_high_pc
+	.long	.Ltmp387                @ DW_AT_low_pc
+	.long	.Ltmp388-.Ltmp387       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	222                     @ DW_AT_call_line
+	.byte	225                     @ DW_AT_call_line
 	.byte	1                       @ DW_AT_GNU_discriminator
 	.byte	116                     @ Abbrev [116] 0xf783:0x9 DW_TAG_formal_parameter
 	.long	.Ldebug_loc120          @ DW_AT_location
@@ -45365,28 +45341,28 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.byte	0                       @ End Of Children Mark
 	.ascii	"\210\001"              @ Abbrev [136] 0xf78d:0x10 DW_TAG_inlined_subroutine
 	.long	62696                   @ DW_AT_abstract_origin
-	.long	.Ltmp387                @ DW_AT_low_pc
-	.long	.Ltmp388-.Ltmp387       @ DW_AT_high_pc
+	.long	.Ltmp388                @ DW_AT_low_pc
+	.long	.Ltmp389-.Ltmp388       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.byte	222                     @ DW_AT_call_line
+	.byte	225                     @ DW_AT_call_line
 	.ascii	"\206\001"              @ Abbrev [134] 0xf79d:0x17 DW_TAG_inlined_subroutine
 	.long	62664                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges49        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	232                     @ DW_AT_call_line
+	.byte	234                     @ DW_AT_call_line
 	.byte	1                       @ DW_AT_GNU_discriminator
 	.byte	116                     @ Abbrev [116] 0xf7aa:0x9 DW_TAG_formal_parameter
-	.long	.Ldebug_loc122          @ DW_AT_location
+	.long	.Ldebug_loc121          @ DW_AT_location
 	.long	62683                   @ DW_AT_abstract_origin
 	.byte	0                       @ End Of Children Mark
 	.ascii	"\206\001"              @ Abbrev [134] 0xf7b4:0x17 DW_TAG_inlined_subroutine
 	.long	62664                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges50        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.byte	231                     @ DW_AT_call_line
+	.byte	235                     @ DW_AT_call_line
 	.byte	1                       @ DW_AT_GNU_discriminator
 	.byte	116                     @ Abbrev [116] 0xf7c1:0x9 DW_TAG_formal_parameter
-	.long	.Ldebug_loc121          @ DW_AT_location
+	.long	.Ldebug_loc122          @ DW_AT_location
 	.long	62683                   @ DW_AT_abstract_origin
 	.byte	0                       @ End Of Children Mark
 	.byte	120                     @ Abbrev [120] 0xf7cb:0x10 DW_TAG_inlined_subroutine
@@ -45394,19 +45370,19 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp407                @ DW_AT_low_pc
 	.long	.Ltmp408-.Ltmp407       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.short	272                     @ DW_AT_call_line
+	.short	274                     @ DW_AT_call_line
 	.byte	120                     @ Abbrev [120] 0xf7db:0x10 DW_TAG_inlined_subroutine
 	.long	63136                   @ DW_AT_abstract_origin
 	.long	.Ltmp408                @ DW_AT_low_pc
 	.long	.Ltmp409-.Ltmp408       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.short	273                     @ DW_AT_call_line
+	.short	275                     @ DW_AT_call_line
 	.byte	115                     @ Abbrev [115] 0xf7eb:0x1a DW_TAG_inlined_subroutine
 	.long	58588                   @ DW_AT_abstract_origin
 	.long	.Ltmp413                @ DW_AT_low_pc
 	.long	.Ltmp414-.Ltmp413       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.short	324                     @ DW_AT_call_line
+	.short	326                     @ DW_AT_call_line
 	.byte	116                     @ Abbrev [116] 0xf7fb:0x9 DW_TAG_formal_parameter
 	.long	.Ldebug_loc125          @ DW_AT_location
 	.long	58607                   @ DW_AT_abstract_origin
@@ -45453,19 +45429,19 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.byte	91
 	.long	.Linfo_string40         @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.short	348                     @ DW_AT_decl_line
+	.short	350                     @ DW_AT_decl_line
                                         @ DW_AT_external
 	.ascii	"\232\001"              @ Abbrev [154] 0xf863:0x11 DW_TAG_formal_parameter
 	.long	.Ldebug_loc126          @ DW_AT_location
 	.long	.Linfo_string2109       @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.short	348                     @ DW_AT_decl_line
+	.short	350                     @ DW_AT_decl_line
 	.long	62750                   @ DW_AT_type
 	.ascii	"\232\001"              @ Abbrev [154] 0xf874:0x11 DW_TAG_formal_parameter
 	.long	.Ldebug_loc127          @ DW_AT_location
 	.long	.Linfo_string2220       @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.short	348                     @ DW_AT_decl_line
+	.short	350                     @ DW_AT_decl_line
 	.long	46058                   @ DW_AT_type
 	.ascii	"\230\001"              @ Abbrev [152] 0xf885:0x3a DW_TAG_lexical_block
 	.long	.Ltmp436                @ DW_AT_low_pc
@@ -45474,26 +45450,26 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ldebug_loc128          @ DW_AT_location
 	.long	.Linfo_string28         @ DW_AT_name
 	.byte	13                      @ DW_AT_decl_file
-	.short	351                     @ DW_AT_decl_line
+	.short	353                     @ DW_AT_decl_line
 	.long	40774                   @ DW_AT_type
 	.ascii	"\217\001"              @ Abbrev [143] 0xf8a0:0xe DW_TAG_inlined_subroutine
 	.long	58563                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges51        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.short	351                     @ DW_AT_call_line
+	.short	353                     @ DW_AT_call_line
 	.byte	1                       @ DW_AT_GNU_discriminator
 	.byte	120                     @ Abbrev [120] 0xf8ae:0x10 DW_TAG_inlined_subroutine
 	.long	58588                   @ DW_AT_abstract_origin
 	.long	.Ltmp440                @ DW_AT_low_pc
 	.long	.Ltmp441-.Ltmp440       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.short	357                     @ DW_AT_call_line
+	.short	359                     @ DW_AT_call_line
 	.byte	0                       @ End Of Children Mark
 	.ascii	"\202\001"              @ Abbrev [130] 0xf8bf:0x88 DW_TAG_inlined_subroutine
 	.long	63528                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges52        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.short	362                     @ DW_AT_call_line
+	.short	364                     @ DW_AT_call_line
 	.ascii	"\202\001"              @ Abbrev [130] 0xf8cc:0x7a DW_TAG_inlined_subroutine
 	.long	63496                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges53        @ DW_AT_ranges
@@ -45548,7 +45524,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	63548                   @ DW_AT_abstract_origin
 	.long	.Ldebug_ranges55        @ DW_AT_ranges
 	.byte	13                      @ DW_AT_call_file
-	.short	365                     @ DW_AT_call_line
+	.short	367                     @ DW_AT_call_line
 	.byte	120                     @ Abbrev [120] 0xf954:0x10 DW_TAG_inlined_subroutine
 	.long	58682                   @ DW_AT_abstract_origin
 	.long	.Ltmp454                @ DW_AT_low_pc
@@ -45561,7 +45537,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp455                @ DW_AT_low_pc
 	.long	.Ltmp457-.Ltmp455       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.short	366                     @ DW_AT_call_line
+	.short	368                     @ DW_AT_call_line
 	.byte	120                     @ Abbrev [120] 0xf975:0x10 DW_TAG_inlined_subroutine
 	.long	58682                   @ DW_AT_abstract_origin
 	.long	.Ltmp456                @ DW_AT_low_pc
@@ -45574,7 +45550,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp457                @ DW_AT_low_pc
 	.long	.Ltmp459-.Ltmp457       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.short	367                     @ DW_AT_call_line
+	.short	369                     @ DW_AT_call_line
 	.byte	120                     @ Abbrev [120] 0xf996:0x10 DW_TAG_inlined_subroutine
 	.long	58682                   @ DW_AT_abstract_origin
 	.long	.Ltmp458                @ DW_AT_low_pc
@@ -45587,7 +45563,7 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	.Ltmp459                @ DW_AT_low_pc
 	.long	.Ltmp461-.Ltmp459       @ DW_AT_high_pc
 	.byte	13                      @ DW_AT_call_file
-	.short	368                     @ DW_AT_call_line
+	.short	370                     @ DW_AT_call_line
 	.byte	120                     @ Abbrev [120] 0xf9b7:0x10 DW_TAG_inlined_subroutine
 	.long	58682                   @ DW_AT_abstract_origin
 	.long	.Ltmp460                @ DW_AT_low_pc
@@ -46864,33 +46840,33 @@ _ZTIPFvPN6oscpkt7MessageEPKcPvE:
 	.long	0
 	.long	0
 .Ldebug_ranges47:
-	.long	.Ltmp375
 	.long	.Ltmp376
 	.long	.Ltmp377
-	.long	.Ltmp378
-	.long	.Ltmp381
+	.long	.Ltmp379
+	.long	.Ltmp380
 	.long	.Ltmp382
+	.long	.Ltmp383
 	.long	0
 	.long	0
 .Ldebug_ranges48:
-	.long	.Ltmp382
 	.long	.Ltmp383
 	.long	.Ltmp384
 	.long	.Ltmp385
+	.long	.Ltmp386
 	.long	0
 	.long	0
 .Ldebug_ranges49:
-	.long	.Ltmp389
-	.long	.Ltmp390
-	.long	.Ltmp394
-	.long	.Ltmp395
-	.long	0
-	.long	0
-.Ldebug_ranges50:
 	.long	.Ltmp391
 	.long	.Ltmp392
 	.long	.Ltmp396
 	.long	.Ltmp397
+	.long	0
+	.long	0
+.Ldebug_ranges50:
+	.long	.Ltmp393
+	.long	.Ltmp394
+	.long	.Ltmp398
+	.long	.Ltmp399
 	.long	0
 	.long	0
 .Ldebug_ranges51:
