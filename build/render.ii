@@ -53752,18 +53752,18 @@ std::atomic<bool> bypass;
 
 
 
-AuxiliaryTask filteringTask;
+ AuxiliaryTask filteringTask;
 
 
 
 
-void filtering_thread(void *);
-# 96 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+ void filtering_thread(void *);
+# 97 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
 bool setup(BelaContext *context, void *userData)
 {
  int normalization_status = 2;
  bypass = false;
-# 110 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 111 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   oscInterface.oscSender.setup(oscInterface.remotePort, oscInterface.remoteIP);
   oscInterface.send_status("Started..");
   send_pos_0 = false;
@@ -53836,7 +53836,9 @@ bool setup(BelaContext *context, void *userData)
  outRightFFT.setup((256 * 2));
 
 
- filteringTask = Bela_createAuxiliaryTask(filtering_thread, 50, "SOFAlizer-filtering-task");
+
+  filteringTask = Bela_createAuxiliaryTask(filtering_thread, 50, "SOFAlizer-filtering-task");
+
 
 
 
@@ -53860,17 +53862,19 @@ bool setup(BelaContext *context, void *userData)
 
 
 
-void filtering_thread(void *) {
+
+ void filtering_thread(void *) {
 
 
 
-  filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+   filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
 
 
 
 
- out_write_ptr = (out_write_ptr + 256) % 1024;
-}
+  out_write_ptr = (out_write_ptr + 256) % 1024;
+ }
+
 
 
 void render(BelaContext *context, void *userData)
@@ -53904,18 +53908,25 @@ void render(BelaContext *context, void *userData)
   if (outcReadPtr >= 1024) {
    outcReadPtr = 0;
   }
-# 266 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 271 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   hopCnt++;
   if (hopCnt >= 256) {
    hopCnt = 0;
    cached_in_read_ptr = incWritePtr;
-   Bela_scheduleAuxiliaryTask(filteringTask);
+
+    Bela_scheduleAuxiliaryTask(filteringTask);
+
+
+
+
+
+
   }
 
 
   audioWrite(context, i, 0, leftOut);
   audioWrite(context, i, 1, rightOut);
-# 321 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+# 333 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
   if (hrtf_num != hrtf_num_prev) {
 
 

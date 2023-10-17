@@ -72,17 +72,18 @@ std::atomic<bool> bypass;
 
 /*----------------- END GLOBAL VARIABLES DEFINITIONS -----------------*/
 
+#if MULTITHREADING == true
+	/*----------------- THREAD DEFINITIONS -----------------*/
+	/** Thread for FFT processing */
+	AuxiliaryTask filteringTask;
+	/*----------------- END THREAD DEFINITIONS -----------------*/
 
-/*----------------- THREAD DEFINITIONS -----------------*/
-/** Thread for FFT processing */
-AuxiliaryTask filteringTask;
-/*----------------- END THREAD DEFINITIONS -----------------*/
 
-
-/*----------------- FUNCTION PROTOTYPES -----------------*/
-void filtering_thread(void *);
-//void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg);
-/*----------------- END FUNCTION PROTOTYPES -----------------*/
+	/*----------------- FUNCTION PROTOTYPES -----------------*/
+	void filtering_thread(void *);
+	//void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg);
+	/*----------------- END FUNCTION PROTOTYPES -----------------*/
+#endif
 
 /**
  * Load multiple Sofa structures & perform FFT on it,
@@ -178,8 +179,10 @@ bool setup(BelaContext *context, void *userData)
 	outLeftFFT.setup(FFT_SIZE);
 	outRightFFT.setup(FFT_SIZE);
 
-	/** Initialize filtering thread */
-	filteringTask = Bela_createAuxiliaryTask(filtering_thread, 50, "SOFAlizer-filtering-task");
+	#if MULTITHREADING == true
+		/** Initialize filtering thread */
+		filteringTask = Bela_createAuxiliaryTask(filtering_thread, 50, "SOFAlizer-filtering-task");
+	#endif
 
 	#if INTERFACE != ANALOG
 		/** Setup for OSC Receiver */
@@ -200,20 +203,22 @@ bool setup(BelaContext *context, void *userData)
 	return true;
 }
 
-/**
- * Multithread wrapper for filtering process
-*/
-void filtering_thread(void *) {
-	#if CM_METHOD == CM_CPU
-		filtering_multiple_positions_cpu(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
-	#elif CM_METHOD == CM_NEON
-		filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
-	#endif
-	//filtering(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+#if MULTITHREADING == true
+	/**
+	* Multithread wrapper for filtering process
+	*/
+	void filtering_thread(void *) {
+		#if CM_METHOD == CM_CPU
+			filtering_multiple_positions_cpu(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+		#elif CM_METHOD == CM_NEON
+			filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+		#endif
+		//filtering(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
 
-	/** Update the output buffer write pointer to start at next hop */
-	out_write_ptr = (out_write_ptr + HOP_SIZE) % INBUFF_SIZE;
-}
+		/** Update the output buffer write pointer to start at next hop */
+		out_write_ptr = (out_write_ptr + HOP_SIZE) % INBUFF_SIZE;
+	}
+#endif
 
 
 void render(BelaContext *context, void *userData)
@@ -267,7 +272,14 @@ void render(BelaContext *context, void *userData)
 		if (hopCnt >= HOP_SIZE) {
 			hopCnt = 0;
 			cached_in_read_ptr = incWritePtr;
-			Bela_scheduleAuxiliaryTask(filteringTask);
+			#if MULTITHREADING == true
+				Bela_scheduleAuxiliaryTask(filteringTask);
+			#else
+				filtering_multiple_positions_neon(hrtfdata, &incBuff, cached_in_read_ptr, &outcBuff, out_write_ptr);
+				/** Update the output buffer write pointer to start at next hop */
+				out_write_ptr = (out_write_ptr + HOP_SIZE) % INBUFF_SIZE;
+			#endif
+
 		}
 
 		/** Write to audio output */

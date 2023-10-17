@@ -387,13 +387,13 @@ _ZN3Fft3fftEv:                          @ @_ZN3Fft3fftEv
 	.cfi_startproc
 @ BB#0:
 	@DEBUG_VALUE: fft:this <- %R0
-	.loc	15 69 46 prologue_end   @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:69:46
+	.loc	15 71 49 prologue_end   @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:71:49
 	ldm	r0, {r1, r3}
-	.loc	15 69 58 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:69:58
+	.loc	15 71 61 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:71:61
 	ldr	r2, [r0, #8]
-	.loc	15 69 3                 @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:69:3
+	.loc	15 71 3                 @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:71:3
 	mov	r0, r3
-	b	ne10_fft_r2c_1d_float32_c
+	b	ne10_fft_r2c_1d_float32_neon
 .Ltmp56:
 .Lfunc_end4:
 	.size	_ZN3Fft3fftEv, .Lfunc_end4-_ZN3Fft3fftEv
@@ -456,14 +456,14 @@ _ZN3Fft3fftERKSt6vectorIfSaIfEE:        @ @_ZN3Fft3fftERKSt6vectorIfSaIfEE
 	bl	memcpy
 .Ltmp69:
 	@DEBUG_VALUE: fft:this <- %R4
-	.loc	15 69 46 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:69:46
+	.loc	15 71 49 is_stmt 1      @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:71:49
 	ldr	r1, [r4]
-	.loc	15 69 29 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:69:29
+	.loc	15 71 32 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:71:32
 	ldmib	r4, {r0, r2}
-	.loc	15 69 3                 @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:69:3
+	.loc	15 71 3                 @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:71:3
 	pop	{r4, r10, r11, lr}
 .Ltmp70:
-	b	ne10_fft_r2c_1d_float32_c
+	b	ne10_fft_r2c_1d_float32_neon
 .Ltmp71:
 .Lfunc_end5:
 	.size	_ZN3Fft3fftERKSt6vectorIfSaIfEE, .Lfunc_end5-_ZN3Fft3fftERKSt6vectorIfSaIfEE
@@ -480,13 +480,13 @@ _ZN3Fft4ifftEv:                         @ @_ZN3Fft4ifftEv
 	.cfi_startproc
 @ BB#0:
 	@DEBUG_VALUE: ifft:this <- %R0
-	.loc	15 87 29 prologue_end   @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:87:29
+	.loc	15 89 32 prologue_end   @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:89:32
 	ldr	r3, [r0]
-	.loc	15 87 41 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:87:41
+	.loc	15 89 44 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:89:44
 	ldmib	r0, {r1, r2}
-	.loc	15 87 3                 @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:87:3
+	.loc	15 89 3                 @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:89:3
 	mov	r0, r3
-	b	ne10_fft_c2r_1d_float32_c
+	b	ne10_fft_c2r_1d_float32_neon
 .Ltmp72:
 .Lfunc_end6:
 	.size	_ZN3Fft4ifftEv, .Lfunc_end6-_ZN3Fft4ifftEv
@@ -573,7 +573,7 @@ _ZN3Fft4ifftERKSt6vectorIfSaIfEES4_:    @ @_ZN3Fft4ifftERKSt6vectorIfSaIfEES4_
 	.loc	15 102 1 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:102:1
 	poplo	{r4, r5, r6, r7, r8, r9, r11, pc}
 .Ltmp92:
-	.loc	15 87 41                @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:87:41
+	.loc	15 89 44                @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:89:44
 	ldr	r1, [r0, #4]
 	mov	r5, #0
 .Ltmp93:
@@ -672,14 +672,14 @@ _ZN3Fft4ifftERKSt6vectorIfSaIfEES4_:    @ @_ZN3Fft4ifftERKSt6vectorIfSaIfEES4_
 .Ltmp106:
 .LBB7_10:                               @ %.loopexit
 	@DEBUG_VALUE: ifft:this <- %R0
-	.loc	15 87 29                @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:87:29
+	.loc	15 89 32                @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:89:32
 	ldr	r3, [r0]
-	.loc	15 87 58 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:87:58
+	.loc	15 89 61 is_stmt 0      @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:89:61
 	ldr	r2, [r0, #8]
-	.loc	15 87 3                 @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:87:3
+	.loc	15 89 3                 @ /root/Bela/projects/SOFAlizer-for-Bela/fft.cpp:89:3
 	mov	r0, r3
 	pop	{r4, r5, r6, r7, r8, r9, r11, lr}
-	b	ne10_fft_c2r_1d_float32_c
+	b	ne10_fft_c2r_1d_float32_neon
 .Ltmp107:
 .Lfunc_end7:
 	.size	_ZN3Fft4ifftERKSt6vectorIfSaIfEES4_, .Lfunc_end7-_ZN3Fft4ifftERKSt6vectorIfSaIfEES4_

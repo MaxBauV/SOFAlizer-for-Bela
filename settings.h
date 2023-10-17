@@ -64,6 +64,12 @@
  *  At this state the macros influence filtering_test.cpp and fft.cpp
  */
 
+/** Switching between multi-thread and single-thread implementation
+ *  true = multi-thread
+ *  false = single-thread
+ */
+#define MULTITHREADING true
+
 /** Choose Method for FFT
  *  Set FFT_METHOD to FFT_CPU or FFT_NEON
  */

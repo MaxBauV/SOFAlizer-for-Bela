@@ -784,7 +784,7 @@ _Z32filtering_multiple_positions_cpuRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_
 	@DEBUG_VALUE: fd:this <- %R7
 	.loc	9 51 9 is_stmt 1 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp:51:9
 	sub	r5, r5, #1
-	cmn	r5, #34
+	cmn	r5, #36
 .Ltmp94:
 	.loc	39 46 44                @ /root/Bela/projects/SOFAlizer-for-Bela/fft.h:46:44
 	ldr	r7, [r7, #4]
@@ -1174,7 +1174,7 @@ _Z32filtering_multiple_positions_cpuRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_
 	.p2align	2
 @ BB#28:
 .LCPI0_0:
-	.long	1022423281              @ float 0.0294117648
+	.long	1021546041              @ float 0.027777778
 .Lfunc_end0:
 	.size	_Z32filtering_multiple_positions_cpuRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j, .Lfunc_end0-_Z32filtering_multiple_positions_cpuRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j
 	.cfi_endproc
@@ -1867,7 +1867,7 @@ _Z33filtering_multiple_positions_neonRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4
 	ldr	r1, [r1, r10, lsl #2]
 .Ltmp262:
 	.loc	9 170 9 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp:170:9
-	cmp	r0, #34
+	cmp	r0, #36
 .Ltmp263:
 	.loc	9 188 100               @ /root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp:188:100
 	ldr	r4, [r4, r10, lsl #2]
@@ -2015,7 +2015,7 @@ _Z33filtering_multiple_positions_neonRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4
 	ldr	r1, [r1, r10, lsl #2]
 .Ltmp292:
 	.loc	9 226 9 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp:226:9
-	cmp	r0, #34
+	cmp	r0, #36
 .Ltmp293:
 	.loc	9 244 100               @ /root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp:244:100
 	ldr	r4, [r4, r10, lsl #2]
@@ -2263,10 +2263,10 @@ _Z33filtering_multiple_positions_neonRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4
 	.p2align	4
 @ BB#30:
 .LCPI2_0:
-	.long	1022423281              @ float 0.0294117648
-	.long	1022423281              @ float 0.0294117648
-	.long	1022423281              @ float 0.0294117648
-	.long	1022423281              @ float 0.0294117648
+	.long	1021546041              @ float 0.027777778
+	.long	1021546041              @ float 0.027777778
+	.long	1021546041              @ float 0.027777778
+	.long	1021546041              @ float 0.027777778
 .Lfunc_end2:
 	.size	_Z33filtering_multiple_positions_neonRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j, .Lfunc_end2-_Z33filtering_multiple_positions_neonRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4_j
 	.cfi_endproc
