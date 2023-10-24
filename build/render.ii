@@ -53719,10 +53719,10 @@ Fft outRightFFT;
 
 
 
+ AnalogInterface anInterface;
 
 
 
- OSCinterface oscInterface;
 
 
 
@@ -53753,22 +53753,24 @@ void filtering_thread(void *);
 bool setup(BelaContext *context, void *userData)
 {
  int normalization_status = 2;
- bypass = false;
-# 112 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
-  oscInterface.oscSender.setup(oscInterface.remotePort, oscInterface.remoteIP);
-  oscInterface.send_status("Started..");
-  send_pos_0 = false;
-  send_pos_1 = true;
 
 
 
- if (!read_hrtfs_from_dir(hrtfdata, "./HRTFs/\0", 44100, 1)){
+  pinMode(context, 0, 12, INPUT);
+  pinMode(context, 0, 13, INPUT);
+  pinMode(context, 0, 15, INPUT);
+  pinMode(context, 0, 8, OUTPUT);
+  pinMode(context, 0, 5, OUTPUT);
+
+  bypass = true;
+# 122 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+ if (!read_hrtfs_from_dir(hrtfdata, "./HRTFs/\0", 44100, 7)){
   rt_printf("Could not find %s\n", "./HRTFs/\0");
 
  }
 
 
-  oscInterface.send_status("Loaded all HRTFs");
+
 
 
 
@@ -53808,7 +53810,7 @@ bool setup(BelaContext *context, void *userData)
  }
 
 
-  oscInterface.send_status("Performed FFT on all HRTFs");
+
 
 
 
@@ -53831,7 +53833,7 @@ bool setup(BelaContext *context, void *userData)
 
 
 
-  oscInterface.oscReceiver.setup(oscInterface.localPort, osc_on_receive);
+
 
 
 
@@ -53841,8 +53843,8 @@ bool setup(BelaContext *context, void *userData)
  m_hrtf_num.unlock();
 
 
-  oscInterface.send_filename(hrtfdata[hrtf_num].filename);
-  oscInterface.send_status("Running..");
+
+
 
 
  return true;
@@ -53882,7 +53884,6 @@ void render(BelaContext *context, void *userData)
   outcBuff.right[outcReadPtr] = 0;
 
 
-  rt_printf("vol=%f", ((float) 256 / (float) (256 * 2)));
   leftOut *= ((float) 256 / (float) (256 * 2));
   rightOut *= ((float) 256 / (float) (256 * 2));
 
@@ -53891,7 +53892,22 @@ void render(BelaContext *context, void *userData)
   if (outcReadPtr >= 1024) {
    outcReadPtr = 0;
   }
-# 264 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+
+
+
+   anInterface.read(context, 0);
+
+   m_left_pos.lock();
+   leftPosition.azimuth = anInterface.leftAzimuthPot.currentValue;
+   leftPosition.elevation_angle = anInterface.leftElevationPot.currentValue;
+   m_left_pos.unlock();
+   m_right_pos.lock();
+   righPosition.azimuth = anInterface.rightAzimuthPot.currentValue;
+   righPosition.elevation_angle = anInterface.rightElevationPot.currentValue;
+   m_right_pos.unlock();
+
+
+
   hopCnt++;
   if (hopCnt >= 256) {
    hopCnt = 0;
@@ -53902,29 +53918,62 @@ void render(BelaContext *context, void *userData)
 
   audioWrite(context, i, 0, leftOut);
   audioWrite(context, i, 1, rightOut);
-# 319 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
+
+
+
+
+
+   anInterface.incButtonValueCurr = digitalRead(context, i, 12);
+   anInterface.decButtonValueCurr = digitalRead(context, i, 13);
+   anInterface.bypassButtonValueCurr = digitalRead(context, i, 15);
+
+
+   if (anInterface.incButtonValueCurr == false && anInterface.incButtonValuePrev == true) {
+
+    m_hrtf_num.lock();
+    hrtf_num++;
+    if (hrtf_num == hrtf_cnt) {
+                 hrtf_num = 0;
+             }
+    m_hrtf_num.unlock();
+   }
+
+
+   if (anInterface.decButtonValueCurr == false && anInterface.decButtonValuePrev == true) {
+
+    m_hrtf_num.lock();
+    hrtf_num--;
+    if (hrtf_num == -1) {
+     hrtf_num = hrtf_cnt-1;
+    }
+    m_hrtf_num.unlock();
+   }
+
+
+   if (anInterface.bypassButtonValueCurr == false && anInterface.bypassButtonValuePrev == true) {
+
+    bypass = !bypass;
+   }
+
+
+   anInterface.incButtonValuePrev = anInterface.incButtonValueCurr;
+   anInterface.decButtonValuePrev = anInterface.decButtonValueCurr;
+   anInterface.bypassButtonValuePrev = anInterface.bypassButtonValueCurr;
+
+
+
+
   if (hrtf_num != hrtf_num_prev) {
 
+    rt_printf("%s\n", hrtfdata[hrtf_num].filename);
 
 
-    oscInterface.send_hrtf_num(hrtf_num);
-    oscInterface.send_filename(hrtfdata[hrtf_num].filename);
+
 
 
    hrtf_num_prev = hrtf_num;
   }
-
-
-
-   if (send_pos_0) {
-    oscInterface.get_angle_pos0();
-    send_pos_0 = false;
-   }
-   if (send_pos_1) {
-    oscInterface.get_angle_pos1();
-    send_pos_1 = false;
-   }
-
+# 343 "/root/Bela/projects/SOFAlizer-for-Bela/render.cpp"
  }
 }
 

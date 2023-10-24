@@ -5,7 +5,7 @@
 #define DEBUG_PRINT false
 
 /** Maximum HRTFs to be loaded */
-#define MAX_SOFAS 1
+#define MAX_SOFAS 7
 
 #define HOP_SIZE 256
 #define FFT_SIZE (HOP_SIZE * 2)

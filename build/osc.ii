@@ -53700,10 +53700,10 @@ extern Fft outRightFFT;
 
 
 
+ extern AnalogInterface anInterface;
 
 
 
- extern OSCinterface oscInterface;
 
 
 
@@ -53727,15 +53727,15 @@ OSCinterface::OSCinterface() {
 }
 
 void OSCinterface::send_filename (char* filename) {
-    oscSender.newMessage("/filenames/").add(std::string (filename)).send();
+    oscSender.newMessage("/hrtf/filename/").add(std::string(filename)).send();
 }
 
 void OSCinterface::send_hrtf_num (unsigned int hrtf_num) {
-    oscSender.newMessage("/hrtf_num/").add(std::to_string(hrtf_num)).send();
+    oscSender.newMessage("/hrtf/num/").add(std::to_string(hrtf_num)).send();
 }
 
 void OSCinterface::send_status (std::string status) {
-    oscSender.newMessage("/status/").add(status).send();
+    oscSender.newMessage("/system/status/").add(status).send();
 }
 
 void OSCinterface::get_angle_pos0 (void) {
@@ -53766,9 +53766,9 @@ void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg)
             leftPosition.azimuth = fmod(a, 360);
             leftPosition.elevation_angle = fmod(e, 360);
             m_left_pos.unlock();
-            rt_printf("fmod(%f, 360) = %f\n", a, fmod(a, 360));
-            rt_printf("received a %f\n", leftPosition.azimuth);
-            rt_printf("received e %f\n", leftPosition.elevation_angle);
+
+
+
         }
         else if(msg->match("/position/set/angle/1")){
             float a;
@@ -53778,8 +53778,8 @@ void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg)
             righPosition.azimuth = fmod(a, 360);
             righPosition.elevation_angle = fmod(e, 360);
             m_right_pos.unlock();
-            rt_printf("received a %f\n", righPosition.azimuth);
-            rt_printf("received e %f\n", righPosition.elevation_angle);
+
+
         }
         else if(msg->match("/position/set/norm/0")){
             float left_x;
@@ -53820,7 +53820,7 @@ void osc_on_receive(oscpkt::Message* msg, const char* addr, void* arg)
                 hrtf_num = hrtf_cnt-1;
             }
             m_hrtf_num.unlock();
-            rt_printf("hrtf_num %d, hrtf_cnt %d\n", hrtf_num, hrtf_cnt);
+
         }
         else if(msg->match("/hrtf/inc")) {
             m_hrtf_num.lock();

@@ -2067,7 +2067,7 @@ _Z33filtering_multiple_positions_neonRSt6vectorI8HRTFDataSaIS0_EEPK8CircBuffjPS4
 .Ltmp305:
 	@DEBUG_VALUE: filtering_multiple_positions_neon:cnt <- %R9
 	.loc	9 133 5 discriminator 1 @ /root/Bela/projects/SOFAlizer-for-Bela/filtering_test.cpp:133:5
-	cmp	r10, #128
+	cmp	r10, #256
 	bne	.LBB2_15
 .Ltmp306:
 @ BB#20:

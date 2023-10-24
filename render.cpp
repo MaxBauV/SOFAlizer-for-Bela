@@ -98,7 +98,6 @@ void filtering_thread(void *);
 bool setup(BelaContext *context, void *userData)
 {
 	int normalization_status = 2;
-	bypass = false;
 
 	#if INTERFACE == ANALOG
 		/** Configure Button & LED pins */
@@ -107,12 +106,16 @@ bool setup(BelaContext *context, void *userData)
 		pinMode(context, 0, BYPASS_BUTTON, INPUT);
 		pinMode(context, 0, 8, OUTPUT);
 		pinMode(context, 0, 5, OUTPUT);
+		/** Set bypass to true (inverted with Analog Interface) */
+		bypass = true;
 	#else
 		/** Setup of OSC Sender */
 		oscInterface.oscSender.setup(oscInterface.remotePort, oscInterface.remoteIP);
 		oscInterface.send_status("Started..");
 		send_pos_0 = false;
 		send_pos_1 = true;
+		/** Set bypass to false */
+		bypass = false;
 	#endif
 
 	/** Load all sofa files from HRTF_DIR */
