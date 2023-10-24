@@ -53700,10 +53700,10 @@ extern Fft outRightFFT;
 
 
 
- extern AnalogInterface anInterface;
 
 
 
+ extern OSCinterface oscInterface;
 
 
 

@@ -1,5 +1,5 @@
 SOFAlizer-for-Bela is a real-time audio spatialization system for headphone-based sound reproduction implemented for the Bela hardware. It is embedded into Bela’s environment for real-time processing and utilizes the [libmysofa](https://github.com/hoene/libmysofa) library. Latter is a set of C functions to read AES SOFA files, if they contain HRTF data sets according to the [AES69-2015 standard](https://www.aes.org/publications/standards/search.cfm?docID=99).
-It is intendend to be a customizable open source framework for audio spatialization.
+It is intendend to be a customizable open source framework for a Bela-based audio spatialization device.
 
 The software filters audio inputs using head-related transfer functions (HRTFs) to create immersive spatial audio effects. To optimize performance, fast convolution techniques are employed, leveraging the ARM Cortex-A8's NEON co-processor for efficient computation of FFT, IFFT, and complex multiplication. SOFAlizer-for-Bela has been tested successfully with configurations of up to 41 virtual loudspeakers per channel when using a block size and hop size of 128, and up to 36 virtual loudspeakers per channel with a block size and hop size of 256.
 
@@ -48,7 +48,7 @@ After successfully connecting your Bela device to a network, let's connect to it
 If you are running a Windows computer, you can either use the [built-in SSH client](https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh) or a third party software, such as [PuTTY](https://www.putty.org/).
 
 ## Install libmysofa <a name="installlib"></a>
-**SOFAlizer-for-bela** relies on [libmysofa](https://github.com/hoene/libmysofa). I have used version (**TODO:** add commit number).
+**SOFAlizer-for-bela** relies on [libmysofa](https://github.com/hoene/libmysofa).
 
 - Make sure that Bela has an internet connection and is reachable via an remote computer.
 - Connect to Bela via ssh
@@ -73,15 +73,14 @@ If you are running a Windows computer, you can either use the [built-in SSH clie
 
 ## Install SOFAlizer-for-bela
 
-(**TODO:** change github links once published - now not available, because it is private)
 
 - Make sure that Bela has an internet connection and is reachable via an remote computer.
 - Connect to Bela via ssh
 - Once connected to the Bela device, perform following steps on it:
 
-    - Clone SOFAlizer-for-bela from: `https://github.com/MaxBauV/SofalizerForBela/tree/main` into `~/Bela/projects`
+    - Clone SOFAlizer-for-bela from: `https://github.com/MaxBauV/SOFAlizer-for-Bela` into `~/Bela/projects`
         - `$ cd ~/Bela/projects`
-        - `$ git clone https://github.com/MaxBauV/SofalizerForBela.git`
+        - `$ git clone https://github.com/MaxBauV/SOFAlizer-for-Bela.git`
 
 - On the remote computer open Bela's IDE by either typing Bela's IP-address or `bela.local` in a browser
 - Tell the linker to link *libmysofa* and *zlib*
